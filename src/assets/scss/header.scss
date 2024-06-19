@@ -40,6 +40,12 @@
     }
   }
   .wrapper-header-mobile{
+    .wrapper-icon-menu.open{
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 999;
+  }
     .wrapper-icon-menu{
       display: none;
       position: absolute;
