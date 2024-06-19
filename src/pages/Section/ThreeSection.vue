@@ -15,7 +15,7 @@ export default {
 
 <template>
   <div class="wrapper">
-    <MultiSlider :ActiveSlide = ActiveSlide />
+<!--    <MultiSlider :ActiveSlide = ActiveSlide />-->
     <div class="title">
       Сведения об инициаторе мероприятия (проекта)
     </div>
@@ -68,11 +68,9 @@ export default {
   border: 1px solid rgba(37, 36, 52, 0.75);
 }
 .form-input-item{
-
   margin: 0 auto;
   margin-top: 16px;
   max-width: 593px;
-
   display: flex;
   flex-direction: column;
   justify-content: left;
