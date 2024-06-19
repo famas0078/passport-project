@@ -75,7 +75,7 @@ export default {
 .line{
   position: absolute;
   left: 50%;
-  top: 18%;
+  top: 30%;
   transform: translate( -50%, -50%);
   height: 1px;
   width: 80%;

@@ -18,7 +18,7 @@
      </div>
    </div>
    <div class="wrapper-header-mobile">
-     <div class="wrapper-icon-menu">
+     <div class="wrapper-icon-menu" :class="{ open: isOpen }" >
        <a href="#" @click="toggleMenu" class="nav" :class="{ open: isOpen }">
          <div class="one"></div>
          <div class="two"></div>
@@ -76,4 +76,5 @@ export default {
 .open.nav + .wrapper-burger-menu {
   display: block;
 }
+
 </style>
