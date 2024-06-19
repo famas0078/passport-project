@@ -23,12 +23,18 @@ export default {
         <div :class="isActiveSlide === 1 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
           1
         </div>
+        <div class="slider-text">
+          Раздел
+        </div>
       </div>
       <div :class=" isActiveSlide === 2 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
         <div :class="isActiveSlide === 2 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
         </div>
         <div :class="isActiveSlide === 2 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
           2
+        </div>
+        <div class="slider-text">
+          Раздел
         </div>
       </div>
       <div :class=" isActiveSlide === 3 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
@@ -37,12 +43,18 @@ export default {
         <div :class="isActiveSlide === 3 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
           3
         </div>
+        <div class="slider-text">
+          Раздел
+        </div>
       </div>
       <div :class=" isActiveSlide === 4 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
         <div :class="isActiveSlide === 4 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
         </div>
         <div :class="isActiveSlide === 4 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
           4
+        </div>
+        <div class="slider-text">
+          Раздел
         </div>
       </div>
       <div :class=" isActiveSlide === 5 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
@@ -51,6 +63,9 @@ export default {
         <div :class="isActiveSlide === 5 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
           5
         </div>
+        <div class="slider-text">
+          Раздел
+        </div>
       </div>
       <div :class=" isActiveSlide === 6 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
         <div :class="isActiveSlide === 6 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
@@ -58,14 +73,22 @@ export default {
         <div :class="isActiveSlide === 6 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
           6
         </div>
+        <div class="slider-text">
+          Раздел
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.active{
-
+.slider-text{
+  position: absolute;
+  left: -13px;
+  top: 50px;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 21px;
 }
 .wrapper-slider-item-circle{
   position: absolute;
