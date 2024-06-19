@@ -1,0 +1,16 @@
+:root{
+    --bg-color-light-green-btn: #E0F5D4;
+    --bg-color-green-btn: #015458;
+    --text-color: #252434;
+    --bg-color-linear-btn: linear-gradient(135deg, #CBCE55 0.69%, #217B4F 100.69%);
+
+}
+.d-flex{
+    display: flex;
+}
+.justify-content-around{
+    justify-content: space-around;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
