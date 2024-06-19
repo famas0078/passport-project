@@ -3,6 +3,8 @@
   <OneSection v-if="ActiveSlide === 1" :ActiveSlide="ActiveSlide" />
   <TwoSection v-if="ActiveSlide === 2" :ActiveSlide="ActiveSlide" />
   <ThreeSection v-if="ActiveSlide === 3" :ActiveSlide="ActiveSlide" />
+  <FourSection v-if="ActiveSlide === 4" :ActiveSlide="ActiveSlide" />
+  <FiveSection v-if="ActiveSlide === 5" :ActiveSlide="ActiveSlide" />
   <div class="index-btn d-flex">
     <div class="btn-last btn-item" @click="lastSlider()">
       <img src="../assets/img/Vector.svg" alt="">
@@ -22,17 +24,21 @@ import OneSection from "@/pages/Section/OneSection.vue";
 import Footer from "@/components/footer/footer.vue";
 import TwoSection from "@/pages/Section/TwoSection.vue";
 import ThreeSection from "@/pages/Section/ThreeSection.vue";
+import FourSection from "@/pages/Section/FourSection.vue";
+import FiveSection from "@/pages/Section/FiveSection.vue";
 export default {
   components: {
     ThreeSection,
     Header,
     TwoSection,
     Footer,
-    OneSection
+    OneSection,
+    FourSection,
+    FiveSection
   },
   data(){
     return{
-      ActiveSlide: 2
+      ActiveSlide: 1
     }
   },
   methods:{
