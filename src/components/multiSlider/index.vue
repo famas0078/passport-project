@@ -3,162 +3,90 @@ export default {
   props: {
     ActiveSlide: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
-  data(){
-    return{
-
-    }
-  }
-}
+  data() {
+    return {
+      pagination: [
+        {
+          id: 1,
+        },
+        {
+          id: 2,
+        },
+        {
+          id: 3,
+        },
+        {
+          id: 4,
+        },
+        {
+          id: 5,
+        },
+        {
+          id: 6,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <template>
   <div class="wrapper">
-    <div class="wrapper-slider d-flex justify-content-around">
-
-      <div :class="{
-        'wrapper-slider-item-back': ActiveSlide === 1,
-        'wrapper-slider-item': ActiveSlide !== 1 && ActiveSlide < 1,
-        'last-active': ActiveSlide > 1
-      }">
-        <div :class="{
-        'wrapper-slider-item-circle': ActiveSlide === 1 || ActiveSlide > 1,
-        'wrapper-slider-item-circle-border': ActiveSlide !== 1 && ActiveSlide < 2,
-      }">
-        </div>
-        <div :class="{
-        'wrapper-slider-item-text-white': ActiveSlide === 1 || ActiveSlide > 1,
-        'wrapper-slider-item-text': ActiveSlide !== 1 && ActiveSlide < 1
-       }">
-          1
-        </div>
-        <div class="slider-text">
-          Раздел
-        </div>
-      </div>
-
-      <div :class="{
-        'wrapper-slider-item-back': ActiveSlide === 2,
-        'wrapper-slider-item': ActiveSlide !== 2 && ActiveSlide < 2,
-        'last-active': ActiveSlide > 2
-      }">
-        <div :class="{
-        'wrapper-slider-item-circle': ActiveSlide === 2 || ActiveSlide > 2,
-        'wrapper-slider-item-circle-border': ActiveSlide !== 2 && ActiveSlide < 3,
-      }">
-        </div>
-        <div :class="{
-        'wrapper-slider-item-text-white': ActiveSlide === 2 || ActiveSlide > 2,
-        'wrapper-slider-item-text': ActiveSlide !== 2 && ActiveSlide < 2
-       }">
-          2
+    <div class="wrapper-slider d-flex justify-content-around position-relative">
+      <div class="line"></div>
+      <div v-for="item in pagination" :key="index" class="d-flex align-items-center justify-content-center flex-column">
+        <div
+          :class="{
+            'wrapper-slider-item-back': ActiveSlide === item.id,
+            'wrapper-slider-item':
+              ActiveSlide !== item.id && ActiveSlide < item.id,
+            'last-active': ActiveSlide > item.id,
+          }"
+        >
+          <div
+            class="d-flex align-items-center justify-content-center h-100 w-100"
+          >
+            <div
+              :class="{
+                'wrapper-slider-item-text-white':
+                  ActiveSlide === item.id || ActiveSlide > item.id,
+                'wrapper-slider-item-text':
+                  ActiveSlide !== item.id && ActiveSlide < item.id,
+              }"
+            >
+              {{ item.id }}
+            </div>
+          </div>
         </div>
         <div class="slider-text">
-          Раздел
+          <h3>
+            Раздел
+          </h3>
         </div>
       </div>
-
-
-      <div :class="{
-        'wrapper-slider-item-back': ActiveSlide === 3,
-        'wrapper-slider-item': ActiveSlide !== 3 && ActiveSlide < 3,
-        'last-active': ActiveSlide > 3
-      }">
-        <div :class="{
-        'wrapper-slider-item-circle': ActiveSlide === 3 || ActiveSlide > 3,
-        'wrapper-slider-item-circle-border': ActiveSlide !== 3 && ActiveSlide < 4,
-      }">
-        </div>
-        <div :class="{
-        'wrapper-slider-item-text-white': ActiveSlide === 3 || ActiveSlide > 3,
-        'wrapper-slider-item-text': ActiveSlide !== 3 && ActiveSlide < 3
-       }">
-          3
-        </div>
-        <div class="slider-text">
-          Раздел
-        </div>
-      </div>
-
-      <div :class="{
-        'wrapper-slider-item-back': ActiveSlide === 4 ,
-        'wrapper-slider-item': ActiveSlide !== 4 && ActiveSlide < 4,
-        'last-active': ActiveSlide > 4
-      }">
-        <div :class="{
-        'wrapper-slider-item-circle': ActiveSlide === 4 || ActiveSlide > 4,
-        'wrapper-slider-item-circle-border': ActiveSlide !== 4 && ActiveSlide < 5,
-      }">
-        </div>
-        <div :class="{
-        'wrapper-slider-item-text-white': ActiveSlide === 4 || ActiveSlide > 4,
-        'wrapper-slider-item-text': ActiveSlide !== 4 && ActiveSlide < 4
-       }">
-          4
-        </div>
-        <div class="slider-text">
-          Раздел
-        </div>
-      </div>
-
-      <div :class="{
-        'wrapper-slider-item-back': ActiveSlide === 5 || ActiveSlide > 5,
-        'wrapper-slider-item': ActiveSlide !== 5 && ActiveSlide < 5,
-        'last-active': ActiveSlide > 5
-      }">
-        <div :class="{
-        'wrapper-slider-item-circle': ActiveSlide === 5 || ActiveSlide > 5,
-        'wrapper-slider-item-circle-border': ActiveSlide !== 5 && ActiveSlide < 6,
-      }">
-        </div>
-        <div :class="{
-        'wrapper-slider-item-text-white': ActiveSlide === 5 || ActiveSlide > 5,
-        'wrapper-slider-item-text': ActiveSlide !== 5 && ActiveSlide < 5
-       }">
-          5
-        </div>
-        <div class="slider-text">
-          Раздел
-        </div>
-      </div>
-
-      <div :class="{
-        'wrapper-slider-item-back': ActiveSlide === 6 || ActiveSlide > 6,
-        'wrapper-slider-item': ActiveSlide !== 6 && ActiveSlide < 6,
-        'last-active': ActiveSlide > 6
-      }">
-      <div :class="{
-        'wrapper-slider-item-circle': ActiveSlide === 6 || ActiveSlide > 6,
-        'wrapper-slider-item-circle-border': ActiveSlide !== 6 && ActiveSlide < 7,
-      }">
-      </div>
-       <div :class="{
-        'wrapper-slider-item-text-white': ActiveSlide === 6 || ActiveSlide > 6,
-        'wrapper-slider-item-text': ActiveSlide !== 6 && ActiveSlide < 6
-       }">
-          6
-       </div>
-       <div class="slider-text">
-          Раздел
-       </div>
-      </div>
-
     </div>
   </div>
 </template>
 
 <style scoped>
-.slider-text{
+.line{
   position: absolute;
-  left: -13px;
-  top: 50px;
+  left: 50%;
+  top: 18%;
+  transform: translate( -50%, -50%);
+  height: 1px;
+  width: 80%;
+  background: var(--color-light-green);
+}
+.slider-text {
   font-weight: 500;
   color: var(--text-color);
   font-size: 21px;
 }
-.wrapper-slider-item-circle{
+.wrapper-slider-item-circle {
   position: absolute;
   top: 0;
   left: 0;
@@ -166,7 +94,7 @@ export default {
   height: 100%;
   border-radius: 50%;
 }
-.wrapper-slider-item-circle-border{
+.wrapper-slider-item-circle-border {
   position: absolute;
   top: 0;
   left: 0;
@@ -175,45 +103,38 @@ export default {
   border: 1px solid var(--bg-color-green-btn);
   border-radius: 50%;
 }
-.wrapper-slider-item-text{
-  position: absolute;
-  top: 60%;
-  left: 53%;
-  transform: translate(-50%, -50%);
+.wrapper-slider-item-text {
   font-size: 24px;
   font-weight: 550;
   color: var(--bg-color-green-btn);
 }
-.wrapper-slider-item-text-white{
-  position: absolute;
-  top: 55%;
-  left: 53%;
-  transform: translate(-50%, -50%);
+.wrapper-slider-item-text-white {
   font-size: 24px;
   font-weight: 550;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-.wrapper-slider{
+.wrapper-slider {
   margin: 0 auto;
   max-width: 782px;
   margin-top: 170px;
-
 }
-.wrapper-slider-item{
+.wrapper-slider-item {
   position: relative;
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid var(--bg-color-green-btn);
 }
-.last-active{
+.last-active {
   background: rgba(1, 84, 88, 1);
   position: relative;
   width: 42px;
   height: 42px;
   border-radius: 50%;
 }
-.wrapper-slider-item-back{
-  background: linear-gradient(135deg, #CBCE55 0.69%, #217B4F 100.69%);
+.wrapper-slider-item-back {
+  background: linear-gradient(135deg, #cbce55 0.69%, #217b4f 100.69%);
   position: relative;
   width: 42px;
   height: 42px;

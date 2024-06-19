@@ -2,11 +2,29 @@
     --bg-color-light-green-btn: #E0F5D4;
     --bg-color-green-btn: #015458;
     --text-color: #252434;
+    --color-light-green: #CDEADC;
     --bg-color-linear-btn: linear-gradient(135deg, #CBCE55 0.69%, #217B4F 100.69%);
-
 }
 .d-flex{
     display: flex;
+}
+.position-relative{
+    position: relative;
+}
+.flex-column{
+    flex-direction: column;
+}
+.w-100{
+    width: 100%;
+}
+.h-100{
+    height: 100%;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-content-center{
+    justify-content: center;
 }
 .justify-content-around{
     justify-content: space-around;
