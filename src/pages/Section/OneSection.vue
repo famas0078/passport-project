@@ -5,6 +5,12 @@ import MultiSlider from "@/components/multiSlider/index.vue";
 import Header from "@/components/header/header.vue";
 
 export default {
+  props:{
+    ActiveSlide: {
+      type: Number,
+      required: true
+    }
+  },
   components:{
     Header,
     MultiSlider
@@ -19,8 +25,7 @@ export default {
 
 <template>
 <div class="wrapper">
-  <Header />
-  <MultiSlider :isActiveSlide = 1 />
+  <MultiSlider :ActiveSlide = ActiveSlide />
   <div class="title">
     паспорт мероприятия (проекта) для размещения<br/> на платформе “рантье. развиваем города”
   </div>

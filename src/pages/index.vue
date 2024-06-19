@@ -1,19 +1,8 @@
-<script>
-import Header from "@/components/header/header.vue"
-import OneSection from "@/pages/Section/OneSection.vue";
-import Footer from "@/components/footer/footer.vue";
-export default {
-  components: {
-    Footer,
-    OneSection
-  },
-  name: "index"
-}
-</script>
-
 <template>
   <Header />
-  <OneSection />
+  <OneSection v-if="ActiveSlide === 1" :ActiveSlide="ActiveSlide" />
+  <TwoSection v-if="ActiveSlide === 2" :ActiveSlide="ActiveSlide" />
+  <ThreeSection v-if="ActiveSlide === 3" :ActiveSlide="ActiveSlide" />
   <div class="index-btn d-flex">
     <div class="btn-last btn-item">
       <img src="../assets/img/Vector.svg" alt="">
@@ -26,6 +15,33 @@ export default {
   </div>
   <Footer/>
 </template>
+
+<script>
+import Header from "@/components/header/header.vue"
+import OneSection from "@/pages/Section/OneSection.vue";
+import Footer from "@/components/footer/footer.vue";
+import TwoSection from "@/pages/Section/TwoSection.vue";
+import ThreeSection from "@/pages/Section/ThreeSection.vue";
+export default {
+  components: {
+    ThreeSection,
+    Header,
+    TwoSection,
+    Footer,
+    OneSection
+  },
+  data(){
+    return{
+      ActiveSlide: 2
+    }
+  },
+  methods:{
+
+  },
+  name: "index"
+}
+
+</script>
 
 <style scoped>
 .btn-item{
@@ -50,3 +66,5 @@ export default {
   background-color: var(--bg-color-green-btn);
 }
 </style>
+
+
