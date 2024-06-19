@@ -1,9 +1,3 @@
-<script>
-export default {
-  name: "header"
-}
-</script>
-
 <template>
  <div class="wrapper-header d-flex justify-content-between">
    <div class="wrapper-header-img">
@@ -23,41 +17,63 @@ export default {
        Войти
      </div>
    </div>
+   <div class="wrapper-header-mobile">
+     <div class="wrapper-icon-menu">
+       <a href="#" @click="toggleMenu" class="nav" :class="{ open: isOpen }">
+         <div class="one"></div>
+         <div class="two"></div>
+         <div class="three"></div>
+
+       </a>
+     </div>
+     <div class="wrapper-burger-menu" :class="{open: isOpen}">
+       <ul>
+         <li class="cursor-pointer">
+           <h2>
+             О платформе
+           </h2>
+         </li>
+         <li class="cursor-pointer">
+           <h2>
+             Инвестировать
+           </h2>
+         </li>
+         <li class="cursor-pointer">
+           <h2>
+             Разместить проект
+           </h2>
+         </li>
+         <li class="cursor-pointer">
+           <h2>
+             Стать партнером
+           </h2>
+         </li>
+       </ul>
+     </div>
+   </div>
  </div>
 </template>
 
+<script>
+export default {
+  name: "header",
+  data() {
+    return {
+      isOpen: false
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isOpen = !this.isOpen;
+    }
+  }
+}
+</script>
 <style scoped>
-.middle-item{
-  font-weight: 400;
-  font-size: 16px;
-  color: var(--text-color);
+.wrapper-burger-menu{
+  display: none;
 }
-.wrapper-header{
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: 24px;
-}
-.wrapper-header-middle{
-  gap: 36px;
-  align-items: center;
-}
-.wrapper-header-btn{
-  max-height: 50px;
-  align-items: center;
-  gap: 16px;
-}
-.header-btn{
-  padding: 16px 24px 16px 24px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 400;
-}
-.wrapper-header-btn-register{
-  color: var(--text-color);
-  background-color: var(--bg-color-light-green-btn);
-}
-.wrapper-header-btn-login{
-  color: white;
-  background-color: var(--bg-color-green-btn);
+.open.nav + .wrapper-burger-menu {
+  display: block;
 }
 </style>

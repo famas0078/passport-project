@@ -4,11 +4,11 @@
   <TwoSection v-if="ActiveSlide === 2" :ActiveSlide="ActiveSlide" />
   <ThreeSection v-if="ActiveSlide === 3" :ActiveSlide="ActiveSlide" />
   <div class="index-btn d-flex">
-    <div class="btn-last btn-item">
+    <div class="btn-last btn-item" @click="lastSlider()">
       <img src="../assets/img/Vector.svg" alt="">
       К прошлому разделу
     </div>
-    <div class="btn-prev btn-item">
+    <div class="btn-next btn-item" @click="nextSlider()">
       Продолжить
       <img src="../assets/img/Caret_Circle_Left.svg" alt="">
     </div>
@@ -36,7 +36,16 @@ export default {
     }
   },
   methods:{
-
+    lastSlider(){
+      if (this.ActiveSlide > 1){
+        this.ActiveSlide = this.ActiveSlide - 1
+      }
+    },
+    nextSlider(){
+      if (this.ActiveSlide < 6){
+        this.ActiveSlide = this.ActiveSlide + 1
+      }
+    }
   },
   name: "index"
 }
@@ -45,6 +54,7 @@ export default {
 
 <style scoped>
 .btn-item{
+  cursor: pointer;
   gap: 15px;
   display: flex;
   padding: 16px 24px;
@@ -60,7 +70,7 @@ export default {
   color: var(--text-color);
   background-color: var(--bg-color-light-green-btn);
 }
-.btn-prev{
+.btn-next{
   border-radius: 8px;
   color: white;
   background-color: var(--bg-color-green-btn);

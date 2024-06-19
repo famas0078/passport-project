@@ -5,6 +5,7 @@
     --color-light-green: #CDEADC;
     --bg-color-linear-btn: linear-gradient(135deg, #CBCE55 0.69%, #217B4F 100.69%);
 }
+html, body * { margin: 0; padding: 0; }
 .d-flex{
     display: flex;
 }
@@ -31,4 +32,7 @@
 }
 .justify-content-between{
     justify-content: space-between;
+}
+.cursor-pointer{
+    cursor: pointer;
 }
