@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Hell from "@/components/Hell.vue";
 import OneSectionProjectPass from "@/pages/OneSection/OneSectionProjectPass.vue";
 export default createRouter({
   history: createWebHistory(),
@@ -7,10 +6,6 @@ export default createRouter({
     {
       path: '/',
       component: OneSectionProjectPass
-    },
-    {
-      path: '/test',
-      component: Hell
     },
   ]
 })
