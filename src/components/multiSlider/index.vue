@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    isActiveSlide: {
+    ActiveSlide: {
       type: Number,
       required: true
     }
@@ -17,66 +17,134 @@ export default {
 <template>
   <div class="wrapper">
     <div class="wrapper-slider d-flex justify-content-around">
-      <div :class=" isActiveSlide === 1 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
-        <div :class="isActiveSlide === 1 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
+
+      <div :class="{
+        'wrapper-slider-item-back': ActiveSlide === 1,
+        'wrapper-slider-item': ActiveSlide !== 1 && ActiveSlide < 1,
+        'last-active': ActiveSlide > 1
+      }">
+        <div :class="{
+        'wrapper-slider-item-circle': ActiveSlide === 1 || ActiveSlide > 1,
+        'wrapper-slider-item-circle-border': ActiveSlide !== 1 && ActiveSlide < 2,
+      }">
         </div>
-        <div :class="isActiveSlide === 1 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
+        <div :class="{
+        'wrapper-slider-item-text-white': ActiveSlide === 1 || ActiveSlide > 1,
+        'wrapper-slider-item-text': ActiveSlide !== 1 && ActiveSlide < 1
+       }">
           1
         </div>
         <div class="slider-text">
           Раздел
         </div>
       </div>
-      <div :class=" isActiveSlide === 2 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
-        <div :class="isActiveSlide === 2 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
+
+      <div :class="{
+        'wrapper-slider-item-back': ActiveSlide === 2,
+        'wrapper-slider-item': ActiveSlide !== 2 && ActiveSlide < 2,
+        'last-active': ActiveSlide > 2
+      }">
+        <div :class="{
+        'wrapper-slider-item-circle': ActiveSlide === 2 || ActiveSlide > 2,
+        'wrapper-slider-item-circle-border': ActiveSlide !== 2 && ActiveSlide < 3,
+      }">
         </div>
-        <div :class="isActiveSlide === 2 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
+        <div :class="{
+        'wrapper-slider-item-text-white': ActiveSlide === 2 || ActiveSlide > 2,
+        'wrapper-slider-item-text': ActiveSlide !== 2 && ActiveSlide < 2
+       }">
           2
         </div>
         <div class="slider-text">
           Раздел
         </div>
       </div>
-      <div :class=" isActiveSlide === 3 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
-        <div :class="isActiveSlide === 3 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
+
+
+      <div :class="{
+        'wrapper-slider-item-back': ActiveSlide === 3,
+        'wrapper-slider-item': ActiveSlide !== 3 && ActiveSlide < 3,
+        'last-active': ActiveSlide > 3
+      }">
+        <div :class="{
+        'wrapper-slider-item-circle': ActiveSlide === 3 || ActiveSlide > 3,
+        'wrapper-slider-item-circle-border': ActiveSlide !== 3 && ActiveSlide < 4,
+      }">
         </div>
-        <div :class="isActiveSlide === 3 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
+        <div :class="{
+        'wrapper-slider-item-text-white': ActiveSlide === 3 || ActiveSlide > 3,
+        'wrapper-slider-item-text': ActiveSlide !== 3 && ActiveSlide < 3
+       }">
           3
         </div>
         <div class="slider-text">
           Раздел
         </div>
       </div>
-      <div :class=" isActiveSlide === 4 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
-        <div :class="isActiveSlide === 4 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
+
+      <div :class="{
+        'wrapper-slider-item-back': ActiveSlide === 4 ,
+        'wrapper-slider-item': ActiveSlide !== 4 && ActiveSlide < 4,
+        'last-active': ActiveSlide > 4
+      }">
+        <div :class="{
+        'wrapper-slider-item-circle': ActiveSlide === 4 || ActiveSlide > 4,
+        'wrapper-slider-item-circle-border': ActiveSlide !== 4 && ActiveSlide < 5,
+      }">
         </div>
-        <div :class="isActiveSlide === 4 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
+        <div :class="{
+        'wrapper-slider-item-text-white': ActiveSlide === 4 || ActiveSlide > 4,
+        'wrapper-slider-item-text': ActiveSlide !== 4 && ActiveSlide < 4
+       }">
           4
         </div>
         <div class="slider-text">
           Раздел
         </div>
       </div>
-      <div :class=" isActiveSlide === 5 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
-        <div :class="isActiveSlide === 5 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
+
+      <div :class="{
+        'wrapper-slider-item-back': ActiveSlide === 5 || ActiveSlide > 5,
+        'wrapper-slider-item': ActiveSlide !== 5 && ActiveSlide < 5,
+        'last-active': ActiveSlide > 5
+      }">
+        <div :class="{
+        'wrapper-slider-item-circle': ActiveSlide === 5 || ActiveSlide > 5,
+        'wrapper-slider-item-circle-border': ActiveSlide !== 5 && ActiveSlide < 6,
+      }">
         </div>
-        <div :class="isActiveSlide === 5 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
+        <div :class="{
+        'wrapper-slider-item-text-white': ActiveSlide === 5 || ActiveSlide > 5,
+        'wrapper-slider-item-text': ActiveSlide !== 5 && ActiveSlide < 5
+       }">
           5
         </div>
         <div class="slider-text">
           Раздел
         </div>
       </div>
-      <div :class=" isActiveSlide === 6 ? 'wrapper-slider-item-back' : 'wrapper-slider-item'">
-        <div :class="isActiveSlide === 6 ? 'wrapper-slider-item-circle' : 'wrapper-slider-item-circle-border'">
-        </div>
-        <div :class="isActiveSlide === 6 ? 'wrapper-slider-item-text-white' : 'wrapper-slider-item-text'">
-          6
-        </div>
-        <div class="slider-text">
-          Раздел
-        </div>
+
+      <div :class="{
+        'wrapper-slider-item-back': ActiveSlide === 6 || ActiveSlide > 6,
+        'wrapper-slider-item': ActiveSlide !== 6 && ActiveSlide < 6,
+        'last-active': ActiveSlide > 6
+      }">
+      <div :class="{
+        'wrapper-slider-item-circle': ActiveSlide === 6 || ActiveSlide > 6,
+        'wrapper-slider-item-circle-border': ActiveSlide !== 6 && ActiveSlide < 7,
+      }">
       </div>
+       <div :class="{
+        'wrapper-slider-item-text-white': ActiveSlide === 6 || ActiveSlide > 6,
+        'wrapper-slider-item-text': ActiveSlide !== 6 && ActiveSlide < 6
+       }">
+          6
+       </div>
+       <div class="slider-text">
+          Раздел
+       </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -132,6 +200,13 @@ export default {
 
 }
 .wrapper-slider-item{
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+.last-active{
+  background: rgba(1, 84, 88, 1);
   position: relative;
   width: 42px;
   height: 42px;
