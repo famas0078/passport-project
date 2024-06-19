@@ -1,17 +1,18 @@
 <template>
 
   <Header />
-
+  <OneSection/>
 </template>
 
 <script>
-// import OneSection from "./pages/OneSection/OneSectionProjectPass.vue"
+import OneSection from "./pages/OneSection/OneSectionProjectPass.vue"
 import Header from "./components/header/header.vue"
+
 export default {
 
   name: 'App',
   components: {
-    // OneSection,
+    OneSection,
     Header,
   }
 }
