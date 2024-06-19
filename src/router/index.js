@@ -1,13 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
 import Hell from "@/components/Hell.vue";
-
+import Header from "@/components/header/header.vue";
 export default createRouter({
   history: createWebHistory(),
   routes: [
     {
       path: '/',
-      component: HelloWorld
+      component: Header
     },
     {
       path: '/test',
