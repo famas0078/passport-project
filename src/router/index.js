@@ -1,16 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HelloWorld from '../'
+import HelloWorld from '@/components/HelloWorld.vue'
+import Hell from "@/components/Hell.vue";
 
-const routes = [
-  {
-    path: '/',
-    component: HelloWorld
-  }
-]
-
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(),
-  routes
+  routes: [
+    {
+      path: '/',
+      component: HelloWorld
+    },
+    {
+      path: '/test',
+      component: Hell
+    },
+  ]
 })
-
-export default router
