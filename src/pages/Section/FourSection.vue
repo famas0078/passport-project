@@ -13,8 +13,8 @@
       </div>
       <ul>
         <li v-for="(item, index) in typeEvent" key="index">
-          <input :id="'r' + index" type="radio" name="radio" value="1">
-          <label class="position-relative d-flex align-items-center" :for="'r' + index">
+          <input :id="'radio-event' + index" type="radio" name="radio" value="1">
+          <label class="position-relative d-flex align-items-center" :for="'radio-event' + index">
             {{ item.text }}
           </label>
         </li>
@@ -30,19 +30,99 @@
         </p>
       </div>
       <ul>
-        <li v-for="(item, index) in codeOKVED" key="index">
+        <li v-for="(item, index) in codeOKVED" :key="index">
           <input :id="'code' + index" type="radio" name="code" value="1">
           <label class="position-relative d-flex align-items-center" :for="'code' + index">
             {{ item.text }}
           </label>
         </li>
       </ul>
+    </div>
+    <div class="card wrapper-input-with-additional-info">
       <div class="form-input-item">
-        <input class="form-input-item-input" type="text" placeholder="Напишите другие типы мероприятий">
+        <label class="form-input-item-label">
+          Наименование мероприятия
+          <span class="text-danger">
+            *
+          </span>
+        </label>
+        <input class="form-input-item-input" type="text" placeholder="Наименование мероприятия">
+      </div>
+      <div class="form-input-item" v-for="(item, index) in inputEvent" :key="index">
+        <label class="form-input-item-label">
+          {{ item.text }}
+          <span v-if="item.necessarily" class="text-danger">
+            *
+          </span>
+        </label>
+        <input class="form-input-item-input" type="text" :placeholder="item.text">
       </div>
     </div>
-    <div class="card wrapper-input-with-additional-info"></div>
-    <div class="card wrapper-status-event"></div>
+    <div class="card wrapper-status-event">
+      <div class="type-event-title text-left">
+        <p>
+          Статус реализации мероприятия*
+          <span class="text-danger">
+            *
+          </span>
+        </p>
+      </div>
+      <ul>
+        <li v-for="(item, index) in status" :key="index">
+          <input :id="'status' + index" type="radio" name="code" value="1">
+          <label class="position-relative d-flex align-items-center" :for="'status' + index">
+            {{ item.text }}
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="card wrapper-source-event">
+      <div class="type-event-title text-left">
+        <p>
+          Источники финансирования мероприятия
+          <span class="text-danger">
+            *
+          </span>
+        </p>
+      </div>
+      <ul>
+        <li v-for="(item, index) in source" :key="index">
+          <input :id="'source' + index" type="checkbox" name="source" value="1">
+          <label class="position-relative d-flex align-items-center" :for="'source' + index">
+            {{ item.text }}
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="card wrapper-more">
+      <div class="form-input-item">
+        <label class="form-input-item-label">
+          Общая стоимость реализации мероприятия с НДС, млн руб.*
+          <span class="text-danger">
+            *
+          </span>
+        </label>
+        <input class="form-input-item-input" type="text" placeholder="млн руб.">
+      </div>
+      <ul>
+        <li v-for="(item, index) in needs" :key="index">
+          <input :id="'needs' + index" type="radio" name="needs" value="1">
+          <label class="position-relative d-flex align-items-center" :for="'needs' + index">
+            {{ item.text }}
+          </label>
+        </li>
+      </ul>
+      <input class="form-input-item-input" type="text" placeholder="Напишите другие потребности">
+    </div>
+    <div class="form-input-item">
+      <label class="form-input-item-label">
+        Потребность в земельных ресурсах и(или) муниципальном имуществе
+        <span class="text-danger">
+            *
+          </span>
+      </label>
+      <input class="form-input-item-input" type="text" placeholder="Потребность в земельных ресурсах и(или) муниципальном имуществе">
+    </div>
   </div>
 </div>
 </template>
@@ -155,6 +235,96 @@ export default {
           {
             text: 'Раздел U Деятельность экстерриториальных организаций и органов'
           }
+        ],
+        inputEvent: [
+          {
+            text: 'Наименование мероприятия',
+            necessarily: true,
+          },
+          {
+            text: 'Цель мероприятия',
+            necessarily: true,
+          },
+          {
+            text: 'Задачи мероприятия',
+            necessarily: false,
+          },
+          {
+            text: 'Город (регион) реализации проекта',
+            necessarily: false,
+          },
+          {
+            text: 'Дата начала реализации мероприятия',
+            necessarily: true,
+          },
+          {
+            text: 'Дата начала реализации мероприятияДата выхода на проектную мощность',
+            necessarily: false,
+          },
+          {
+            text: 'Дата окончания реализации мероприятия',
+            necessarily: true,
+          },
+        ],
+        status: [
+          {
+            text: 'Бизнес-идея'
+          },
+          {
+            text: 'Разработка ТЭО'
+          },
+          {
+            text: 'Разработка ПСД'
+          },
+          {
+            text: 'Строительство'
+          },
+          {
+            text: 'Эксплуатация'
+          },
+        ],
+        source: [
+          {
+            text: 'Федеральный бюджет'
+          },
+          {
+            text: 'Региональный бюджет'
+          },
+          {
+            text: 'Муниципальный бюджет'
+          },
+          {
+            text: 'Заёмные средства'
+          },
+          {
+            text: 'Собственные средства'
+          },
+          {
+            text: 'Коллективное финансирование'
+          },
+        ],
+        needs: [
+          {
+            text: 'Электроснабжение'
+          },
+          {
+            text: 'Теплоснабжение'
+          },
+          {
+            text: 'Газоснабжение'
+          },
+          {
+            text: 'Водоснабжение и водоотведение'
+          },
+          {
+            text: 'Подъездная автомобильная дорога'
+          },
+          {
+            text: 'Подъездные ж/д пути'
+          },
+          {
+            text: 'Другое (указать)'
+          },
         ]
     }
   },

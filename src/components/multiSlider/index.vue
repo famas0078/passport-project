@@ -37,7 +37,7 @@ export default {
   <div class="wrapper">
     <div class="wrapper-slider d-flex justify-content-around position-relative">
       <div class="line"></div>
-      <div v-for="item in pagination" :key="index" class="d-flex align-items-center justify-content-center flex-column">
+      <div v-for="item in pagination" class="d-flex align-items-center justify-content-center flex-column">
         <div
           :class="{
             'wrapper-slider-item-back': ActiveSlide === item.id,

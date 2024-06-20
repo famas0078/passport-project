@@ -41,7 +41,12 @@ export default {
   },
   data(){
     return{
-      ActiveSlide: 1
+      ActiveSlide: parseInt(localStorage.getItem('activeSlide') || 1)
+    }
+  },
+  watch:{
+    ActiveSlide(newValue){
+      localStorage.setItem('activeSlide', newValue)
     }
   },
   methods:{
@@ -51,7 +56,6 @@ export default {
       }
     },
     nextSlider(){
-      console.log(this.ActiveSlide)
       if (this.ActiveSlide < 6){
         this.ActiveSlide = this.ActiveSlide + 1
       }
