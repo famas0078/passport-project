@@ -168,15 +168,6 @@ export default {
 }
 </script>
 
-<template>
-<div class="wrapper">
-  <MultiSlider :ActiveSlide = ActiveSlide />
-  <div class="title">
-    общие сведения о мероприятии (проекте)
-  </div>
-</div>
-</template>
-
 <style scoped>
 .title{
   margin-top: 80px;
