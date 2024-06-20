@@ -140,4 +140,5 @@ export default {
   height: 42px;
   border-radius: 50%;
 }
+
 </style>

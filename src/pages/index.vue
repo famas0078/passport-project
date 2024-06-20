@@ -81,6 +81,33 @@ export default {
   color: white;
   background-color: var(--bg-color-green-btn);
 }
+@media screen and (max-width: 1200px) {
+  .btn-item{
+    padding: 12px 20px;
+
+  }
+  .description{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .btn-item{
+    padding: 8px 16px;
+
+  }
+  .description{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .btn-item{
+    padding: 4px 12px;
+
+  }
+  .description{
+    font-size: 15px;
+  }
+}
 </style>
 
 
