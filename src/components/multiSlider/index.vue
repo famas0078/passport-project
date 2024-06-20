@@ -61,11 +61,6 @@ export default {
             </div>
           </div>
         </div>
-        <div class="slider-text">
-          <h3>
-            Раздел
-          </h3>
-        </div>
       </div>
     </div>
   </div>

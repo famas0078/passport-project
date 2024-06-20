@@ -29,4 +29,21 @@ export default {
   font-weight: 700;
   font-size: 48px;
 }
+@media screen and (max-width: 1200px) {
+  .title{
+    font-size: 30px;
+
+  }
+  .description{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .title{
+    font-size: 20px;
+  }
+  .description{
+    font-size: 15px;
+  }
+}
 </style>

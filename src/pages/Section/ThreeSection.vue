@@ -68,8 +68,8 @@ export default {
   border: 1px solid rgba(37, 36, 52, 0.75);
 }
 .form-input-item{
-  margin: 0 auto;
   margin-top: 16px;
+  margin-right: 20px;
   max-width: 593px;
   display: flex;
   flex-direction: column;
@@ -92,5 +92,18 @@ export default {
 }
 .form{
   margin-top: 60px;
+  max-width: 583px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1200px) {
+  .title{
+    font-size: 30px;
+
+  }
+}
+@media screen and (max-width: 760px) {
+  .title{
+    font-size: 20px;
+  }
 }
 </style>

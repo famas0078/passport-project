@@ -15,7 +15,7 @@ export default {
 
 <template>
 <div class="wrapper">
-<!--  <MultiSlider :ActiveSlide = ActiveSlide />-->
+  <MultiSlider :ActiveSlide = ActiveSlide />
   <div class="title">
     паспорт мероприятия (проекта) для размещения<br/> на платформе “рантье. развиваем города”
   </div>
@@ -78,11 +78,9 @@ export default {
 }
 
 .form-input-item{
-
-  margin: 0 auto;
   margin-top: 16px;
   max-width: 593px;
-
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -104,5 +102,24 @@ export default {
 }
 .form{
   margin-top: 60px;
+  max-width: 583px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1200px) {
+  .title{
+    font-size: 30px;
+
+  }
+  .description{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .title{
+    font-size: 20px;
+  }
+  .description{
+    font-size: 15px;
+  }
 }
 </style>
