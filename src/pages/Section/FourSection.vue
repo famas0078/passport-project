@@ -31,8 +31,8 @@
       </div>
       <ul>
         <li v-for="(item, index) in codeOKVED" key="index">
-          <input :id="'r' + index" type="radio" name="radio" value="1">
-          <label class="position-relative d-flex align-items-center" :for="'r' + index">
+          <input :id="'code' + index" type="radio" name="code" value="1">
+          <label class="position-relative d-flex align-items-center" :for="'code' + index">
             {{ item.text }}
           </label>
         </li>
@@ -177,7 +177,7 @@ export default {
 }
 .wrapper-general-information{
   width: 100%;
-  max-width: 700px;
+  max-width: 593px;
   margin: 50px auto;
 }
 
