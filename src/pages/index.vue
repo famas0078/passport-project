@@ -5,6 +5,7 @@
   <ThreeSection v-if="ActiveSlide === 3" :ActiveSlide="ActiveSlide" />
   <FourSection v-if="ActiveSlide === 4" :ActiveSlide="ActiveSlide" />
   <FiveSection v-if="ActiveSlide === 5" :ActiveSlide="ActiveSlide" />
+  <SixSection v-if="ActiveSlide === 6" :ActiveSlide="ActiveSlide" />
   <div class="index-btn d-flex">
     <div class="btn-last btn-item" @click="lastSlider()">
       <img src="../assets/img/Vector.svg" alt="">
@@ -26,6 +27,7 @@ import TwoSection from "@/pages/Section/TwoSection.vue";
 import ThreeSection from "@/pages/Section/ThreeSection.vue";
 import FourSection from "@/pages/Section/FourSection.vue";
 import FiveSection from "@/pages/Section/FiveSection.vue";
+import SixSection from "@/pages/Section/SixSection.vue";
 export default {
   components: {
     ThreeSection,
@@ -34,7 +36,8 @@ export default {
     Footer,
     OneSection,
     FourSection,
-    FiveSection
+    FiveSection,
+    SixSection
   },
   data(){
     return{
@@ -48,6 +51,7 @@ export default {
       }
     },
     nextSlider(){
+      console.log(this.ActiveSlide)
       if (this.ActiveSlide < 6){
         this.ActiveSlide = this.ActiveSlide + 1
       }
@@ -80,6 +84,24 @@ export default {
   border-radius: 8px;
   color: white;
   background-color: var(--bg-color-green-btn);
+}
+@media screen and (max-width: 1200px) {
+  .btn-item{
+    padding: 12px 20px;
+
+  }
+}
+@media screen and (max-width: 760px) {
+  .btn-item{
+    padding: 8px 16px;
+
+  }
+}
+@media screen and (max-width: 425px) {
+  .btn-item{
+    padding: 4px 12px;
+
+  }
 }
 </style>
 

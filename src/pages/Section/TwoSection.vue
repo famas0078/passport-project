@@ -68,15 +68,19 @@ export default {
 .form-input-item-input{
   padding: 10px;
   border-radius: 12px;
-  width: 100%;
+  width: 593px;
   border: 1px solid rgba(37, 36, 52, 0.75);
 }
-.form-input-item{
+@media (max-width: 593px) {
+  .form-input-item-input {
+    width: 100%;
+  }
+}
 
-  margin: 0 auto;
+.form-input-item{
   margin-top: 16px;
   max-width: 593px;
-
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -98,5 +102,24 @@ export default {
 }
 .form{
   margin-top: 60px;
+  max-width: 583px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1200px) {
+  .title{
+    font-size: 30px;
+
+  }
+  .description{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .title{
+    font-size: 20px;
+  }
+  .description{
+    font-size: 15px;
+  }
 }
 </style>

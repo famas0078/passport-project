@@ -99,8 +99,7 @@ export default {
   border: 1px solid rgba(37, 36, 52, 0.75);
 }
 .form-input-item{
-
-  margin: 0 auto;
+  margin-right: 20px;
   margin-top: 16px;
   max-width: 593px;
 
@@ -115,15 +114,22 @@ export default {
   font-weight: 700;
   font-size: 48px;
 }
-.description{
-  max-width: 1528px;
-  margin: 0 auto;
-  font-weight: 400;
-  font-size: 24px;
-  text-align: left;
-  margin-top: 60px;
-}
 .form{
   margin-top: 60px;
+  max-width: 583px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1200px) {
+  .title{
+    font-size: 30px;
+
+  }
+
+}
+@media screen and (max-width: 760px) {
+  .title{
+    font-size: 20px;
+  }
+
 }
 </style>
