@@ -15,7 +15,7 @@ export default {
 
 <template>
   <div class="wrapper">
-<!--    <MultiSlider :ActiveSlide = ActiveSlide />-->
+    <MultiSlider :ActiveSlide = ActiveSlide />
     <div class="title">
       Сведения об инициаторе мероприятия (проекта)
     </div>

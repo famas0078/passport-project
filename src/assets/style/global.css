@@ -2,12 +2,30 @@
     --bg-color-light-green-btn: #E0F5D4;
     --bg-color-green-btn: #015458;
     --text-color: #252434;
+    --color-green: #5E9851;
+    --color-green-hover: #90be85;
     --color-light-green: #CDEADC;
     --bg-color-linear-btn: linear-gradient(135deg, #CBCE55 0.69%, #217B4F 100.69%);
 }
 html, body * { margin: 0; padding: 0; }
 .d-flex{
     display: flex;
+}
+.card{
+    margin: 30px 0;
+}
+.text-more{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+
+}
+.text-left{
+    text-align: left;
+}
+.text-center{
+    text-align: center;
 }
 .position-relative{
     position: relative;

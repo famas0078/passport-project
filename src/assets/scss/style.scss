@@ -1,2 +1,17 @@
 /* components */
+
 @import "header";
+@import "checkbox-radio-input";
+@import "text-input";
+
+/* style list */
+
+ul {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  li {
+    margin: 16px 0;
+    position: relative;
+  }
+}

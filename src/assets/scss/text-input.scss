@@ -1,0 +1,21 @@
+.form-input-item-label{
+  margin-bottom: 5px;
+  color: rgba(37, 36, 52, 1);
+  font-size: 16px;
+  font-weight: 450;
+}
+.form-input-item-input{
+  padding: 10px;
+  border-radius: 12px;
+  width: 100%;
+  border: 1px solid rgba(37, 36, 52, 0.75);
+}
+.form-input-item{
+  margin: 0 auto;
+  margin-top: 16px;
+  max-width: 593px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+}
