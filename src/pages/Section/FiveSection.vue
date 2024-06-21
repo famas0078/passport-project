@@ -116,7 +116,7 @@ export default {
 }
 .form{
   margin-top: 60px;
-  max-width: 583px;
+  max-width: 593px;
   margin: 0 auto;
 }
 @media screen and (max-width: 1200px) {

@@ -24,7 +24,7 @@ input[type="radio"] + label::before {
   border: 1px solid var(--color-light-green);
   border-radius: 50%;
 }
-input[type="checkbox"] + label::after,
+
 input[type="radio"] + label::after {
   content: "";
   position: absolute;
@@ -40,15 +40,37 @@ input[type="radio"] + label::after {
   opacity: 0;
   transition: all .3s;
 }
-input[type="checkbox"]:hover + label::after,
+
+input[type="checkbox"] + label::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #252434;
+  border-radius: 3px;
+  text-align: center;
+  margin-right: 0.5em;
+}
+input[type="checkbox"]:hover + label::after, {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
 input[type="radio"]:hover + label::after {
   background: var(--color-green-hover);
   opacity: 1;
   transition: all .3s;
 }
-input[type="checkbox"]:checked + label::after,
 input[type="radio"]:checked + label::after{
-  background: var(--color-green);
+  background-image: var(--color-green);
   opacity: 1;
   transition: all .3s;
 }
+input[type="checkbox"]:checked + label::before {
+  content: '\2713';
+  position: absolute;
+  color: green;
+  transition: opacity 0.5s;
+}
+

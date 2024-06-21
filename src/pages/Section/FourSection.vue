@@ -87,7 +87,7 @@
       </div>
       <ul>
         <li v-for="(item, index) in source" :key="index">
-          <input :id="'source' + index" type="checkbox" name="source" value="1">
+          <input :id="'source' + index" type="radio" name="source" value="1">
           <label class="position-relative d-flex align-items-center" :for="'source' + index">
             {{ item.text }}
           </label>
