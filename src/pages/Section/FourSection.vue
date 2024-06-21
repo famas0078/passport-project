@@ -40,7 +40,7 @@
     </div>
     <div class="card wrapper-input-with-additional-info">
       <div class="form-input-item">
-        <label class="form-input-item-label">
+        <label class="form-input-item-label text-left">
           Наименование мероприятия
           <span class="text-danger">
             *
@@ -49,7 +49,7 @@
         <input class="form-input-item-input" type="text" placeholder="Наименование мероприятия">
       </div>
       <div class="form-input-item" v-for="(item, index) in inputEvent" :key="index">
-        <label class="form-input-item-label">
+        <label class="form-input-item-label text-left">
           {{ item.text }}
           <span v-if="item.necessarily" class="text-danger">
             *
@@ -96,7 +96,7 @@
     </div>
     <div class="card wrapper-more">
       <div class="form-input-item">
-        <label class="form-input-item-label">
+        <label class="form-input-item-label text-left">
           Общая стоимость реализации мероприятия с НДС, млн руб.*
           <span class="text-danger">
             *
@@ -115,7 +115,7 @@
       <input class="form-input-item-input" type="text" placeholder="Напишите другие потребности">
     </div>
     <div class="form-input-item">
-      <label class="form-input-item-label">
+      <label class="form-input-item-label text-left">
         Потребность в земельных ресурсах и(или) муниципальном имуществе
         <span class="text-danger">
             *
