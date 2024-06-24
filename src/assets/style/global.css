@@ -6,6 +6,7 @@
     --color-green-hover: #90be85;
     --color-light-green: #CDEADC;
     --color-danger: #E63024;
+    --color-white: #FFFFFF;
     --bg-color-linear-btn: linear-gradient(135deg, #CBCE55 0.69%, #217B4F 100.69%);
 }
 html, body * { margin: 0; padding: 0; }
