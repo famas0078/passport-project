@@ -21,42 +21,42 @@ export default {
   <div class="form">
 
     <div class="form-input-item">
-      <label class="form-input-item-label">
+      <label class="form-input-item-label text-left">
         Число создаваемых рабочих мест на период строительства, ед.
       </label>
       <input class="form-input-item-input" type="text" placeholder="ед.">
     </div>
 
     <div class="form-input-item">
-      <label class="form-input-item-label">
+      <label class="form-input-item-label text-left">
         Число создаваемых рабочих мест при выходе на проектную мощность
       </label>
       <input class="form-input-item-input" type="text" placeholder="ед.">
     </div>
 
     <div class="form-input-item">
-      <label class="form-input-item-label">
+      <label class="form-input-item-label text-left">
         Средняя номинально начисленная заработная плата работников
       </label>
       <input class="form-input-item-input" type="text" placeholder="тыс. руб.">
     </div>
 
     <div class="form-input-item">
-      <label class="form-input-item-label">
+      <label class="form-input-item-label text-left">
         Объем налоговых платежей при выходе на проектную мощность
       </label>
       <input class="form-input-item-input" type="text" placeholder="млн руб.">
     </div>
 
     <div class="form-input-item">
-      <label class="form-input-item-label">
+      <label class="form-input-item-label text-left">
         Объем первоначальных инвестиций в основной капитал
       </label>
       <input class="form-input-item-input" type="text" placeholder="млн руб.">
     </div>
 
     <div class="form-input-item">
-      <label class="form-input-item-label left">
+      <label class="form-input-item-label  text-left">
         Объем производства в натуральных показателях при выходе <br/>
         на проектную мощность
       </label>
@@ -64,14 +64,14 @@ export default {
     </div>
 
     <div class="form-input-item">
-      <label class="form-input-item-label">
+      <label class="form-input-item-label text-left">
         Выручка при выходе на проектную мощность
       </label>
       <input class="form-input-item-input" type="text" placeholder="млн руб.">
     </div>
 
     <div class="form-input-item">
-      <label class="form-input-item-label">
+      <label class="form-input-item-label text-left">
         Ожидаемая эффективность для коллективного инвестора (вкладчика)
       </label>
       <input class="form-input-item-input" type="text" placeholder="Ожидаемая эффективность для коллективного инвестора (вкладчика)">
@@ -116,7 +116,7 @@ export default {
 }
 .form{
   margin-top: 60px;
-  max-width: 583px;
+  max-width: 593px;
   margin: 0 auto;
 }
 @media screen and (max-width: 1200px) {
