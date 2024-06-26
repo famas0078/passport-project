@@ -1,0 +1,41 @@
+.wrapper{
+    max-width: 1520px;
+    .admin-list{
+        margin-top: 60px;
+        table{
+            .wrapper_table{
+                
+                background-color: var(--bg-color-light-green-btn) !important;
+                border-collapse: collapse;
+            }
+              .wrapper_table tr {
+                margin-bottom: 10px;
+              }
+        }
+        .item-list-spisok td{
+            width: 33%;
+            padding-top: 20px;
+        }
+        .item-list-spisok{
+        
+            .item_name{
+                flex: 1;
+                text-align: left;
+                font-weight: 550;
+                color: #015458;
+            }
+            .item_fio{
+                color: #252434BF;
+            }
+            .item_status{
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                gap:11px;
+            }
+        }
+        .item-list{
+            padding: 20px 0;
+        }
+    }
+}
