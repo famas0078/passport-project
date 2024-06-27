@@ -3,6 +3,9 @@
 
 <OneSection v-if="activeSectionDescription === 1" :contact = descriptionProject[0].contact[0] :infoProject = descriptionProject[0].infoProject[0] />
 <TwoSection v-if="activeSectionDescription === 2" :iniciator = descriptionProject[0].iniciator[0] :infoProject = descriptionProject[0].infoProject[0] />
+<ThreeSection v-if="activeSectionDescription === 3" :desProject = descriptionProject[0].desProject[0] :infoProject = descriptionProject[0].infoProject[0] />
+<FourSection v-if="activeSectionDescription === 4" :TargetIndicatorsProject = descriptionProject[0].TargetIndicatorsProject[0] :infoProject = descriptionProject[0].infoProject[0] />
+<FiveSection v-if="activeSectionDescription === 5" :iniciator = descriptionProject[0].iniciator[0] :infoProject = descriptionProject[0].infoProject[0] />
 <div class="wrapper-pagination">
     <div class="paggination">
         <div class="wrapper">
@@ -46,11 +49,17 @@
 <script>
 import OneSection from './sectionAdminDescription/OneSection.vue';
 import TwoSection from './sectionAdminDescription/TwoSection.vue';
+import ThreeSection from './sectionAdminDescription/ThreeSection.vue';
+import FourSection from './sectionAdminDescription/FourSection.vue';
+import FiveSection from './sectionAdminDescription/FiveSection.vue';
 export default{
     name: "AdminList",
     components: {
         OneSection,
-        TwoSection
+        TwoSection,
+        ThreeSection,
+        FourSection,
+        FiveSection
     },
     data(){
         return{
@@ -100,6 +109,13 @@ export default{
                         cost: "66387 млн. руб.",
                         needСconstruction: "Газоснобжение",
                         needLandResources: "шааомлоа",
+                    }
+                ],
+                TargetIndicatorsProject:[
+                    {
+                        jobsСonstruction: "45 ед.",
+                        jobsFullCapacity: "45 ед.",
+                        averageSalary: "5 3647 тыс. руб.",
                     }
                 ]
             }
