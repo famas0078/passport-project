@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in arrayProject" class="w-100 item-list-spisok">
+          <tr v-for="(item, index) in arrayProject" class="w-100 item-list-spisok" @click="OpenDescriptionProject(item.id)">
             <td class="item_name">{{ item.name }}</td>
             <td class="item_fio">{{ item.fio }}</td>
             <td v-if="item.status === 3 " class="item_status d-flex"> <img src="../../assets/img/ThreeStatusProject.svg" alt=""><div class="item_status_text">Отклонена</div></td>
@@ -36,7 +36,7 @@ export default {
       arrayProject: [
         {
           id: 1,
-          name: "Создание инновационного центра по развитию технологий будущего",
+          name: "Создание инновационного центра по развитию технологий будущего.Создание инновационного центра по развитию технологий будущего",
           fio: "Василий Васильевич Василий",
           status: 1
         },
@@ -158,6 +158,9 @@ export default {
     }
   },
   methods: {
+    OpenDescriptionProject(id) {
+    this.$router.push({ name: 'AdminDescriptionPage', params: { id: id } });
+  }
   }
 }
 </script>

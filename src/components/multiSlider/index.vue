@@ -41,8 +41,7 @@ export default {
         <div
           :class="{
             'wrapper-slider-item-back': ActiveSlide === item.id,
-            'wrapper-slider-item':
-              ActiveSlide !== item.id && ActiveSlide < item.id,
+            'wrapper-slider-item': ActiveSlide !== item.id && ActiveSlide < item.id,
             'last-active': ActiveSlide > item.id,
           }"
         >

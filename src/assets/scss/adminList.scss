@@ -13,16 +13,19 @@
               }
         }
         .item-list-spisok td{
-            width: 33%;
+            width: 30%;
             padding-top: 20px;
         }
         .item-list-spisok{
-        
-            .item_name{
-                flex: 1;
-                text-align: left;
-                font-weight: 550;
-                color: #015458;
+            .item_name_link{
+                max-width: 33%;
+                text-decoration: none;
+                .item_name{
+                    flex: 1;
+                    text-align: left;
+                    font-weight: 550;
+                    color: #015458;
+                }
             }
             .item_fio{
                 color: #252434BF;
