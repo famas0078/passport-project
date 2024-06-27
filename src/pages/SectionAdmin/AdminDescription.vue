@@ -5,7 +5,7 @@
 <TwoSection v-if="activeSectionDescription === 2" :iniciator = descriptionProject[0].iniciator[0] :infoProject = descriptionProject[0].infoProject[0] />
 <ThreeSection v-if="activeSectionDescription === 3" :desProject = descriptionProject[0].desProject[0] :infoProject = descriptionProject[0].infoProject[0] />
 <FourSection v-if="activeSectionDescription === 4" :TargetIndicatorsProject = descriptionProject[0].TargetIndicatorsProject[0] :infoProject = descriptionProject[0].infoProject[0] />
-<FiveSection v-if="activeSectionDescription === 5" :iniciator = descriptionProject[0].iniciator[0] :infoProject = descriptionProject[0].infoProject[0] />
+<FiveSection v-if="activeSectionDescription === 5" :TargetIndicatorsProject = descriptionProject[0].TargetIndicatorsProject[0] :infoProject = descriptionProject[0].infoProject[0] />
 <div class="wrapper-pagination">
     <div class="paggination">
         <div class="wrapper">
@@ -116,6 +116,11 @@ export default{
                         jobsСonstruction: "45 ед.",
                         jobsFullCapacity: "45 ед.",
                         averageSalary: "5 3647 тыс. руб.",
+                        taxes: "6 845 млн. руб.",
+                        capital: "6 45 млн. руб.",
+                        productionVolume: "45 ед.",
+                        revenue: "6 45 млн. руб.", 
+                        expectedEfficiency: "шааомлоа"
                     }
                 ]
             }
