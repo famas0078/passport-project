@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper-recommendations">
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-12 d-flex justify-content-between">
                     <div class="col-xxl-6 item item-left d-flex justify-content-between">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
