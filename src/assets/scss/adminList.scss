@@ -11,6 +11,9 @@
               .wrapper_table tr {
                 margin-bottom: 10px;
               }
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
         }
         .item-list-spisok td{
             width: 30%;
@@ -39,6 +42,12 @@
         }
         .item-list{
             padding: 20px 0;
+        }
+        .accordion{
+            display: none;
+            @media screen and (max-width: 768px){
+                display: block;
+            }
         }
     }
 }

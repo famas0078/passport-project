@@ -6,3 +6,38 @@ const instance = axios.create({
         "Content-type": "application/json"
     }
 })
+
+instance.interceptors.request.use(
+    config => {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+            config.headers['Authorization'] = 'Bearer ' + token;
+        }
+        return config;
+    },
+    error => {
+        // Этот блок кода срабатывает при ошибках запроса
+        return Promise.reject(error);
+    }
+)
+
+instance.interceptors.response.use(
+    response => {
+        // Обработка успешного ответа
+        return response;
+    },
+    error => {
+        // Этот блок кода срабатывает при ошибках ответа
+        if (error.response && error.response.status === 401) {
+            logout();
+        }
+        return Promise.reject(error);
+    }
+);
+
+function logout() {
+    localStorage.removeItem('authToken');
+    window.location.href='/admin/auth/login'
+}
+
+export default instance;

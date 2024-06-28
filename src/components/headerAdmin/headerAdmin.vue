@@ -5,24 +5,25 @@ export default {
 </script>
 
 <template>
-<div class="wrapper d-flex justify-content-around">
-  <div class="admin-sort d-flex">
-    <div class="admin-sort-text">
-      Статус заявки
+<div class="wrapper">
+  <div class="row">
+    <div class="select d-flex col-8 col-md-3 col-lg-2 d-flex justify-content-center align-items-center my-3">
+      <select class="form-select admin-sort d-flex justify-content-center align-items-center cursor-pointer h-100">
+        <option selected>Статус заявки</option>
+        <option value="1">Все</option>
+        <option value="2">Не рассмотрены</option>
+        <option value="3">Отклонены</option>
+        <option value="4">Приняты</option>
+      </select>
     </div>
-    <div class="admin-sort-img">
-      <img src="../../assets/img/arrow-bottom.svg" alt="">
+    <div class="input-search col-9 col-md-7 col-lg-8 my-3">
+      <input type="text" class="input-search-item" placeholder="Поиск по названию проекта">
     </div>
-  </div>
-  <div class="input-search">
-    <input type="text" class="input-search-item" placeholder="Поиск по названию проекта">
-  </div>
-  <div class="btn-search">
-    Найти
+    <div class="col-3 col-md-2 col-lg-2 d-flex justify-content-center align-items-center my-3">
+      <button class="btn btn-search h-100 w-100">
+        Найти
+      </button>
+    </div>
   </div>
 </div>
 </template>
-
-<style scoped>
-
-</style>

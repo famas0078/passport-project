@@ -21,6 +21,39 @@
           </tr>
         </tbody>
       </table>
+      <div class="accordion" id="accordion">
+        <div v-for="(item, index) in arrayProject" class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+ index" aria-expanded="false" :aria-controls="'collapseOne' + index">
+              {{ item.name }}
+            </button>
+          </h2>
+          <div :id="'collapse' + index" class="accordion-collapse collapse" data-bs-parent="#accordion">
+            <div class="accordion-body">
+              <div class="wrapper-fio my-3">
+                <p>
+                  <b>
+                    ФИО
+                  </b>
+                </p>
+                <p class="my-2">
+                  {{ item.fio }}
+                </p>
+              </div>
+              <div class="wrapper-status my-3">
+                <p>
+                  <b>
+                    СТАТУС
+                  </b>
+                </p>
+                <p v-if="item.status === 3 " class="item_status d-flex justify-content-center align-items-center my-2"> <img src="../../assets/img/ThreeStatusProject.svg" alt=""><div class="item_status_text">Отклонена</div></p>
+                <p v-if="item.status === 2 " class="item_status d-flex justify-content-center align-items-center my-2"> <img src="../../assets/img/TwoStatusProject.svg" alt=""><div class="item_status_text">Принята</div></p>
+                <p v-if="item.status === 1 " class="item_status d-flex justify-content-center align-items-center my-2"> <img src="../../assets/img/OneStatusProject.svg" alt=""><div class="item_status_text">Не рассмотрена</div></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

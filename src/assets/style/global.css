@@ -1,6 +1,7 @@
 :root{
     --bg-color-light-green-btn: #E0F5D4;
     --bg-color-green-btn: #015458;
+    --bg-color-green-btn-hover: #014447;
     --text-color: #252434;
     --color-green: #5E9851;
     --color-green-hover: #90be85;
@@ -10,6 +11,14 @@
     --bg-color-linear-btn: linear-gradient(135deg, #CBCE55 0.69%, #217B4F 100.69%);
 }
 html, body * { margin: 0; padding: 0; }
+body{
+    height: 100vh;
+    width: 100%;
+}
+#app{
+    width: 100%;
+    height: 100%;
+}
 .d-flex{
     display: flex;
 }
@@ -61,4 +70,14 @@ html, body * { margin: 0; padding: 0; }
 }
 .cursor-pointer{
     cursor: pointer;
+}
+.b-primary{
+    background: var(--bg-color-green-btn);
+    color: var(--color-white);
+    padding: 10px 35px;
+    border: none !important;
+}
+.b-primary:hover{
+    background: var(--bg-color-green-btn-hover);
+    color: var(--color-white);
 }
