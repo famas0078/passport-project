@@ -8,12 +8,12 @@
   <SixSection v-if="ActiveSlide === 6" :ActiveSlide="ActiveSlide" />
   <div class="index-btn d-flex">
     <div class="btn-last btn-item" @click="lastSlider()">
-      <img src="../assets/img/Vector.svg" alt="">
+      <img src="../../assets/img/Vector.svg" alt="">
       К прошлому разделу
     </div>
     <div class="btn-next btn-item" @click="nextSlider()">
       Продолжить
-      <img src="../assets/img/Caret_Circle_Left.svg" alt="">
+      <img src="../../assets/img/Caret_Circle_Left.svg" alt="">
     </div>
   </div>
   <Footer/>
