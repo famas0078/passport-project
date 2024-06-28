@@ -1,6 +1,10 @@
 
 <template>
     <div class="wrapper-auth h-100 w-100 d-flex align-items-center justify-content-center">
+      <div class="alert" :class="{ 'show': success }" >
+        {{ success ? 'Вход успешен!' : 'Ошибка входа' }}
+      </div>
+
       <div class="container-login w-100 row">
         <div class="container-form col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-center">
           <div class="title-subtitle">
@@ -48,6 +52,8 @@ export default ({
     return {
       active: true,
       query: Boolean,
+      success: false,
+      error: false,
       form: {
         email: '',
         password: ''
@@ -59,7 +65,7 @@ export default ({
     this.query = this.$route.query
   },
   mounted() {
-    this.next = this.$route.query.next ?? '/';
+    this.next = this.$route.query.next ?? '/admin';
   },
   methods: {
     show() {
@@ -80,8 +86,11 @@ export default ({
             localStorage.setItem('authToken', response.data.access_token);
             localStorage.setItem('User', JSON.stringify({ email: this.form.email, user: true }));
             console.log(localStorage.getItem('authToken'))
-            console.log(this.next)
-            this.$router.push(this.next);
+            this.success = true;
+            console.log(this.seccuss)
+            setTimeout(()=>{
+              this.$router.push(this.next);
+            }, 2000)
           })
           .catch( e => {
             console.log(e)
