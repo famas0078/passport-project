@@ -1,0 +1,28 @@
+.wrapper-recommendations {
+    .container {
+        .row {
+            .col-12 {
+                .item-left{
+                    margin-right: 30px;
+                }
+                .item {
+                    text-align: left;
+                    background: linear-gradient(135deg, #22003B 0.78%, #24003E 33.18%, #2D0048 61.65%, #3C005A 87.18%, #450065 98.97%);
+                    border-radius: 15px;
+                    .left-container {
+                        .title {
+                            .big-title {
+                                color: var(--color-white);
+                                font-size: 28px;
+                            }
+                            .small-title{
+                                color: var(--color-white);
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
