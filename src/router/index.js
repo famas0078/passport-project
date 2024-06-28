@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import IndexSection from '@/pages/indexPages/index.vue'
 import indexAdmin from "@/pages/indexPages/indexAdmin.vue";
 import AdminDescription from "@/pages/SectionAdmin/AdminDescription"
-
+import indexLending from "@/pages/indexPages/indexLending"
 // components auth
 
 import login from '@/auth/login.vue'
@@ -11,6 +11,10 @@ import register from '@/auth/register.vue'
 const routes = [
   {
     path: '/',
+    component: indexLending
+  },
+  {
+    path: '/passport',
     component: IndexSection
   },
   {
