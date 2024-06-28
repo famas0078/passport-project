@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex justify-content-between">
-                    <div class="col-xxl-6 col-12 item item-left d-flex justify-content-between">
+                    <div class="col-xxl-6 item item-left d-flex justify-content-between">
                         <div class=" left-container">
                             <div class="title">
                                 <div class="big-title">
