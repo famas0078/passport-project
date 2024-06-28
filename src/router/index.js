@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import IndexSection from '@/pages/index.vue'
-import indexAdmin from "@/pages/indexAdmin.vue";
+import IndexSection from '@/pages/indexPages/index.vue'
+import indexAdmin from "@/pages/indexPages/indexAdmin.vue";
 import AdminDescription from "@/pages/SectionAdmin/AdminDescription"
 
 // components auth
