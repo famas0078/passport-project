@@ -21,7 +21,7 @@
                             <img src="../../assets/img/Cloud.svg" alt="">
                         </div>
                     </div>
-                    <div class="col-xxl-6 col-12 item d-flex justify-content-between">
+                    <div class="col-xxl-6 item d-flex justify-content-between">
                         <div class=" left-container">
                             <div class="title">
                                 <div class="big-title">
