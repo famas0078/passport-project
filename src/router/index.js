@@ -38,8 +38,8 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const path = ["/admin/auth/login", "/admin/auth/register", "/admin"]
-  if (path.includes(to.path)) {
+  const path = ["/admin/auth/login", "/admin/auth/register", "/", ]
+  if (path.includes(to.path) || localStorage.getItem("User")) {
     next()
   } else {
     next(`/admin/auth/login?next=${to.path}`);

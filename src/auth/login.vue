@@ -16,10 +16,10 @@
           <div class="form w-100 mt-5">
             <form @submit.prevent="login">
               <div class="form-group position-relative mb-3">
-                <input class="form-control" type="text" required="" placeholder="Логин">
+                <input class="form-control" type="text" required="" v-model="form.email" placeholder="Логин">
               </div>
               <div class="form-group position-relative">
-                <input class="form-control" :type="active?'password':'text'" required="" placeholder="Пароль">
+                <input class="form-control" :type="active?'password':'text'" v-model="form.password" required="" placeholder="Пароль">
                 <div class="show-hide cursor-pointer" @click.prevent="show">
                   <img v-if="active" class="svg-icon" src="@/assets/img/auth/eye-close.svg"  alt="">
                   <img v-else class="svg-icon" src="@/assets/img/auth/eye-open.svg" alt="">
@@ -47,17 +47,46 @@ export default ({
   data() {
     return {
       active: true,
+      query: Boolean,
+      form: {
+        email: '',
+        password: ''
+      },
+      next: '',
     };
   },
+  created() {
+    this.query = this.$route.query
+  },
   mounted() {
-    this.login()
+    this.next = this.$route.query.next ?? '/';
   },
   methods: {
     show() {
       this.active = !this.active;
     },
     async login(){
-      UserDataService.login()
+      if (!this.form.email) {
+        console.log("введите почту")
+        return;
+      }
+      if (!this.form.email) {
+        console.log("введите пароль")
+        return;
+      }
+      this.$router.replace({ query: {} });
+      await UserDataService.login(this.form)
+          .then((response) => {
+            localStorage.setItem('authToken', response.data.access_token);
+            localStorage.setItem('User', JSON.stringify({ email: this.form.email, user: true }));
+            console.log(localStorage.getItem('authToken'))
+            console.log(this.next)
+            this.$router.push(this.next);
+          })
+          .catch( e => {
+            console.log(e)
+          })
+
     }
   }
 })

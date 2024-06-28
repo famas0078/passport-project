@@ -2,8 +2,6 @@
 
     export default {
         login(data) {
-            return (
-                console.log(http.get('/crowdfunding/available-guarantees'))
-            );
-        }
+            return http.post('/auth/login', data);
+        },
     }

@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
 const instance = axios.create({
     baseURL: process.env.VUE_APP_BACKEND_API_BASE,
     headers: {
         "Content-type": "application/json"
     }
-})
+});
 
 instance.interceptors.request.use(
     config => {
@@ -19,7 +19,7 @@ instance.interceptors.request.use(
         // Этот блок кода срабатывает при ошибках запроса
         return Promise.reject(error);
     }
-)
+);
 
 instance.interceptors.response.use(
     response => {
@@ -34,10 +34,10 @@ instance.interceptors.response.use(
         return Promise.reject(error);
     }
 );
-
 function logout() {
     localStorage.removeItem('authToken');
-    window.location.href='/admin/auth/login'
+    localStorage.removeItem("User");
+    window.location.href='/admin/auth/login';
 }
 
 export default instance;
