@@ -1,0 +1,24 @@
+.wrapper-faq{
+    .container{
+        .title{
+            color: var(--text-color)
+        }
+        .accordions{
+            .accordion-item{
+                padding: 40px 36px;
+                cursor: pointer;
+                .accordions-title{
+                    align-items: center;
+                }
+                .accordions-text{
+                    color: var(--text-color);
+                    text-align: left;
+                }
+                .accordions-inner{
+                    padding-top: 24px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
