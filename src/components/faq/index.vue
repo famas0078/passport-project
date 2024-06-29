@@ -1,30 +1,31 @@
 <template>
     <div class="wrapper-faq">
-        <div class="container">
-            <h1 class="title">
-                вопрос/ответ
-            </h1>
-            <div class="accordions">
-                <div class="accordion-item" v-for="item in accordions"
-                    @click="OpenAccordion(item.id)">
-                    <div class="accordions-title d-flex justify-content-between">
-                        <h3 class="accordions-text">
-                            {{ item.title }}
-                        </h3>
-                        <div class="accordions-arrow">
-                            <img v-if="ActiveAccordion != item.id" src="../../assets/img/arrowAccordionNotActive.svg"
-                                alt="">
-                            <img v-if="ActiveAccordion === item.id" src="../../assets/img/arrowAccordionActive.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="accordions-inner" v-if="ActiveAccordion === item.id">
-                        {{ item.inner }}
-                    </div>
-                </div>
+      <div class="container">
+        <h1 class="title">
+          вопрос/ответ
+        </h1>
+        <div class="accordions">
+          <div class="accordion-item" v-for="item in accordions" :key="item.id"
+            @click="OpenAccordion(item.id)">
+            <div class="accordions-title d-flex justify-content-between">
+              <h3 class="accordions-text">
+                {{ item.title }}
+              </h3>
+              <div class="accordions-arrow">
+                <img v-if="ActiveAccordion != item.id" src="../../assets/img/arrowAccordionNotActive.svg"
+                  alt="">
+                <img v-if="ActiveAccordion === item.id" src="../../assets/img/arrowAccordionActive.svg" alt="">
+              </div>
             </div>
+            <div class="accordions-inner" v-if="ActiveAccordion === item.id"
+              :class="{ 'accordion-enter': ActiveAccordion === item.id, 'accordion-leave': ActiveAccordion !== item.id }">
+              {{ item.inner }}
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</template>
+  </template>
 
 
 <script>
