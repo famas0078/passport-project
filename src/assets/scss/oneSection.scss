@@ -1,0 +1,27 @@
+.wrapper-one-section{
+    position: relative;
+    overflow: hidden;
+    .container{
+        .row{
+            justify-content: left;
+            text-align: left;
+            .title{
+                margin-top: 220px;
+                .wrapper-btn{
+                    margin-bottom: 270px;
+                }
+            }
+            .image{
+                position: absolute;
+                left: 800px;
+                top: 20px;
+                @media screen and (max-width: 1600px){
+                    left: 600px;
+                }
+                @media screen and (max-width: 1300px){
+                    left: 500px;
+                }
+            }
+        }
+    }
+}
