@@ -3,6 +3,7 @@
         <Header />
     <Recommendations />
     <Faq />
+    <BecomeInvestor />
     <Advantages />
     <Footer />
     </div>
@@ -14,6 +15,7 @@ import Header from "@/components/headerLending/header.vue"
 import Footer from "@/components/footerLending/footer.vue"
 import Faq from "@/components/faq/index.vue"
 import Advantages from "@/components/advantagesLending/advantages.vue"
+import BecomeInvestor from "@/components/becomeInvestor/becomeInvestor.vue"
 export default {
     name: "indexLending",
     components:{
@@ -22,6 +24,7 @@ export default {
         Recommendations,
         Faq,
         Advantages,
+        BecomeInvestor,
     }
 }
 </script>

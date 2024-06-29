@@ -1,0 +1,24 @@
+.wrapper-becomeInvestor{
+    margin-bottom: 150px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFB 100%);
+    .containers{
+        .row{
+            .col-4{
+                .cards{ 
+                    
+                    .card-item{
+                        gap: 10px;
+                        margin-top: 20px;
+                        box-shadow: 4px 4px 16px 0px #A7BEA240;
+                        padding: 12px 18px;
+                        border-radius: 15px;
+                        background-color: #FFFFFF;
+                        display: flex ;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
