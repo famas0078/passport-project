@@ -7,7 +7,11 @@ export default {
     ActiveSlide:{
       type:Number,
       required:true
-    }
+    },
+    form:{
+      type: Object,
+      required: true
+    },
   },
   name: "ThreeSection"
 }
@@ -24,31 +28,31 @@ export default {
         <label class="form-input-item-label">
           Инициатор мероприятия
         </label>
-        <input class="form-input-item-input" type="text" placeholder="Инициатор мероприятия">
+        <input class="form-input-item-input" type="text" placeholder="Инициатор мероприятия" :value="form.initiator" @input="$emit('update:form', { ...form, initiator: $event.target.value })">
       </div>
       <div class="form-input-item">
         <label class="form-input-item-label">
           ОГРН
         </label>
-        <input class="form-input-item-input" type="text" placeholder="ОГРН">
+        <input class="form-input-item-input" type="text" placeholder="ОГРН" :value="form.OGRN" @input="$emit('update:form', { ...form, OGRN: $event.target.value })">
       </div>
       <div class="form-input-item">
         <label class="form-input-item-label">
           Телефон инициатора мероприятия
         </label>
-        <input class="form-input-item-input" type="tel" placeholder="Телефон инициатора мероприятия">
+        <input class="form-input-item-input" type="tel" placeholder="Телефон инициатора мероприятия" :value="form.initiatorPhone" @input="$emit('update:form', { ...form, initiatorPhone: $event.target.value })">
       </div>
       <div class="form-input-item">
         <label class="form-input-item-label">
           Email инициатора мероприятия
         </label>
-        <input class="form-input-item-input" type="text" placeholder="Email инициатора мероприятия">
+        <input class="form-input-item-input" type="text" placeholder="Email инициатора мероприятия" :value="form.initiatorEmail" @input="$emit('update:form', { ...form, initiatorEmail: $event.target.value })">
       </div>
       <div class="form-input-item">
         <label class="form-input-item-label">
           Веб-сайт инициатора мероприятия
         </label>
-        <input class="form-input-item-input" type="text" placeholder="Веб-сайт инициатора мероприятия">
+        <input class="form-input-item-input" type="text" placeholder="Веб-сайт инициатора мероприятия" :value="form.initiatorSite" @input="$emit('update:form', { ...form, initiatorSite: $event.target.value })">
       </div>
     </div>
   </div>

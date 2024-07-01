@@ -7,6 +7,14 @@ export default {
     ActiveSlide:{
       type: Number,
       required: true
+    },
+    form:{
+      type: Object,
+      required: true
+    },
+    handleFileChange:{
+      type: Function,
+      required: true
     }
   },
   data() {
@@ -24,7 +32,8 @@ export default {
         {
           text: 'Готов договориться'
         },
-      ]
+      ],
+      fileNameMap: '',
     }
   },
   components: {MultiSlider}
@@ -42,13 +51,13 @@ export default {
       <label class="form-input-item-label text-left">
         Актуальность
       </label>
-      <input class="form-input-item-input" type="text" placeholder="Актуальность">
+      <input class="form-input-item-input" type="text" placeholder="Актуальность" :value="form.relevance" @input="$emit('update:form', { ...form, relevance: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label text-left">
         Как Проект повлияет на развитие городской среды, бизнеса
       </label>
-      <input class="form-input-item-input" type="text" placeholder="Карта-схема территориальной привязки">
+      <input class="form-input-item-input" type="text" placeholder="Карта-схема территориальной привязки" :value="form.HowWillProjectAffectCity" @input="$emit('update:form', { ...form, HowWillProjectAffectCity: $event.target.value })">
     </div>
     <div class="form-input-item file w-100">
       <label class="form-input-item-label text-left">
@@ -56,41 +65,41 @@ export default {
       </label>
       <label class="input-file d-flex justify-content-between w-100 cursor-pointer" for="input-file">
         <p class="input-file-text">
-          Карта-схема территориальной привязки
+          {{ fileNameMap ? fileNameMap : 'Карта-схема территориальной привязки' }}
         </p>
         <img class="input-file-image" src="@/assets/img/peperClip.svg">
       </label>
-      <input class="form-input-item-input-file h-100" id='input-file' type="file">
+      <input class="form-input-item-input-file h-100" id='input-file' type="file" @change="handleFileChange">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label text-left">
         Кто будет исполнителем проекта
       </label>
-      <input class="form-input-item-input" type="text" placeholder="Кто будет исполнителем проекта">
+      <input class="form-input-item-input" type="text" placeholder="Кто будет исполнителем проекта" :value="form.projectExecutor" @input="$emit('update:form', { ...form, projectExecutor: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label text-left">
         Составьте перечень предполагаемых участников проекта
       </label>
-      <input class="form-input-item-input" type="text" placeholder="Составьте перечень предполагаемых участников проекта">
+      <input class="form-input-item-input" type="text" placeholder="Составьте перечень предполагаемых участников проекта" :value="form.membersOfProject" @input="$emit('update:form', { ...form, membersOfProject: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label text-left">
         Опишите ожидаемые результаты (качественные и количественные)
       </label>
-      <input class="form-input-item-input"  type="text" placeholder="Опишите ожидаемые результаты (качественные и количественные)">
+      <input class="form-input-item-input"  type="text" placeholder="Опишите ожидаемые результаты (качественные и количественные)" :value="form.expectedResults" @input="$emit('update:form', { ...form, expectedResults: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label text-left">
         Что нужно сделать для старта или дальнейшей успешной реализации Проекта
       </label>
-      <input class="form-input-item-input"  type="text" placeholder="Что нужно сделать для старта">
+      <input class="form-input-item-input"  type="text" placeholder="Что нужно сделать для старта" :value="form.whatNeedToDoForStartProject" @input="$emit('update:form', { ...form, whatNeedToDoForStartProject: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label text-left">
         Ожидаемая эффективность для коллективного инвестора (вкладчика)
       </label>
-      <input class="form-input-item-input"  type="text" placeholder="Ожидаемая эффективность для коллективного инвестора (вкладчика)">
+      <input class="form-input-item-input"  type="text" placeholder="Ожидаемая эффективность для коллективного инвестора (вкладчика)" :value="form.expectedEffectivenessForInvestor" @input="$emit('update:form', { ...form, expectedEffectivenessForInvestor: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label text-left">

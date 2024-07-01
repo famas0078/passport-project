@@ -1,6 +1,11 @@
 <script>
 export default {
-  name: "headerAdmin"
+  name: "headerAdmin",
+  props: {
+    status: {
+      type: []
+    }
+  }
 }
 </script>
 
@@ -10,10 +15,8 @@ export default {
     <div class="select d-flex col-8 col-md-3 col-lg-2 d-flex justify-content-center align-items-center my-3">
       <select class="form-select admin-sort d-flex justify-content-center align-items-center cursor-pointer h-100">
         <option selected>Статус заявки</option>
-        <option value="1">Все</option>
-        <option value="2">Не рассмотрены</option>
-        <option value="3">Отклонены</option>
-        <option value="4">Приняты</option>
+        <option value="0">Все</option>
+        <option v-for=" (item, index) in status" :key="index" :value="index + 1">{{ item.name }}</option>
       </select>
     </div>
     <div class="input-search col-9 col-md-7 col-lg-8 my-3">
