@@ -19,6 +19,10 @@
 @import "becomeInvestor";
 @import "oneSection";
 
+/* loader */
+
+@import "loading";
+
 /* bootstrap */
 //
 //@import  'node_modules/bootstrap/scss/bootstrap.scss';
@@ -33,5 +37,59 @@ ul {
   li {
     margin: 16px 0;
     position: relative;
+  }
+}
+
+/* alert style */
+
+.alert{
+  display: none;
+}
+.alert.error{
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 50px;
+  background: #ff5e5e;
+  padding-left: 20px;
+  border-radius: 30px 0 0 30px;
+  color: var(--color-white);
+  animation: alerte 5s ease 0s 1 normal forwards;
+  @keyframes alerte {
+    0% {
+      transform: translateX(100%);
+    }
+
+    30% {
+      transform: translateX(0%);
+    }
+
+    70% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+.alert.show{
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 50px;
+  background: #2D7756;
+  padding-left: 20px;
+  border-radius: 30px 0 0 30px;
+  color: var(--color-white);
+  animation: alert 1s ease 0s 1 normal forwards;
+  @keyframes alert {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
   }
 }

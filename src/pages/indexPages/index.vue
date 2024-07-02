@@ -5,17 +5,27 @@
   <ThreeSection v-show="ActiveSlide === 3" v-model:form="form" :ActiveSlide="ActiveSlide" />
   <FourSection v-show="ActiveSlide === 4" v-model:form="form" :source="source" :needs="needs" :status="status" :typeEvent="typeEvent" :codeOKVED="codeOKVED" :inputEvent="inputEvent" :ActiveSlide="ActiveSlide" />
   <FiveSection v-show="ActiveSlide === 5" v-model:form="form" :ActiveSlide="ActiveSlide" />
-  <SixSection v-show="ActiveSlide === 6" :handleFileChange="handleFileChange" v-model:form="form" :ActiveSlide="ActiveSlide" />
-  <div class="btn" @click="postForm(this.form)">Отправить</div>
+  <SixSection v-show="ActiveSlide === 6" :alert_presentation_danger="alert_presentation_danger" :alert_map_danger="alert_map_danger" :handleFilePresentationChange="handleFilePresentationChange" :updateSelectedItems="updateSelectedItems" :fileNamePresentation="fileNamePresentation" :fileNameMap="fileNameMap" :handleFileMapChange="handleFileMapChange" v-model:form="form" :ActiveSlide="ActiveSlide" />
   <div class="index-btn d-flex">
     <div class="btn-last btn-item" @click="lastSlider()">
       <img src="../../assets/img/Vector.svg" alt="">
       К прошлому разделу
     </div>
-    <div class="btn-next btn-item" @click="nextSlider()">
+    <div class="btn-next btn-item" v-if="ActiveSlide !== 6" @click="nextSlider()">
       Продолжить
       <img src="../../assets/img/Caret_Circle_Left.svg" alt="">
     </div>
+    <button class="btn-next btn-item" v-else-if="!isLoading" :disabled="success" @click="postForm(this.form)">
+        Отправить
+      <img src="../../assets/img/Caret_Circle_Left.svg" alt="">
+    </button>
+    <div class="btn-next btn-item" v-else>
+      <div class="loader"></div>
+      <img src="../../assets/img/Caret_Circle_Left.svg" alt="">
+    </div>
+  </div>
+  <div class="alert" :class="{ 'show': success, 'error': error }" >
+    {{ success ? 'Успешно отправлено!' : 'Ошибка! Не все поля заполнены!' }}
   </div>
   <Footer/>
 </template>
@@ -52,6 +62,12 @@ export default {
   data(){
     return{
       name: 'test',
+      success: false,
+      error: false,
+      alert_map_danger: '',
+      alert_presentation_danger: '',
+      fileNameMap: localStorage.getItem('fileNameMap') || '',
+      fileNamePresentation: localStorage.getItem('fileNamePresentation') || '',
       ActiveSlide: parseInt(localStorage.getItem('activeSlide') || 1),
       typeEvent: [],
       codeOKVED: [],
@@ -98,6 +114,7 @@ export default {
       status: [],
       source: [],
       needs: [],
+      isLoading: false,
       form: {
         firstName: "",
         lastName: "",
@@ -113,7 +130,7 @@ export default {
         name: "",
         goal: "",
         tasks: "",
-        realizationLocation: "string",
+        realizationLocation: "",
         dateOfAfterWentOnProductionCapacity: "",
         dateOfStartDesign: "",
         dateOfRealizationEnd: "",
@@ -124,6 +141,7 @@ export default {
         countOfNewJobsAfterWentOnProductionCapacity: 0,
         avarageSalary: 0,
         averageTaxAfterWentOnProductionCapacity: 0,
+        amountOfInitialInvestmentOfMainCapital: 0,
         amountOfOutputAfterWentOnProductionCapacity: 0,
         revenueOutputAfterWentOnProductionCapacity: 0,
         expectedEffectivenessAfterWentOnProductionCapacity: "",
@@ -132,18 +150,14 @@ export default {
         map: "",
         projectExecutor: "",
         membersOfProject: "",
-        expectedResults: "string",
-        whatNeedToDoForStartProject: "string",
-        expectedEffectivenessForInvestor: "string",
-        proejctPresentation: "string",
+        expectedResults: "",
+        whatNeedToDoForStartProject: "",
+        expectedEffectivenessForInvestor: "",
+        proejctPresentation: "",
         crowdfundingAndFinancingSourseRelationsIds: [
           0
         ],
-        crowdfundingAndAvailableGuaranteeIds: [
-          1,
-          2,
-          3
-        ],
+        crowdfundingAndAvailableGuaranteeIds: [],
         crowdfundingTypeId: Number,
         crowdfundingCodeOVKEDId: Number,
         crowdfundingDevelopmentStatusId: Number,
@@ -175,28 +189,64 @@ export default {
   },
   methods:{
     async postForm(body){
+      this.isLoading = true
       await СrowdfundingDataServices.postForm(body)
           .then((response) => {
-            console.log("Создано")
+            this.isLoading = false
+            localStorage.removeItem('activeSlide')
+            localStorage.removeItem('fileNameMap')
+            localStorage.removeItem('fileNamePresentation')
+            localStorage.removeItem('formData')
+            this.success = true
+            setTimeout(() => {
+              this.success = false
+              location.reload();
+            }, 5000)
           })
           .catch((e) => {
-            console.log(body)
+            this.isLoading = false
+            this.error = true
             console.log(e)
+            setTimeout(() => {
+              this.error = false
+            }, 5000)
           })
     },
-    async handleFileChange(event) {
-      console.log("В родителе")
+    async handleFileMapChange(event) {
       const file = event.target.files[0];
       this.fileNameMap = file.name;
+      localStorage.setItem('fileNameMap', this.fileNameMap)
       let formDataDetail = new FormData();
       formDataDetail.append("file", file);
-      console.log(formDataDetail)
+      this.alert_map_danger = ''
       await UploadFilesDataServices.postMap(formDataDetail)
           .then(({data}) => {
             this.form.map = data.filepath
-            console.log("ПРИШЛИ ДАННЫЕ", this.form.map)
+            this.alert_map_danger = ''
           })
           .catch((e) => {
+            if (e.response.status === 415) {
+              this.alert_map_danger = 'Недопустимый формат файла'
+            }
+            console.log(e);
+          });
+    },
+    async handleFilePresentationChange(event) {
+      const filePresentation = event.target.files[0];
+      this.fileNamePresentation = filePresentation.name;
+      localStorage.setItem('fileNamePresentation', this.fileNamePresentation)
+      let formDataDetail = new FormData();
+      formDataDetail.append("file", filePresentation);
+      this.alert_presentation_danger = ''
+      await UploadFilesDataServices.postPresentation(formDataDetail)
+          .then(({data}) => {
+            this.form.proejctPresentation = data.filepath
+            this.alert_presentation_danger = ''
+          })
+          .catch((e) => {
+            if (e.response.status === 415) {
+              this.alert_presentation_danger = 'Недопустимый формат файла'
+            }
             console.log(e);
           });
     },

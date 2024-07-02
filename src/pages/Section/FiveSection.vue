@@ -57,7 +57,7 @@ export default {
         <label class="form-input-item-label text-left">
           Объем первоначальных инвестиций в основной капитал ------
         </label>
-        <input class="form-input-item-input" type="text" placeholder="млн руб. отсутствует" :value="form.amountOfOutputAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, amountOfOutputAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input class="form-input-item-input" type="text" placeholder="млн руб. отсутствует" :value="form.amountOfInitialInvestmentOfMainCapital" @input="$emit('update:form', { ...form, amountOfInitialInvestmentOfMainCapital: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
 
       <div class="form-input-item">

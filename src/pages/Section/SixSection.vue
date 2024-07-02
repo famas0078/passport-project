@@ -12,30 +12,59 @@ export default {
       type: Object,
       required: true
     },
-    handleFileChange:{
+    handleFileMapChange:{
       type: Function,
+      required: true
+    },
+    fileNameMap:{
+      type: String,
+      required: true
+    },
+    updateSelectedItems:{
+      type: Function,
+      required: true
+    },
+    fileNamePresentation:{
+      type: String,
+      required: true
+    },
+    handleFilePresentationChange:{
+      type: Function,
+      required: true
+    },
+    alert_map_danger:{
+      type: String,
+      required: true
+    },
+    alert_presentation_danger:{
+      type: String,
       required: true
     }
   },
   data() {
     return {
+      checkedItems: [],
       status: [
         {
+          id: 1,
           text: 'Имеется договор с Рантье'
         },
         {
+          id: 2,
           text: 'Договор с вкладчиком'
         },
         {
+          id: 3,
           text: 'Иные письменные гарантии'
         },
         {
+          id: 4,
           text: 'Готов договориться'
         },
       ],
-      fileNameMap: '',
     }
   },
+
   components: {MultiSlider}
 }
 </script>
@@ -65,11 +94,14 @@ export default {
       </label>
       <label class="input-file d-flex justify-content-between w-100 cursor-pointer" for="input-file">
         <p class="input-file-text">
-          {{ fileNameMap ? fileNameMap : 'Карта-схема территориальной привязки' }}
+          {{ fileNameMap ? fileNameMap : 'Карта-схема территориальной привязки'}}
         </p>
         <img class="input-file-image" src="@/assets/img/peperClip.svg">
       </label>
-      <input class="form-input-item-input-file h-100" id='input-file' type="file" @change="handleFileChange">
+      <input class="form-input-item-input-file h-100" id='input-file' type="file" @change="handleFileMapChange">
+      <p class="text-danger">
+        {{ alert_map_danger }}
+      </p>
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label text-left">
@@ -108,10 +140,12 @@ export default {
       <div >
         <ul>
           <li v-for="(item, index) in status" :key="index">
-            <input :id="'status' + index" type="checkbox" name="code" value="1">
-            <label class="position-relative d-flex align-items-center cursor-pointer" :for="'status' + index">
-              {{ item.text }}
-            </label>
+            <div>
+              <input class="form-check-input" :id="'status ' + item.id" type="checkbox" :value="item.id" v-model="form.crowdfundingAndAvailableGuaranteeIds">
+              <label class="form-check-label d-flex align-items-center" :for="'status ' + item.id">
+                {{ item.text }}
+              </label>
+            </div>
           </li>
         </ul>
       </div>
@@ -120,13 +154,16 @@ export default {
       <label class="form-input-item-label text-left">
         Презентация проекта
       </label>
-      <label class="input-file d-flex justify-content-between w-100 cursor-pointer" for="input-file">
+      <label class="input-file d-flex justify-content-between w-100 cursor-pointer" for="input-file-present">
         <p class="input-file-text">
-          Презентация проекта
+          {{ fileNamePresentation ? fileNamePresentation : 'Презентация проекта'}}
         </p>
         <img class="input-file-image" src="@/assets/img/peperClip.svg">
       </label>
-      <input class="form-input-item-input-file h-100" id='input-file' type="file">
+      <input class="form-input-item-input-files h-100" id='input-file-present' type="file" @change="handleFilePresentationChange">
+      <p class="text-danger">
+        {{ alert_presentation_danger }}
+      </p>
     </div>
   </div>
 </div>
