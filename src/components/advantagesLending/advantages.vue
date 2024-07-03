@@ -1,12 +1,12 @@
 <template>
     <div class="wrapper-advantages">
         <div class="container">
-            <h5 class="title">
+            <h5 class="title" ref="title" :class="{ 'slide-enter-top': animationPlayed.title, 'isVisible': !animationPlayed.title }">
                 7 преимуществ работы с рантье
             </h5>
             <div class="wrapper-dekstop">
                 <div class="row g-4 mt-2 align-items-stretch">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div ref="card1" :class="{ 'slide-enter-left': animationPlayed.card1, 'isVisible': !animationPlayed.card1 }" class="col-xl-4 col-lg-4 col-md-6 col-12">
                         <div class="card-item d-flex flex-column h-100">
                             <img src="../../assets/img/1-sell.svg" alt="" weight="70px" height="70px">
                             <div class="title-card">
@@ -20,7 +20,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div ref="card2" :class="{ 'slide-enter-top': animationPlayed.card2, 'isVisible': !animationPlayed.card2 }" class="col-xl-4 col-lg-4 col-md-6 col-12">
                         <div class="card-item d-flex flex-column h-100">
                             <img src="../../assets/img/2.svg" alt="" weight="70px" height="70px">
                             <div class="title-card">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div ref="card3" :class="{ 'slide-enter-right': animationPlayed.card3, 'isVisible': !animationPlayed.card3 }" class="col-xl-4 col-lg-4 col-md-6 col-12">
                         <div class="card-item d-flex flex-column h-100">
                             <img src="../../assets/img/3.svg" alt="" weight="70px" height="70px">
                             <div class="title-card">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="row g-4 mt-2 align-items-stretch">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div ref="card4" :class="{ 'slide-enter-left': animationPlayed.card4, 'isVisible': !animationPlayed.card4 }" class="col-xl-4 col-lg-4 col-md-6 col-12">
                         <div class="card-item d-flex flex-column h-100">
                             <img src="../../assets/img/4.svg" alt="" weight="70px" height="70px">
                             <div class="title-card">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div ref="card5" :class="{ 'slide-enter-top': animationPlayed.card5, 'isVisible': !animationPlayed.card5 }" class="col-xl-4 col-lg-4 col-md-6 col-12">
                         <div class="card-item d-flex flex-column h-100">
                             <img src="../../assets/img/5.svg" alt="" weight="70px" height="70px">
                             <div class="title-card">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div ref="card6" :class="{ 'slide-enter-right': animationPlayed.card6, 'isVisible': !animationPlayed.card6 }" class="col-xl-4 col-lg-4 col-md-6 col-12">
                         <div class="card-item d-flex flex-column h-100">
                             <img src="../../assets/img/6.svg" alt="" weight="70px" height="70px">
                             <div class="title-card">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="row g-4 mt-2 align-items-stretch">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                    <div ref="card7" :class="{ 'slide-enter-left': animationPlayed.card7, 'isVisible': !animationPlayed.card7 }" class="col-xl-4 col-lg-4 col-md-6 col-12">
                         <div class="card-item d-flex flex-column h-100">
                             <img src="../../assets/img/7.svg" alt="" weight="70px" height="70px">
                             <div class="title-card">
@@ -106,7 +106,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-8 col-lg-8 col-md-12 col-12">
+                    <div ref="card8" :class="{ 'slide-enter-right': animationPlayed.card8, 'isVisible': !animationPlayed.card8 }" class="col-xl-8 col-lg-8 col-md-12 col-12">
                         <div class="card-item d-flex">
                             <div class="card-text">
                                 <h3 class="title-card-register">
@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </div>
-            <div class="wrapper-mobile">
+            <div ref="card9" class="wrapper-mobile" :class="{ 'slide-enter-top': animationPlayed.card9, 'isVisible': !animationPlayed.card9 }">
                 <div class="row">
                     <div class="col-12" v-if="ActiveSlide === 1">
                         <div class="card-item d-flex flex-column h-100">
@@ -278,9 +278,114 @@ export default {
             ActiveSlide: 1,
             ActiveArrowLeft: false,
             ActiveArrowRight: false,
+            isVisible: {
+                card1: false,
+                card2: false,
+                card3: false,
+                card4: false,
+                card5: false,
+                card6: false,
+                card7: false,
+                card8: false,
+                card9: false,
+                title: false,
+            },
+            animationPlayed: {
+                card1: false,
+                card2: false,
+                card3: false,
+                card4: false,
+                card5: false,
+                card6: false,
+                card7: false,
+                card8: false,
+                card9: false,
+                title: false,
+            },
         }
     },
+    mounted() {
+        this.initIntersectionObserver();
+    },
     methods: {
+        initIntersectionObserver() {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5,
+            };
+
+            this.observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target === this.$refs.card1) {
+                            this.isVisible.card1 = true;
+                            this.animationPlayed.card1 = true;
+                        } else if (entry.target === this.$refs.card2) {
+                            this.isVisible.card2 = true;
+                            this.animationPlayed.card2 = true;
+                        } else if (entry.target === this.$refs.card3) {
+                            this.isVisible.card3 = true;
+                            this.animationPlayed.card3 = true;
+                        } else if (entry.target === this.$refs.card4) {
+                            this.isVisible.card4 = true;
+                            this.animationPlayed.card4 = true;
+                        }else if (entry.target === this.$refs.card5) {
+                            this.isVisible.card5 = true;
+                            this.animationPlayed.card5 = true;
+                        }else if (entry.target === this.$refs.card6) {
+                            this.isVisible.card6 = true;
+                            this.animationPlayed.card6 = true;
+                        }else if (entry.target === this.$refs.title) {
+                            this.isVisible.title = true;
+                            this.animationPlayed.title = true;
+                        }else if (entry.target === this.$refs.card7) {
+                            this.isVisible.card7 = true;
+                            this.animationPlayed.card7 = true;
+                        }else if (entry.target === this.$refs.card8) {
+                            this.isVisible.card8 = true;
+                            this.animationPlayed.card8 = true;
+                        }else if (entry.target === this.$refs.card9) {
+                            this.isVisible.card9 = true;
+                            this.animationPlayed.card9 = true;
+                        }
+                    } else {
+                        if (entry.target === this.$refs.card1) {
+                            this.isVisible.card1 = false;
+                        } else if (entry.target === this.$refs.card2) {
+                            this.isVisible.card2 = false;
+                        } else if (entry.target === this.$refs.card3) {
+                            this.isVisible.card3 = false;
+                        } else if (entry.target === this.$refs.card4) {
+                            this.isVisible.card4 = false;
+                        }else if (entry.target === this.$refs.card5) {
+                            this.isVisible.card5 = false;
+                        }else if (entry.target === this.$refs.card6) {
+                            this.isVisible.card6 = false;
+                        }else if (entry.target === this.$refs.card7) {
+                            this.isVisible.card7 = false;
+                        }else if (entry.target === this.$refs.card8) {
+                            this.isVisible.card8 = false;
+                        }else if (entry.target === this.$refs.card9) {
+                            this.isVisible.card9 = false;
+                        }else if (entry.target === this.$refs.title) {
+                            this.isVisible.title = false;
+                        }
+                    }
+                });
+            }, options);
+
+            this.observer.observe(this.$refs.card1);
+            this.observer.observe(this.$refs.card2);
+            this.observer.observe(this.$refs.card3);
+            this.observer.observe(this.$refs.card4);
+            this.observer.observe(this.$refs.card5);
+            this.observer.observe(this.$refs.card6);
+            this.observer.observe(this.$refs.card7);
+            this.observer.observe(this.$refs.card8);
+            this.observer.observe(this.$refs.card9);
+            this.observer.observe(this.$refs.title);
+        },
         NextSlide() {
             if (this.ActiveSlide < 8) {
                 this.ActiveSlide += 1
@@ -304,7 +409,52 @@ export default {
 .slide-leave {
     animation: slide-leave 0.5s ease-in;
 }
+.isVisible{
+    opacity: 0;
+}
+.slide-enter-left {
+    animation: slide-enter-left 0.8s ease-out;
+}
+.slide-enter-top {
+    animation: slide-enter-top 0.8s ease-out;
+}
+.slide-enter-right {
+    animation: slide-enter-right 0.8s ease-out;
+}
 
+@keyframes slide-enter-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide-enter-top {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slide-enter-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 @keyframes slide-enter {
     0% {
         opacity: 0;
