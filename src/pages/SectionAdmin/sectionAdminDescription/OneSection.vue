@@ -1,9 +1,9 @@
 <template>
 
-    <div class="wrapper">
+    <div class="wrapper mx-3">
         <div class="title">
             <div class="title-top d-flex">
-                {{ infoProject.projectName }}
+                {{ infoProject.name }}
             </div>
             <div class="title-under d-flex">
                 {{ infoProject.firstName }} {{ infoProject.middleName }} {{ infoProject.lastName }}
@@ -19,31 +19,31 @@
                     Имя 
                 </div>
                 <div class="item-under">
-                    {{ contact.firstName }}
+                    {{ infoProject.firstName }}
                 </div>
                 <div class="item-title">
                     Отчество
                 </div>
                 <div class="item-under">
-                    {{ contact.middleName }}
+                    {{ infoProject.middleName }}
                 </div>
                 <div class="item-title">
                     Фамилия 
                 </div>
                 <div class="item-under">
-                    {{ contact.lastName }}
+                    {{ infoProject.lastName }}
                 </div>
                 <div class="item-title">
                     Телефон 
                 </div>
                 <div class="item-under">
-                    {{ contact.tel }}
+                    {{ infoProject.phone }}
                 </div>
                 <div class="item-title">
                     Электронная почта 
                 </div>
                 <div class="item-under">
-                    {{ contact.email }}
+                    {{ infoProject.email }}
                 </div>
 
             </div>
@@ -56,13 +56,8 @@
 export default{
     name: "OneSectionAdmin",
     props:{
-    contact:{
-      type: Array,
-      required: true
-    },
     infoProject:{
       type: Array,
-      required: true
     }
   },
 }

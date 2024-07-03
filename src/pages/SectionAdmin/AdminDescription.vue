@@ -1,8 +1,8 @@
 
 <template>
 
-<OneSection v-if="activeSectionDescription === 1" :contact = descriptionProject[0].contact[0] :infoProject = descriptionProject[0].infoProject[0] />
-<TwoSection v-if="activeSectionDescription === 2" :iniciator = descriptionProject[0].iniciator[0] :infoProject = descriptionProject[0].infoProject[0] />
+<OneSection v-if="activeSectionDescription === 1" :infoProject="infoProject" />
+<TwoSection v-if="activeSectionDescription === 2" :infoProject="infoProject" />
 <ThreeSection v-if="activeSectionDescription === 3" :desProject = descriptionProject[0].desProject[0] :infoProject = descriptionProject[0].infoProject[0] />
 <FourSection v-if="activeSectionDescription === 4" :TargetIndicatorsProject = descriptionProject[0].TargetIndicatorsProject[0] :infoProject = descriptionProject[0].infoProject[0] />
 <FiveSection v-if="activeSectionDescription === 5" :TargetIndicatorsProject = descriptionProject[0].TargetIndicatorsProject[0] :infoProject = descriptionProject[0].infoProject[0] />
@@ -47,11 +47,19 @@
 </template>
 
 <script>
+
+/* components */
+
 import OneSection from './sectionAdminDescription/OneSection.vue';
 import TwoSection from './sectionAdminDescription/TwoSection.vue';
 import ThreeSection from './sectionAdminDescription/ThreeSection.vue';
 import FourSection from './sectionAdminDescription/FourSection.vue';
 import FiveSection from './sectionAdminDescription/FiveSection.vue';
+
+/* services */
+
+import ProjectsDataServices from '@/services/ProjectsDataServices'
+
 export default{
     name: "AdminList",
     components: {
@@ -63,103 +71,114 @@ export default{
     },
     data(){
         return{
-        activeSectionDescription: 1,
-        descriptionProject: [
-            {
-                infoProject: 
-                [
-                    {
-                    projectName: "Исследование влияния социокультурных факторов на формирование гражданского общества",
-                    firstName: "Владимир",
-                    middleName: "Николаевич",
-                    lastName: "Морозов",
-                    }
-                ],
-                contact: [
-                    {
-                        firstName: "Владимир",
-                        middleName: "Николаевич",
-                        lastName: "Морозов",
-                        tel: "8-900-888-77-77",
-                        email: "boffagrijuha-4090@yopmail.com"
-                    }
-                ],
-                iniciator: [
-                {
-                        iniciator: "iniciator",
-                        ORGN: "ОРГН",
-                        web: "Веб-сайт инициатора мероприятия",
-                        tel: "8-900-888-77-77",
-                        email: "boffagrijuha-4090@yopmail.com"
-                    },
-                ],
-                desProject:[
-                    {
-                        type: "Тип мероприятия",
-                        OCVD: "ОКВД",
-                        nameProject: "Наименование мероприятия",
-                        goalProject: "Цель мероприятия",
-                        taskProject: "Задача мероприятия",
-                        cityRealizations: "шааомлоа",
-                        dateStart: "Дата начала",
-                        dateExit: "Дата выхода",
-                        dateEnd: "Дата конца",
-                        statusRealization: "Статус реализации",
-                        sourceFinancing: "Источник финансирования",
-                        cost: "66387 млн. руб.",
-                        needСconstruction: "Газоснобжение",
-                        needLandResources: "шааомлоа",
-                    }
-                ],
-                TargetIndicatorsProject:[
-                    {
-                        jobsСonstruction: "45 ед.",
-                        jobsFullCapacity: "45 ед.",
-                        averageSalary: "5 3647 тыс. руб.",
-                        taxes: "6 845 млн. руб.",
-                        capital: "6 45 млн. руб.",
-                        productionVolume: "45 ед.",
-                        revenue: "6 45 млн. руб.", 
-                        expectedEfficiency: "шааомлоа"
-                    }
-                ]
-            }
+          activeSectionDescription: 1,
+          descriptionProject: [
+              {
+                  infoProject:
+                  [
+                      {
+                      projectName: "Исследование влияния социокультурных факторов на формирование гражданского общества",
+                      firstName: "Владимир",
+                      middleName: "Николаевич",
+                      lastName: "Морозов",
+                      }
+                  ],
+                  contact: [
+                      {
+                          firstName: "Владимир",
+                          middleName: "Николаевич",
+                          lastName: "Морозов",
+                          tel: "8-900-888-77-77",
+                          email: "boffagrijuha-4090@yopmail.com"
+                      }
+                  ],
+                  iniciator: [
+                  {
+                          iniciator: "iniciator",
+                          ORGN: "ОРГН",
+                          web: "Веб-сайт инициатора мероприятия",
+                          tel: "8-900-888-77-77",
+                          email: "boffagrijuha-4090@yopmail.com"
+                      },
+                  ],
+                  desProject:[
+                      {
+                          type: "Тип мероприятия",
+                          OCVD: "ОКВД",
+                          nameProject: "Наименование мероприятия",
+                          goalProject: "Цель мероприятия",
+                          taskProject: "Задача мероприятия",
+                          cityRealizations: "шааомлоа",
+                          dateStart: "Дата начала",
+                          dateExit: "Дата выхода",
+                          dateEnd: "Дата конца",
+                          statusRealization: "Статус реализации",
+                          sourceFinancing: "Источник финансирования",
+                          cost: "66387 млн. руб.",
+                          needСconstruction: "Газоснобжение",
+                          needLandResources: "шааомлоа",
+                      }
+                  ],
+                  TargetIndicatorsProject:[
+                      {
+                          jobsСonstruction: "45 ед.",
+                          jobsFullCapacity: "45 ед.",
+                          averageSalary: "5 3647 тыс. руб.",
+                          taxes: "6 845 млн. руб.",
+                          capital: "6 45 млн. руб.",
+                          productionVolume: "45 ед.",
+                          revenue: "6 45 млн. руб.",
+                          expectedEfficiency: "шааомлоа"
+                      }
+                  ]
+              }
+          ],
+          pagination: [
+          {
+            id: 1,
+          },
+          {
+            id: 2,
+          },
+          {
+            id: 3,
+          },
+          {
+            id: 4,
+          },
+          {
+            id: 5,
+          },
         ],
-        pagination: [
-        {
-          id: 1,
-        },
-        {
-          id: 2,
-        },
-        {
-          id: 3,
-        },
-        {
-          id: 4,
-        },
-        {
-          id: 5,
-        },
-      ],  
+          infoProject: [],
         }
-        
-        
+    },
+    mounted() {
+      this.getDetailProject(this.$route.params.id)
     },
     methods:{
-        OpenNextSection(){
-            if (this.activeSectionDescription < 5){
-                this.activeSectionDescription += 1
-            }
-        },
-        PrevNextSection(){
-            if (this.activeSectionDescription > 1){
-                this.activeSectionDescription -= 1
-            }
-        },
-        OpenCurrentSection(id){
-            this.activeSectionDescription = id
+      getDetailProject(id){
+        ProjectsDataServices.getDetailProject(id)
+            .then((response) => {
+              this.infoProject = response.data
+            })
+            .catch((e) => {
+              console.log(e)
+            })
+      },
+      OpenNextSection(){
+        if (this.activeSectionDescription < 5){
+          this.activeSectionDescription += 1
         }
+      },
+      PrevNextSection(){
+        if (this.activeSectionDescription > 1){
+          this.activeSectionDescription -= 1
+        }
+      },
+      OpenCurrentSection(id){
+        this.activeSectionDescription = id
+      }
     }
 }
 </script>

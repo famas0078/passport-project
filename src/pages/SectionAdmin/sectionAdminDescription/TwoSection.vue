@@ -1,6 +1,6 @@
 <template>
 
-    <div class="wrapper">
+    <div class="wrapper mx-3">
         <div class="title">
             <div class="title-top d-flex">
                 {{ infoProject.projectName }}
