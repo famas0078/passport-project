@@ -14,6 +14,7 @@
             .card-item{
                 border-radius: 16px;
                 padding: 25px;
+                
                 background-color: #ffffff;
                 box-shadow: 4px 4px 16px 0px #A7BEA240;
                 height: 100%;
@@ -26,8 +27,9 @@
                         font-size: 28px;
                         font-weight: 550;
                         line-height: 27.66px;
-                        @media screen and (max-width: 110px) {
-                            
+                        @media screen and (max-width:1100px) {
+                            font-size: 20px;
+                            line-height:  19.76px;
                         }
                     }
                     .des-card{
@@ -36,6 +38,10 @@
                         line-height: 24.2px;
                         color: #252434BF;
                         margin-top: 20px;
+                        @media screen and (max-width:1100px) {
+                            font-size: 18px;
+                            line-height:  20px;
+                        }
                     }
                 }
                 .time{
@@ -44,7 +50,12 @@
                     text-align: right;
                     .time_inner{
                         font-size: 40px;
+                        font-weight: 700;
                         color: var(--color-purple);
+                        @media screen and (max-width:1100px) {
+                            font-size: 32px;
+                            line-height:  31.84px;
+                        }
                     }
                 }
             }
