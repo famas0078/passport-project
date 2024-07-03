@@ -1,7 +1,6 @@
 .wrapper-recommendations {
     .container {
         .row {
-            .col-12 {
                 .item-left{
                     margin-right: 30px;
                 }
@@ -9,6 +8,20 @@
                     text-align: left;
                     background: linear-gradient(135deg, #22003B 0.78%, #24003E 33.18%, #2D0048 61.65%, #3C005A 87.18%, #450065 98.97%);
                     border-radius: 15px;
+                    @media screen and (max-width: 600px) {
+                        flex-direction: column;
+                    }
+                    .mobile_img{
+                        display: none;
+                        @media screen and (max-width: 600px) {
+                            display: block;
+                        }
+                    }
+                    .dekstop_img{
+                        @media screen and (max-width: 600px) {
+                        display: none;
+                        }
+                    }
                     .left-container {
                         .title {
                             .big-title {
@@ -22,7 +35,7 @@
                         }
                     }
                 }
-            }
+            
         }
     }
 }
