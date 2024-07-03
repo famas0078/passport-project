@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper-partner">
         <div class="container">
-            <div class="title">
+            <div class="title mt-5" ref="title" :class="{ 'slide-enter-top': animationPlayed.title, 'isVisible': !animationPlayed.title }">
                 Как присоединиться к партнерской программе и зарабатывать на активности своих рефералов?
             </div>
             <div class="row mt-5">
@@ -80,13 +80,13 @@
             </div>
             <div class="group-btn">
                 <div class="btn-to-register d-flex justify-content-center" ref="btnRegister"
-                    :class="{ 'slide-enter-left': animationPlayed.btnRegister,
+                    :class="{ 'slide-enter-top': animationPlayed.btnRegister,
                               'isVisible': !animationPlayed.btnRegister
                 }">
                     <router-link to="" class="btn-a">Зарегистрироваться</router-link>
                 </div>
                 <div class="btn-to-invest d-flex justify-content-center" ref="btnInvest"
-                    :class="{ 'slide-enter-right': animationPlayed.btnInvest,'isVisible': !animationPlayed.btnInvest }">
+                    :class="{ 'slide-enter-top': animationPlayed.btnInvest,'isVisible': !animationPlayed.btnInvest }">
                     <router-link to="" class="btn-a">Начать зарабатывать</router-link>
                 </div>
             </div>
@@ -107,6 +107,7 @@ export default {
                 card4: false,
                 btnRegister: false,
                 btnInvest: false,
+                title: false,
             },
             animationPlayed: {
                 card1: false,
@@ -115,6 +116,7 @@ export default {
                 card4: false,
                 btnRegister: false,
                 btnInvest: false,
+                title: false,
             },
         };
     },
@@ -150,6 +152,9 @@ export default {
                         }else if (entry.target === this.$refs.btnRegister) {
                             this.isVisible.btnRegister = true;
                             this.animationPlayed.btnRegister = true;
+                        }else if (entry.target === this.$refs.title) {
+                            this.isVisible.title = true;
+                            this.animationPlayed.title = true;
                         }
                     } else {
                         if (entry.target === this.$refs.card1) {
@@ -164,6 +169,8 @@ export default {
                             this.isVisible.btnRegister = false;
                         }else if (entry.target === this.$refs.btnInvest) {
                             this.isVisible.btnInvest = false;
+                        }else if (entry.target === this.$refs.title) {
+                            this.isVisible.title = false;
                         }
                     }
                 });
@@ -175,6 +182,7 @@ export default {
             this.observer.observe(this.$refs.card4);
             this.observer.observe(this.$refs.btnRegister);
             this.observer.observe(this.$refs.btnInvest);
+            this.observer.observe(this.$refs.title);
         },
     },
 };
@@ -187,7 +195,9 @@ export default {
 .slide-enter-left {
     animation: slide-enter-left 0.8s ease-out;
 }
-
+.slide-enter-top {
+    animation: slide-enter-top 0.8s ease-out;
+}
 .slide-enter-right {
     animation: slide-enter-right 0.8s ease-out;
 }
@@ -203,7 +213,17 @@ export default {
         transform: translateX(0);
     }
 }
+@keyframes slide-enter-top {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
 
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 @keyframes slide-enter-right {
     0% {
         opacity: 0;
