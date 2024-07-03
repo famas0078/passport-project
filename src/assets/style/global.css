@@ -24,7 +24,7 @@ body{
 .d-flex{
     display: flex;
 }
-.card{
+.card-w{
     margin: 30px 0;
 }
 .text-danger{

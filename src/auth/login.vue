@@ -1,7 +1,7 @@
 
 <template>
     <div class="wrapper-auth h-100 w-100 d-flex align-items-center justify-content-center">
-      <div class="alert" :class="{ 'show': success }" >
+      <div class="alert" :class="{ 'show': success, 'error': error }" >
         {{ success ? 'Вход успешен!' : 'Ошибка входа' }}
       </div>
 
@@ -20,7 +20,7 @@
           <div class="form w-100 mt-5">
             <form @submit.prevent="login">
               <div class="form-group position-relative mb-3">
-                <input class="form-control" type="text" required="" v-model="form.email" placeholder="Логин">
+                <input class="form-control" type="text" required="" v-model="form.login" placeholder="Логин">
               </div>
               <div class="form-group position-relative">
                 <input class="form-control" :type="active?'password':'text'" v-model="form.password" required="" placeholder="Пароль">
@@ -29,12 +29,12 @@
                   <img v-else class="svg-icon" src="@/assets/img/auth/eye-open.svg" alt="">
                 </div>
               </div>
-              <div class="wrapper-btn mt-5">
-                <button class="btn b-primary" type="submit">
-                  Войти
-                </button>
-              </div>
             </form>
+            <div class="wrapper-btn mt-5">
+              <div class="btn b-primary" @click="login()">
+                Войти
+              </div>
+            </div>
           </div>
         </div>
         <div class="container-image col-12 col-md-6 col-lg-8">
@@ -55,7 +55,7 @@ export default ({
       success: false,
       error: false,
       form: {
-        email: '',
+        login: '',
         password: ''
       },
       next: '',
@@ -72,30 +72,40 @@ export default ({
       this.active = !this.active;
     },
     async login(){
-      if (!this.form.email) {
-        console.log("введите почту")
-        return;
-      }
-      if (!this.form.email) {
-        console.log("введите пароль")
-        return;
-      }
-      this.$router.replace({ query: {} });
-      await UserDataService.login(this.form)
-          .then((response) => {
-            localStorage.setItem('authToken', response.data.access_token);
-            localStorage.setItem('User', JSON.stringify({ email: this.form.email, user: true }));
-            console.log(localStorage.getItem('authToken'))
-            this.success = true;
-            console.log(this.seccuss)
-            setTimeout(()=>{
-              this.$router.push(this.next);
-            }, 2000)
-          })
-          .catch( e => {
-            console.log(e)
-          })
+      try {
+        if (!this.form.login) {
+          console.log("введите почту")
+          return;
+        }
+        if (!this.form.password) {
+          console.log("введите пароль")
+          return;
+        }
 
+        await UserDataService.login(this.form)
+            .then((response) => {
+              localStorage.setItem('authToken', response.data.access_token);
+              localStorage.setItem('User', JSON.stringify({ login: this.form.login, user: true }));
+              console.log(localStorage.getItem('authToken'))
+              this.error = false;
+              this.success = true;
+              setTimeout(() => {
+                this.$router.push(this.next);
+              }, 2000)
+            })
+            .catch(e => {
+              this.success = false;
+              this.error = true;
+              setTimeout(() => {
+                console.log(this.success)
+                console.log(e)
+              }, 2000)
+            })
+      } catch (error) {
+        localStorage.removeItem('User')
+        localStorage.removeItem('authToken')
+        console.error(error);
+      }
     }
   }
 })

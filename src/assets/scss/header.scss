@@ -6,10 +6,11 @@
 
   }
   .wrapper-header-middle{
+    display: block;
     gap: 36px;
     align-items: center;
     @media screen and (max-width: 1120px) {
-      display: none;
+      display: none !important;
     }
     .middle-item{
       font-weight: 400;
@@ -22,7 +23,7 @@
     align-items: center;
     gap: 16px;
     @media screen and (max-width: 1120px) {
-      display: none;
+      display: none !important;
     }
     .wrapper-header-btn-register{
       color: var(--text-color);
@@ -36,6 +37,7 @@
     }
     .wrapper-header-btn-login{
       color: white;
+      text-decoration: none;
       background-color: var(--bg-color-green-btn);
     }
   }

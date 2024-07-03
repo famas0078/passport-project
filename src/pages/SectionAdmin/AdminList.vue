@@ -1,7 +1,7 @@
 
 <template>
   <div class="wrapper container">
-    <HeaderAdmin />
+    <HeaderAdmin :status="status"/>
     <div class="admin-list">
       <table class="w-100 " border="0" cellspacing="0" cellpadding="0">
         <thead class="wrapper_table">
@@ -60,12 +60,14 @@
 
 <script>
 import HeaderAdmin from "@/components/headerAdmin/headerAdmin.vue";
+import СrowdfundingDataServices from "@/services/СrowdfundingDataServices";
 
 export default {
   name: "AdminList",
   components: { HeaderAdmin },
   data() {
     return {
+      status: null,
       arrayProject: [
         {
           id: 1,
@@ -190,10 +192,23 @@ export default {
       ],
     }
   },
+  mounted(){
+    this.getStatus()
+  },
   methods: {
     OpenDescriptionProject(id) {
-    this.$router.push({ name: 'AdminDescriptionPage', params: { id: id } });
-  }
+      this.$router.push({ name: 'AdminDescriptionPage', params: { id: id } });
+    },
+    async getStatus() {
+      await СrowdfundingDataServices.getStatus()
+          .then( (response) => {
+            this.status = response.data
+            console.log(this.status)
+          })
+          .catch((e) => {
+            console.log(e)
+          })
+    }
   }
 }
 </script>

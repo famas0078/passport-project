@@ -9,7 +9,7 @@ export default {
     ActiveSlide: {
       type: Number,
       required: true
-    }
+    },
   },
   components:{
     Header,

@@ -4,18 +4,18 @@
      <img src="../../assets/img/Logo.svg" alt="Logo Rantie">
    </div>
    <div class="wrapper-header-middle d-flex justify-content-around">
-     <div class="middle-item">О платформе</div>
-     <div class="middle-item">Инвестировать</div>
-     <div class="middle-item">Разместить проект</div>
-     <div class="middle-item">Стать партнером</div>
+     <div class="middle-item cursor-pointer">О платформе</div>
+     <div class="middle-item cursor-pointer">Инвестировать</div>
+     <div class="middle-item cursor-pointer">Разместить проект</div>
+     <div class="middle-item cursor-pointer">Стать партнером</div>
    </div>
    <div class="wrapper-header-btn d-flex justify-content-between">
-     <div class="wrapper-header-btn-register header-btn">
+     <div class="wrapper-header-btn-register header-btn cursor-pointer">
        Регистрация
      </div>
-     <div class="wrapper-header-btn-login header-btn">
+     <router-link class="wrapper-header-btn-login header-btn cursor-pointer" to="/admin">
        Войти
-     </div>
+     </router-link>
    </div>
    <div class="wrapper-header-mobile">
      <div class="wrapper-icon-menu" :class="{ open: isOpen }" >

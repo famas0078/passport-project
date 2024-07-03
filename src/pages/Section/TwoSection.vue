@@ -7,7 +7,11 @@ export default {
     ActiveSlide: {
       type: Number,
       required: true
-    }
+    },
+    form:{
+      type: Object,
+      required: true
+    },
   },
   name: "TwoSection"
 }
@@ -28,31 +32,31 @@ export default {
       <label class="form-input-item-label">
         Имя
       </label>
-      <input class="form-input-item-input" type="text" placeholder="Имя">
+      <input class="form-input-item-input" type="text" placeholder="Имя" :value="form.firstName" @input="$emit('update:form', { ...form, firstName: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label">
         Отчество
       </label>
-      <input class="form-input-item-input" type="text" placeholder="Отчество">
+      <input class="form-input-item-input" type="text" placeholder="Отчество" :value="form.middleName" @input="$emit('update:form', { ...form, middleName: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label">
         Фамилия
       </label>
-      <input class="form-input-item-input" type="text" placeholder="Фамилия">
+      <input class="form-input-item-input" type="text" placeholder="Фамилия" :value="form.lastName" @input="$emit('update:form', { ...form, lastName: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label">
         Телефон
       </label>
-      <input class="form-input-item-input" type="tel" placeholder="Телефон">
+      <input class="form-input-item-input" type="tel" placeholder="Телефон" :value="form.phone" @input="$emit('update:form', { ...form, phone: $event.target.value })">
     </div>
     <div class="form-input-item">
       <label class="form-input-item-label">
         Электронная почта
       </label>
-      <input class="form-input-item-input"  type="email" placeholder="Электронная почта">
+      <input class="form-input-item-input"  type="email" placeholder="Электронная почта" :value="form.email" @input="$emit('update:form', { ...form, email: $event.target.value })">
     </div>
   </div>
 </div>
