@@ -4,8 +4,10 @@
         <OneSection />
         <Recommendations />
         <Faq />
+        <HoWeSelect />
         <BecomeInvestor />
         <Advantages />
+        <Partner />
         <Footer />
     </div>
 </template>
@@ -18,6 +20,8 @@ import Faq from "@/components/faq/index.vue"
 import Advantages from "@/components/advantagesLending/advantages.vue"
 import BecomeInvestor from "@/components/becomeInvestor/becomeInvestor.vue"
 import OneSection from "@/components/descriprionOneSection/index.vue"
+import HoWeSelect from "@/components/hoWeSelect/hoWeSelect.vue"
+import Partner from "@/components/partner/index.vue"
 export default {
     name: "indexLending",
     components: {
@@ -28,6 +32,8 @@ export default {
         Advantages,
         BecomeInvestor,
         OneSection,
+        HoWeSelect,
+        Partner,
     }
 }
 </script>
