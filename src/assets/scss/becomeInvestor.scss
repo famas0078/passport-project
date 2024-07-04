@@ -4,6 +4,11 @@
     background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFB 100%);
     .containers{
         .row{
+            .dekstop_img{
+                @media screen and (max-width: 1200px) {
+                    display: none;
+                }
+            }
             .col-4{
                 .cards{ 
                     
