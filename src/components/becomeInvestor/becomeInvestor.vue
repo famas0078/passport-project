@@ -5,7 +5,7 @@
                 Стать инвестором за 7 простых шагов
             </h1>
             <div class="row d-flex justify-content-between">
-                <div class="col-6">
+                <div class="col-6 dekstop_img">
                     <img src="../../assets/img/BecomInvestorDekstop.svg" alt="">
                 </div>
                 <div class="col-4">
