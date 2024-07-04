@@ -1,0 +1,35 @@
+.wrapper-how-we-selected{
+    overflow: hidden;
+    display: flex;
+    @media screen and (max-width: 1200px) {
+        flex-direction: column;
+    }
+    .wrapper-how-we-selected img{
+        @media screen and (max-width: 1200px) {
+            width: 280px;
+            height: 202px;
+        }
+    }
+    .wrapper-text{
+        .title{
+            color: var(--text-color);
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 47.76px;
+            @media screen and (max-width: 1200px) {
+                font-size: 30px;
+                line-height: 30.76px;
+            }
+        }
+        .small-title{
+            color: #252434BF;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 29.05px;
+            @media screen and (max-width: 1200px) {
+                font-size: 20px;
+                line-height: 18.76px;
+            }
+        }
+    }
+}
