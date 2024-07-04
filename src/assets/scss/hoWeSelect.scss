@@ -1,13 +1,21 @@
 .wrapper-how-we-selected{
     overflow: hidden;
     display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
     @media screen and (max-width: 1200px) {
         flex-direction: column;
     }
-    .wrapper-how-we-selected img{
+    .mobile_img{
+        display: none;
         @media screen and (max-width: 1200px) {
-            width: 280px;
-            height: 202px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .dekstop_img{
+        @media screen and (max-width: 1200px) {
+            display: none;
         }
     }
     .wrapper-text{
@@ -17,8 +25,10 @@
             font-weight: 700;
             line-height: 47.76px;
             @media screen and (max-width: 1200px) {
-                font-size: 30px;
-                line-height: 30.76px;
+                margin-bottom: 16px;
+                margin-top: 20px;
+                font-size: 28px;
+                line-height: 27px;
             }
         }
         .small-title{
