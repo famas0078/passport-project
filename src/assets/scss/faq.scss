@@ -1,7 +1,11 @@
 .wrapper-faq{
+  margin-top: 160px;
     .container{
         .title{
-            color: var(--text-color)
+            color: var(--text-color);
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 48px;
         }
         .accordions{
             .accordion-item{

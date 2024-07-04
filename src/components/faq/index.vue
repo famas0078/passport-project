@@ -1,10 +1,10 @@
 <template>
     <div class="wrapper-faq">
       <div class="container">
-        <h1 class="title">
+        <h1 class="title" ref="card1" :class="{ 'slide-enter-top': animationPlayed.card1, 'isVisible': !animationPlayed.card1 }">
           вопрос/ответ
         </h1>
-        <div class="accordions">
+        <div class="accordions" ref="card2" :class="{ 'slide-enter-top': animationPlayed.card2, 'isVisible': !animationPlayed.card2 }">
           <div class="accordion-item" v-for="item in accordions" :key="item.id"
             @click="OpenAccordion(item.id)">
             <div class="accordions-title d-flex justify-content-between">
@@ -34,6 +34,14 @@ export default {
     data() {
         return {
             ActiveAccordion: 0,
+            isVisible: {
+                card1: false,
+                card2: false,
+            },
+            animationPlayed: {
+                card1: false,
+                card2: false,
+            },
             accordions:
                 [
                     {
@@ -64,6 +72,9 @@ export default {
                 ]
         }
     },
+    mounted(){
+      this.initIntersectionObserver();
+    },
     methods: {
         OpenAccordion(id) {
             if (this.ActiveAccordion === id) {
@@ -72,7 +83,86 @@ export default {
                 this.ActiveAccordion = id
             }
 
-        }
+        },
+        initIntersectionObserver() {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5,
+            };
+
+            this.observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target === this.$refs.card1) {
+                            this.isVisible.card1 = true;
+                            this.animationPlayed.card1 = true;
+                        } else if (entry.target === this.$refs.card2) {
+                            this.isVisible.card2 = true;
+                            this.animationPlayed.card2 = true;
+                        } 
+                    } else {
+                        if (entry.target === this.$refs.card1) {
+                            this.isVisible.card1 = false;
+                        } else if (entry.target === this.$refs.card2) {
+                            this.isVisible.card2 = false;
+                        } 
+                    }
+                });
+            }, options);
+
+            this.observer.observe(this.$refs.card1);
+            this.observer.observe(this.$refs.card2);
+        },
     }
 }
 </script>
+
+<style scoped>
+.isVisible{
+    opacity: 0;
+}
+.slide-enter-left {
+    animation: slide-enter-left 0.8s ease-out;
+}
+.slide-enter-top {
+    animation: slide-enter-top 0.8s ease-out;
+}
+.slide-enter-right {
+    animation: slide-enter-right 0.8s ease-out;
+}
+
+@keyframes slide-enter-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide-enter-top {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slide-enter-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+</style>
