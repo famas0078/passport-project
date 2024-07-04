@@ -4,11 +4,11 @@
             <h1 class="title">
                 Стать инвестором за 7 простых шагов
             </h1>
-            <div class="row d-flex justify-content-between">
-                <div class="col-6 dekstop_img">
+            <div class="row">
+                <div class="col-xl-8 dekstop_img">
                     <img src="../../assets/img/BecomInvestorDekstop.svg" alt="">
                 </div>
-                <div class="col-4">
+                <div class="col-xl-4 col-md-12">
                     <div class="cards">
                         <div class="card-item">
                             <img src="../../assets/img/1Circle.svg" alt="">
