@@ -2,7 +2,10 @@
     <div class="wrapper-one-section">
         <div class="container">
             <div class="row">
-                <div class="title col-xl-6 mt-4 col-lg-12 col-md-12 col-12">
+                <div class="image mobile-image col-xl-6 mt-4 col-lg-6 col-md-12 col-12">
+                    <img src="../../assets/img/OneSection.svg" alt="" width="280px" height="173px">
+                </div>
+                <div class="title col-xl-6 col-lg-12 col-md-12 col-12">
                     <div class="big-title">
                         <span class="big-title-inner">
                             Инвестируйте<br>
