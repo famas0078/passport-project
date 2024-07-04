@@ -3,9 +3,9 @@
 
 <OneSection v-if="activeSectionDescription === 1" :infoProject="infoProject" />
 <TwoSection v-if="activeSectionDescription === 2" :infoProject="infoProject" />
-<ThreeSection v-if="activeSectionDescription === 3" :desProject = descriptionProject[0].desProject[0] :infoProject = descriptionProject[0].infoProject[0] />
-<FourSection v-if="activeSectionDescription === 4" :TargetIndicatorsProject = descriptionProject[0].TargetIndicatorsProject[0] :infoProject = descriptionProject[0].infoProject[0] />
-<FiveSection v-if="activeSectionDescription === 5" :TargetIndicatorsProject = descriptionProject[0].TargetIndicatorsProject[0] :infoProject = descriptionProject[0].infoProject[0] />
+<ThreeSection v-if="activeSectionDescription === 3" :infoProject="infoProject" />
+<FourSection v-if="activeSectionDescription === 4" :infoProject="infoProject" />
+<FiveSection v-if="activeSectionDescription === 5" :putStatusProject="putStatusProject" :infoProject="infoProject" />
 <div class="wrapper-pagination">
     <div class="paggination">
         <div class="wrapper">
@@ -71,7 +71,7 @@ export default{
     },
     data(){
         return{
-          activeSectionDescription: 1,
+          activeSectionDescription: parseInt(localStorage.getItem('activeDetail') ? localStorage.getItem('activeDetail') : 1),
           descriptionProject: [
               {
                   infoProject:
@@ -161,6 +161,7 @@ export default{
         ProjectsDataServices.getDetailProject(id)
             .then((response) => {
               this.infoProject = response.data
+              console.log(this.infoProject)
             })
             .catch((e) => {
               console.log(e)
@@ -169,15 +170,42 @@ export default{
       OpenNextSection(){
         if (this.activeSectionDescription < 5){
           this.activeSectionDescription += 1
+          localStorage.setItem('activeDetail', this.activeSectionDescription)
         }
       },
       PrevNextSection(){
         if (this.activeSectionDescription > 1){
           this.activeSectionDescription -= 1
+          localStorage.setItem('activeDetail', this.activeSectionDescription)
         }
       },
       OpenCurrentSection(id){
         this.activeSectionDescription = id
+        localStorage.setItem('activeDetail', this.activeSectionDescription)
+      },
+      putStatusProject(status){
+        try {
+          if (status){
+            ProjectsDataServices.putAcceptProject(this.$route.params.id)
+                .then((response) => {
+                  console.log(response)
+                })
+                .catch((e) => {
+                  console.log(e)
+                })
+          } else {
+            ProjectsDataServices.putRejectProject(this.$route.params.id)
+                .then((response) => {
+                  console.log(response)
+                })
+                .catch((e) => {
+                  console.log(e)
+                })
+          }
+        }
+        catch (e) {
+          console.log(e)
+        }
       }
     }
 }

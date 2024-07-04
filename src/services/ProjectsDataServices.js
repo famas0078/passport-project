@@ -9,17 +9,16 @@ export default {
             }
         })
     },
+
     getAllProjects(pageSize, page, statusId, name) {
         const params = {
             pageSize: pageSize,
             page: page
         }
-        if (statusId && statusId !== 0) {
-            console.log('statusId TRUE')
+        if (statusId && statusId !== '0') {
             params['statusId'] = statusId
         }
         if (name) {
-            console.log('name TRUE')
             params['name'] = name
         }
         console.log(params)
@@ -32,6 +31,22 @@ export default {
         return http.get('/crowdfunding/one-project', {
             params: {
                 id: id,
+            }
+        })
+    },
+
+    putAcceptProject(projectId) {
+        return http.put('/crowdfunding/accept-project', {}, {
+            params: {
+                projectId: parseInt(projectId),
+            }
+        });
+    },
+
+    putRejectProject(projectId) {
+        return http.put('/crowdfunding/reject-project', {}, {
+            params: {
+                projectId: parseInt(projectId),
             }
         })
     },

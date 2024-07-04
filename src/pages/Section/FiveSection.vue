@@ -13,6 +13,11 @@ export default {
       required: true
     },
   },
+  data() {
+    return {
+      phone: ""
+    };
+  },
   components: {MultiSlider}
 }
 </script>
@@ -29,35 +34,35 @@ export default {
         <label class="form-input-item-label text-left">
           Число создаваемых рабочих мест на период строительства, ед.
         </label>
-        <input class="form-input-item-input" type="text" placeholder="ед." :value="form.countOfNewJobs" @input="$emit('update:form', { ...form, countOfNewJobs: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input class="form-input-item-input" type="number" placeholder="ед." :value="form.countOfNewJobs" @input="$emit('update:form', { ...form, countOfNewJobs: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
 
       <div class="form-input-item">
         <label class="form-input-item-label text-left">
           Число создаваемых рабочих мест при выходе на проектную мощность
         </label>
-        <input class="form-input-item-input" type="text" placeholder="ед." :value="form.countOfNewJobsAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, countOfNewJobsAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input class="form-input-item-input" type="number" placeholder="ед." :value="form.countOfNewJobsAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, countOfNewJobsAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
 
       <div class="form-input-item">
         <label class="form-input-item-label text-left">
           Средняя номинально начисленная заработная плата работников
         </label>
-        <input class="form-input-item-input" type="text" placeholder="тыс. руб." :value="form.avarageSalary" @input="$emit('update:form', { ...form, avarageSalary: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input class="form-input-item-input" type="number" placeholder="тыс. руб." :value="form.avarageSalary" @input="$emit('update:form', { ...form, avarageSalary: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
 
       <div class="form-input-item">
         <label class="form-input-item-label text-left">
           Объем налоговых платежей при выходе на проектную мощность
         </label>
-        <input class="form-input-item-input" type="text" placeholder="млн руб." :value="form.averageTaxAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, averageTaxAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input class="form-input-item-input" type="number" placeholder="млн руб." :value="form.averageTaxAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, averageTaxAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
 
       <div class="form-input-item">
         <label class="form-input-item-label text-left">
-          Объем первоначальных инвестиций в основной капитал ------
+          Объем первоначальных инвестиций в основной капитал
         </label>
-        <input class="form-input-item-input" type="text" placeholder="млн руб. отсутствует" :value="form.amountOfInitialInvestmentOfMainCapital" @input="$emit('update:form', { ...form, amountOfInitialInvestmentOfMainCapital: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input class="form-input-item-input" type="number" placeholder="млн руб. отсутствует" :value="form.amountOfInitialInvestmentOfMainCapital" @input="$emit('update:form', { ...form, amountOfInitialInvestmentOfMainCapital: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
 
       <div class="form-input-item">
@@ -65,14 +70,14 @@ export default {
           Объем производства в натуральных показателях при выходе <br/>
           на проектную мощность
         </label>
-        <input class="form-input-item-input" type="text" placeholder="ед." :value="form.amountOfOutputAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, amountOfOutputAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input class="form-input-item-input" type="number" placeholder="ед." :value="form.amountOfOutputAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, amountOfOutputAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
 
       <div class="form-input-item">
         <label class="form-input-item-label text-left">
           Выручка при выходе на проектную мощность
         </label>
-        <input class="form-input-item-input" type="text" placeholder="млн руб." :value="form.revenueOutputAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, revenueOutputAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <input class="form-input-item-input" type="number" placeholder="млн руб." :value="form.revenueOutputAfterWentOnProductionCapacity" @input="$emit('update:form', { ...form, revenueOutputAfterWentOnProductionCapacity: parseInt($event.target.value) })" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
 
       <div class="form-input-item">

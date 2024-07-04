@@ -3,7 +3,7 @@
     <div class="wrapper mx-3">
         <div class="title">
             <div class="title-top d-flex">
-                {{ infoProject.projectName }}
+                {{ infoProject.name }}
             </div>
             <div class="title-under d-flex">
                 {{ infoProject.firstName }} {{ infoProject.middleName }} {{ infoProject.lastName }}
@@ -11,7 +11,7 @@
         </div>
         <div class="description">
             <div class="description-title">
-                Сведения о контактном лице
+                Сведения об инициаторе мероприятия (проекта)
             </div>
 
             <div class="item d-flex">
@@ -19,31 +19,31 @@
                     Инициатор мероприятия 
                 </div>
                 <div class="item-under">
-                   {{ iniciator.iniciator }}
+                   {{ infoProject.initiator }}
                 </div>
                 <div class="item-title">
                     ОРГН
                 </div>
                 <div class="item-under">
-                    {{ iniciator.ORGN }}
+                    {{ infoProject.OGRN }}
                 </div>
                 <div class="item-title">
                     Телефон инициатора мероприятия 
                 </div>
                 <div class="item-under">
-                    {{ iniciator.tel }}
+                    {{ infoProject.initiatorPhone }}
                 </div>
                 <div class="item-title">
                     Email инициатора мероприятия  
                 </div>
                 <div class="item-under">
-                    {{ iniciator.email }}
+                    {{ infoProject.initiatorEmail }}
                 </div>
                 <div class="item-title">
                     Веб-сайт инициатора мероприятия
                 </div>
                 <div class="item-under">
-                    {{ iniciator.web }}
+                    {{ infoProject.initiatorSite }}
                 </div>
             </div>
         </div>
@@ -55,14 +55,9 @@
 export default{
     name: "OneSectionAdmin",
     props:{
-    iniciator:{
+      infoProject:{
         type: Array,
-        required: true
-    },
-    infoProject:{
-      type: Array,
-      required: true
-    }
+      },
   },
 }
 </script>
