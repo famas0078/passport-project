@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper-recommendations">
+    <div class="wrapper-recommendations" id="platform">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 item-wrapper" ref="card1" :class="{ 'slide-enter-left': animationPlayed.card1, 'isVisible': !animationPlayed.card1 }">

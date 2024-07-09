@@ -1,0 +1,157 @@
+.wrapper_howCreateProject{
+  margin-top: 315px;
+  .container{
+    position: relative;
+    .title{
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 47.76px;
+      margin-bottom: 60px;
+    }
+    .Arrow_big_one_img{
+      position: absolute;
+      left: -100px;
+      top: 260px;
+      @media screen and (max-width: 1550px) {
+        width: 1500px;
+        left: -85px;
+      }
+      @media screen and (max-width: 1520px) {
+        width: 1460px;
+        left: -70px;
+      }
+      @media screen and (max-width: 1494px) {
+      display: none;
+      }
+    }
+    .Arrow_big_img{
+      position: absolute;
+      left: -100px;
+      top: 550px;
+      @media screen and (max-width: 1550px) {
+        width: 1500px;
+        left: -85px;
+      }
+      @media screen and (max-width: 1520px) {
+        width: 1460px;
+        left: -70px;
+      }
+      @media screen and (max-width: 1494px) {
+        display: none;
+      }
+    }
+    .desktop{
+      @media screen and (max-width: 1200px) {
+        display: none;
+      }
+      .row{
+        .card-item{
+          .card-item-inner{
+            padding: 20px;
+            position: relative;
+            .Arrow_img{
+              position: absolute;
+              left: 390px;
+              top: 25px;
+              @media screen and (max-width: 1400px) {
+                left: 340px;
+                top: 25px;
+              }
+              @media screen and (max-width: 1200px) {
+                display: none;
+              }
+            }
+            .title{
+              color: rgba(37, 36, 52, 1);
+              font-weight: 550;
+              font-size: 28px;
+              line-height: 27.66px;
+              display: flex;
+              flex-direction: column;
+              text-align: left;
+            }
+            .description{
+              font-size: 20px;
+              font-weight: 400;
+              line-height: 24.2px;
+              color: rgba(37, 36, 52, 0.75);
+              display: flex;
+              flex-direction: column;
+              text-align: left;
+              ul{
+                list-style: disc;
+                color: rgba(37, 36, 52, 0.75);
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                line-height: 24.2px;
+                margin: 1px 1px !important;
+                li{
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .mobile{
+      @media screen and (min-width: 1200px) {
+        display: none;
+      }
+      .paggination{
+        gap: 20px;
+      }
+      .row{
+        .card-item{
+          .card-item-inner{
+            padding: 20px;
+            position: relative;
+            .Arrow_img{
+              position: absolute;
+              left: 390px;
+              top: 25px;
+              @media screen and (max-width: 1400px) {
+                left: 340px;
+                top: 25px;
+              }
+              @media screen and (max-width: 1200px) {
+                display: none;
+              }
+            }
+            .title{
+              color: rgba(37, 36, 52, 1);
+              font-weight: 550;
+              font-size: 28px;
+              line-height: 27.66px;
+              display: flex;
+              flex-direction: column;
+              text-align: left;
+            }
+            .description{
+              font-size: 20px;
+              font-weight: 400;
+              line-height: 24.2px;
+              color: rgba(37, 36, 52, 0.75);
+              display: flex;
+              flex-direction: column;
+              text-align: left;
+              ul{
+                list-style: disc;
+                color: rgba(37, 36, 52, 0.75);
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                line-height: 24.2px;
+                margin: 1px 1px !important;
+                li{
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
