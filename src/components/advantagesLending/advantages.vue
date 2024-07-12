@@ -240,17 +240,14 @@
                                     <img src="../../assets/img/8.svg" alt="" height="167px" width="205px">
                                 </div>
                                 <h3 class="title-card-register">
-                                    Зарегистрируйтесь и убедитесь сами!
+                                  Создайте свой проект
                                 </h3>
                                 <div class="des-card flex-grow-1">
-                                    Регистрируйтесь и узнайте все преимущества первым лицом. Ощутите разницу сами!
+                                  На этом этапе выполните все необходимые шаги для запуска своего проекта в действие.
                                 </div>
                                 <div class="group-btn">
                                     <div class="btn-to-register d-flex justify-content-center">
                                         <router-link to="" class="btn-a">Зарегистрироваться</router-link>
-                                    </div>
-                                    <div class="btn-to-invest d-flex justify-content-center">
-                                        <router-link to="" class="btn-a">Начать инвестировать</router-link>
                                     </div>
                                 </div>
                             </div>

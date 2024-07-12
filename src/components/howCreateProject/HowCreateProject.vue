@@ -142,7 +142,9 @@
                 На этом этапе выполните все необходимые шаги для запуска своего проекта в действие.
               </div>
               <div class="button-project">
-                Заполнить паспорт проекта
+                <router-link to="/passport" class="button-project-inner">
+                  Заполнить паспорт проекта
+                </router-link>
               </div>
             </div>
           </div>
@@ -328,6 +330,16 @@ export default {
 </script>
 
 <style scoped>
+.button-project-inner{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(157, 98, 245, 1);
+  border-radius: 8px;
+  padding: 12px 80px;
+}
+.button-project{
+  margin-top: 24px;
+}
 .slide-enter {
   animation: slide-enter 0.5s ease-out;
 }

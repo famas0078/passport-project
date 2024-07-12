@@ -19,14 +19,11 @@
                         Начните вести финансово здоровый образ жизни, помогая городам стать комфортными, креативными и
                         процветающими.
                     </div>
-                    <div class="group-btn">
-                        <div class="btn-to-register d-flex justify-content-center" ref="card5" :class="{ 'slide-enter-left': animationPlayed.card5, 'isVisible': !animationPlayed.card5 }">
-                            <router-link to="" class="btn-a">Присоединиться к сообществу</router-link>
-                        </div>
-                        <div class="btn-to-invest d-flex justify-content-center" ref="card6" :class="{ 'slide-enter-right': animationPlayed.card6, 'isVisible': !animationPlayed.card6 }">
-                            <router-link to="" class="btn-a">Создать личный кабинет</router-link>
-                        </div>
+                  <div class="group-btn">
+                    <div class="btn-to-register d-flex justify-content-center" ref="card5" :class="{ 'slide-enter-left': animationPlayed.card5, 'isVisible': !animationPlayed.card5 }">
+                      <router-link to="/passport" class="btn-a">Создать свой проект</router-link>
                     </div>
+                  </div>
                 </div>
                 <div class="image dekstop-image col-xl-6 mt-4 col-lg-6 col-md-12 col-12" ref="card7" :class="{ 'slide-enter-top': animationPlayed.card7, 'isVisible': !animationPlayed.card7 }">
                     <img src="../../assets/img/OneSection.svg" alt="">
@@ -90,9 +87,6 @@ export default {
                         }else if (entry.target === this.$refs.card5) {
                             this.isVisible.card5 = true;
                             this.animationPlayed.card5 = true;
-                        }else if (entry.target === this.$refs.card6) {
-                            this.isVisible.card6 = true;
-                            this.animationPlayed.card6 = true;
                         }else if (entry.target === this.$refs.card7) {
                             this.isVisible.card7 = true;
                             this.animationPlayed.card7 = true;
@@ -108,8 +102,6 @@ export default {
                             this.isVisible.card4 = false;
                         }else if (entry.target === this.$refs.card5) {
                             this.isVisible.card5 = false;
-                        }else if (entry.target === this.$refs.card6) {
-                            this.isVisible.card6 = false;
                         }else if (entry.target === this.$refs.card7) {
                             this.isVisible.card7 = false;
                         }
@@ -122,7 +114,6 @@ export default {
             this.observer.observe(this.$refs.card3);
             this.observer.observe(this.$refs.card4);
             this.observer.observe(this.$refs.card5);
-            this.observer.observe(this.$refs.card6);
             this.observer.observe(this.$refs.card7);
         },
     },
