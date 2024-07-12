@@ -5,6 +5,7 @@
         <Recommendations />
         <Faq />
         <HoWeSelect />
+        <GoalsPlatform />
         <BecomeInvestor />
         <Advantages />
         <HowCreateProject />
@@ -24,6 +25,7 @@ import OneSection from "@/components/descriprionOneSection/index.vue"
 import HoWeSelect from "@/components/hoWeSelect/hoWeSelect.vue"
 import Partner from "@/components/partner/index.vue"
 import HowCreateProject from "@/components/howCreateProject/HowCreateProject.vue";
+import GoalsPlatform from "@/components/GoalsPlatform/GoalsPlatform.vue"
 export default {
     name: "indexLending",
     components: {
@@ -37,6 +39,7 @@ export default {
         HoWeSelect,
         Partner,
         HowCreateProject,
+        GoalsPlatform,
     }
 }
 </script>

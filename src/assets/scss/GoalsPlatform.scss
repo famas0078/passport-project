@@ -1,0 +1,72 @@
+.wrapper-goalsPlatform{
+  margin-bottom: 100px;
+  .container{
+    .title{
+      color: rgba(37, 36, 52, 1);
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 48px;
+      @media screen and (max-width: 1200px){
+        font-size: 28px;
+        line-height: 28px;
+      }
+    }
+    .row{
+      .img-desktop{
+        @media screen and (max-width: 1200px){
+          display: none;
+        }
+      }
+      .one-card-item{
+        margin-right: 70px;
+        @media screen and (max-width: 1200px){
+          margin-right: 0;
+        }
+      }
+      .two-card-item{
+        margin-left: 70px;
+        @media screen and (max-width: 1200px){
+          margin-left: 0;
+        }
+      }
+      .card-item{
+        .img-mobile{
+          @media screen and (max-width: 1200px){
+            margin-bottom: 25px;
+          }
+          @media screen and (min-width: 1200px){
+            display: none;
+          }
+        }
+        border-radius: 15px;
+        background: rgba(248, 250, 251, 1);
+        padding: 36px 36px 28px 38px;
+
+        .title{
+          text-align: left;
+          color: rgba(37, 36, 52, 1);
+          font-weight: 550;
+          font-size: 28px;
+          line-height: 28px;
+          @media screen and (max-width: 1200px){
+            font-weight: 550;
+            font-size: 20px;
+            line-height: 20px;
+          }
+        }
+        .description{
+          color: rgba(37, 36, 52, 1);
+          margin-top: 20px;
+          text-align: left;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 24px;
+          @media screen and (max-width: 1200px){
+            font-size: 18px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
