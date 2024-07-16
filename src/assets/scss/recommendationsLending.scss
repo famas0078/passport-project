@@ -9,6 +9,7 @@
                 .item-left{
                 }
                 .item {
+                    height: 100%;
                     padding-left: 35px !important;
                     padding-bottom:25px !important ;
                     text-align: left;
@@ -24,6 +25,11 @@
                         @media screen and (max-width: 1200px) {
                             display: block;
                         }
+                    }
+                    .lupa{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
                     }
                     .dekstop_img{
                         @media screen and (max-width: 1200px) {

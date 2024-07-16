@@ -2,7 +2,7 @@
     <div class="wrapper-faq">
       <div class="container">
         <h1 class="title" ref="card1" :class="{ 'slide-enter-top': animationPlayed.card1, 'isVisible': !animationPlayed.card1 }">
-          вопрос/ответ
+          Вопрос/ответ
         </h1>
         <div class="accordions" ref="card2" :class="{ 'slide-enter-top': animationPlayed.card2, 'isVisible': !animationPlayed.card2 }">
           <div class="accordion-item" v-for="item in accordions" :key="item.id"

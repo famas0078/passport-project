@@ -6,6 +6,11 @@
             font-weight: 700;
             font-size: 48px;
             line-height: 48px;
+          @media screen and (max-width: 1200px) {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 31.84px;
+          }
         }
         .accordions{
             .accordion-item{
@@ -15,12 +20,34 @@
                     align-items: center;
                 }
                 .accordions-text{
-                    color: var(--text-color);
+                  color: var(--text-color);
+                  text-align: left;
+                  font-size: 28px;
+                  font-weight: 550;
+                  line-height: 27.66px;
+                  @media screen and (max-width: 1200px) {
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 19.9px;
                     text-align: left;
+
+                  }
                 }
                 .accordions-inner{
-                    padding-top: 24px;
+                  padding-top: 24px;
+                  text-align: left;
+                  font-size: 20px;
+                  font-weight: 400;
+                  line-height: 24.2px;
+                 color:  rgba(37, 36, 52, 0.75);
+                  @media screen and (max-width: 1200px) {
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 20px;
                     text-align: left;
+
+
+                  }
                 }
                 .accordion-enter{
                     animation: accordion-enter 0.5s ease-out;

@@ -1,5 +1,8 @@
 .wrapper_howCreateProject{
   margin-top: 315px;
+  @media screen and (max-width: 1200px) {
+    margin-top: 100px;
+  }
   .container{
     position: relative;
     .title{

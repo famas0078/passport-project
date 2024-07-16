@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper-partner">
+    <div class="wrapper-partner" id="partner">
         <div class="container">
             <div class="title mt-5" ref="title" :class="{ 'slide-enter-top': animationPlayed.title, 'isVisible': !animationPlayed.title }">
                 Как присоединиться к партнерской программе и зарабатывать на активности своих рефералов?
@@ -83,11 +83,11 @@
                     :class="{ 'slide-enter-top': animationPlayed.btnRegister,
                               'isVisible': !animationPlayed.btnRegister
                 }">
-                    <router-link to="" class="btn-a">Зарегистрироваться</router-link>
+                    <router-link to="/passport" class="btn-a">Заполнить паспопт проекта</router-link>
                 </div>
                 <div class="btn-to-invest d-flex justify-content-center" ref="btnInvest"
                     :class="{ 'slide-enter-top': animationPlayed.btnInvest,'isVisible': !animationPlayed.btnInvest }">
-                    <router-link to="" class="btn-a">Начать зарабатывать</router-link>
+                    <router-link to="" class="btn-a"></router-link>
                 </div>
             </div>
         </div>

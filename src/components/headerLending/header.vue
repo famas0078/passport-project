@@ -9,9 +9,9 @@
           </div>
           <div class="menu d-flex" :class="{ show: isMenuVisible }">
             <div class="menu-item"><a href="#platform">О платформе</a></div>
-            <div class="menu-item"><a href="">Инвестировать</a></div>
-            <div class="menu-item"><a href="">Разместить проект</a></div>
-            <div class="menu-item"><a href="">Как присоединиться?</a></div>
+            <div class="menu-item"><a href="#becomeInvestor">Инвестировать</a></div>
+            <div class="menu-item"><a href="#HowCreateProject">Разместить проект</a></div>
+            <div class="menu-item"><a href="#partner">Как присоединиться?</a></div>
             <div class="wrapper-btn">
               <div class="btn">
                 <router-link to="/passport" class="btn-inner">Заполнить анкету</router-link>

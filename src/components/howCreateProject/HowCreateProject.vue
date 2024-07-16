@@ -1,7 +1,7 @@
 
 
 <template>
-<div class="wrapper_howCreateProject">
+<div class="wrapper_howCreateProject" id="HowCreateProject">
   <div class="container">
     <h2 class="title">
       как создать проект?

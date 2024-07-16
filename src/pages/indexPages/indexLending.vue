@@ -6,6 +6,7 @@
         <Faq />
         <HoWeSelect />
         <GoalsPlatform />
+        <SubmitApplication />
         <BecomeInvestor />
         <Advantages />
         <HowCreateProject />
@@ -26,9 +27,11 @@ import HoWeSelect from "@/components/hoWeSelect/hoWeSelect.vue"
 import Partner from "@/components/partner/index.vue"
 import HowCreateProject from "@/components/howCreateProject/HowCreateProject.vue";
 import GoalsPlatform from "@/components/GoalsPlatform/GoalsPlatform.vue"
+import SubmitApplication from "@/components/submitApplication/index.vue";
 export default {
     name: "indexLending",
     components: {
+        SubmitApplication,
         Header,
         Footer,
         Recommendations,

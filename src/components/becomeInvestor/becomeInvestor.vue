@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper-becomeInvestor">
+    <div class="wrapper-becomeInvestor" id="becomeInvestor">
         <div class="containers">
             <h1 class="title">
                 Стать инвестором за 7 простых шагов

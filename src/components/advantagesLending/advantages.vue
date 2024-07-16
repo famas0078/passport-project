@@ -110,17 +110,17 @@
                         <div class="card-item d-flex">
                             <div class="card-text">
                                 <h3 class="title-card-register">
-                                    Зарегистрируйтесь и убедитесь сами!
+                                    Заполните анкету и убедитесь сами!
                                 </h3>
                                 <div class="des-card flex-grow-1">
-                                    Регистрируйтесь и узнайте все преимущества первым лицом. Ощутите разницу сами!
+                                    Заполните анкету и узнайте все преимущества первым лицом. Ощутите разницу сами!
                                 </div>
                                 <div class="group-btn">
                                     <div class="btn-to-register d-flex justify-content-center">
-                                        <router-link to="" class="btn-a">Зарегистрироваться</router-link>
+                                        <router-link to="/passport" class="btn-anketa">Заполнить анкету</router-link>
                                     </div>
                                     <div class="btn-to-invest d-flex justify-content-center">
-                                        <router-link to="" class="btn-a">Начать инвестировать</router-link>
+                                        <router-link to="#becomeInvestor" class="btn-investment">Начать инвестировать</router-link>
                                     </div>
                                 </div>
                             </div>
@@ -245,11 +245,14 @@
                                 <div class="des-card flex-grow-1">
                                   На этом этапе выполните все необходимые шаги для запуска своего проекта в действие.
                                 </div>
-                                <div class="group-btn">
-                                    <div class="btn-to-register d-flex justify-content-center">
-                                        <router-link to="" class="btn-a">Зарегистрироваться</router-link>
-                                    </div>
+                              <div class="group-btn">
+                                <div class="btn-to-register d-flex justify-content-center">
+                                  <router-link to="/passport" class="btn-anketa">Заполнить анкету</router-link>
                                 </div>
+                                <div class="btn-to-invest d-flex justify-content-center">
+                                  <router-link to="#becomeInvestor" class="btn-investment">Начать инвестировать</router-link>
+                                </div>
+                              </div>
                             </div>
                         </div>
                     </div>
