@@ -1,0 +1,83 @@
+.wrapper-SubmitApplication{
+  height: 862px;
+  max-width: 1900px;
+  margin: 0 auto;
+  margin-bottom: 158px;
+  background-image: url("../img/Back.svg");
+  @media screen and (max-width: 700px) {
+    padding-left: 20px;
+  }
+  .right{
+    max-width: 593px;
+    text-align: left;
+    .title{
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 47.76px;
+      color: rgba(255, 255, 255, 1);
+      @media screen and (max-width: 700px) {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 23.88px;
+      }
+    }
+    .description{
+      margin-top: 24px;
+      margin-bottom: 30px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 29.05px;
+      color: rgba(255, 255, 255, 1);
+      @media screen and (max-width: 700px) {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+
+    .group-btn{
+      display: flex;
+      gap: 24px;
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+        gap: 48px;
+
+      }
+      .btn-left{
+        .btn-left-inner{
+          color: rgba(255, 255, 255, 1);
+          background-color: rgba(37, 36, 52, 1);
+          padding: 19px 24px;
+          border-radius: 8px;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 17.91px;
+          @media screen and (max-width: 700px) {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 15.92px;
+          }
+        }
+      }
+      .btn-right{
+        .btn-right-inner{
+          color: rgba(37, 36, 52, 1);
+          background: rgba(255, 255, 255, 1);
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 17.91px;
+          padding: 16px 24px 16px 24px;
+          border-radius: 8px;
+          @media screen and (max-width: 700px) {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 15.92px;
+          }
+
+
+
+        }
+      }
+    }
+  }
+}

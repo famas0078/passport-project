@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper-recommendations">
+    <div class="wrapper-recommendations" id="platform">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 item-wrapper" ref="card1" :class="{ 'slide-enter-left': animationPlayed.card1, 'isVisible': !animationPlayed.card1 }">
@@ -12,7 +12,7 @@
                                 <div class="big-title">
                                     Создавайте личный (семейный) капитал
                                 </div>
-                                <div class="small-title">
+                                <div class="small-title mb-3">
                                     Научитесь им управлять и приумножать. Достигайте свои финансовые цели
                                 </div>
                             </div>
@@ -28,15 +28,15 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 item-wrapper" ref="card2" :class="{ 'slide-enter-right': animationPlayed.card2, 'isVisible': !animationPlayed.card2 }">
                     <div class="item d-flex justify-content-between item-left p-3">
                         <div class="mobile_img">
-                            <img src="../../assets/img/Cloud.svg" alt="">
+                            <img src="../../assets/img/recRak.svg" alt="">
                         </div>
                         <div class="left-container">
                             <div class="title">
                                 <div class="big-title">
-                                    Создавайте личный (семейный) капитал
+                                  Делайте это на благо своего города!
                                 </div>
                                 <div class="small-title">
-                                    Научитесь им управлять и приумножать. Достигайте свои финансовые цели
+                                  Становитесь совладельцем открывающихся в Вашем городе ( и других городах) новых бизнесов
                                 </div>
                             </div>
                             <div class="arrow">
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="dekstop_img">
-                            <img src="../../assets/img/Cloud.svg" alt="">
+                            <img src="../../assets/img/recRak.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -53,15 +53,16 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 item-wrapper" ref="card3" :class="{ 'slide-enter-left': animationPlayed.card3, 'isVisible': !animationPlayed.card3 }">
                     <div class="item d-flex justify-content-between item-left p-3">
                         <div class="mobile_img">
-                            <img src="../../assets/img/Cloud.svg" alt="">
+                            <img src="../../assets/img/loudspeakersvg.svg" alt="">
                         </div>
                         <div class="left-container">
                             <div class="title">
                                 <div class="big-title">
-                                    Создавайте личный (семейный) капитал
+                                  Участвуйте в финснсировании социально-значимых
+                                  и благотворительных проектов
                                 </div>
-                                <div class="small-title">
-                                    Научитесь им управлять и приумножать. Достигайте свои финансовые цели
+                                <div class="small-title mb-3">
+                                  В обмен на эксключивные товары и услуги, специальные бонусы и подарки
                                 </div>
                             </div>
                             <div class="arrow">
@@ -69,30 +70,30 @@
                             </div>
                         </div>
                         <div class="dekstop_img">
-                            <img src="../../assets/img/Cloud.svg" alt="">
+                            <img src="../../assets/img/loudspeakersvg.svg" alt="">
                         </div>
                     </div>
                 </div> 
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12 item-wrapper" ref="card4" :class="{ 'slide-enter-right': animationPlayed.card4, 'isVisible': !animationPlayed.card4 }">
                     <div class="item d-flex justify-content-between item-left p-3">
                         <div class="mobile_img">
-                            <img src="../../assets/img/Cloud.svg" alt="">
+                            <img src="../../assets/img/recLupa.svg" alt="">
                         </div>
                         <div class="left-container">
                             <div class="title">
                                 <div class="big-title">
-                                    Создавайте личный (семейный) капитал
+                                  Получайте больший доход, чем в любом банке
                                 </div>
                                 <div class="small-title">
-                                    Научитесь им управлять и приумножать. Достигайте свои финансовые цели
+                                  А также яркие и положительные эмоции!
                                 </div>
                             </div>
                             <div class="arrow">
                                 <img src="../../assets/img/ArrowRightRecommendations.svg" alt="Стрелка">
                             </div>
                         </div>
-                        <div class="dekstop_img">
-                            <img src="../../assets/img/Cloud.svg" alt="">
+                        <div class="dekstop_img lupa">
+                            <img src="../../assets/img/recLupa.svg" alt="">
                         </div>
                     </div>
                 </div>
