@@ -9,7 +9,7 @@
      <div class="middle-item cursor-pointer">Разместить проект</div>
      <div class="middle-item cursor-pointer">Стать партнером</div>
    </div>
-   <div class="wrapper-header-btn d-flex justify-content-between">favicon.svg
+   <div class="wrapper-header-btn d-flex justify-content-between">
      <router-link class="wrapper-header-btn-login header-btn cursor-pointer" to="/admin">
        Войти
      </router-link>
