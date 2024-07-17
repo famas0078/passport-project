@@ -86,7 +86,6 @@ export default ({
             .then((response) => {
               localStorage.setItem('authToken', response.data.access_token);
               localStorage.setItem('User', JSON.stringify({ login: this.form.login, user: true }));
-              console.log(localStorage.getItem('authToken'))
               this.error = false;
               this.success = true;
               setTimeout(() => {
@@ -97,7 +96,6 @@ export default ({
               this.success = false;
               this.error = true;
               setTimeout(() => {
-                console.log(this.success)
                 console.log(e)
               }, 2000)
             })

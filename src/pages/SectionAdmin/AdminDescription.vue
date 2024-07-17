@@ -1,6 +1,8 @@
 
 <template>
-
+  <div class="alert" :class="{ 'show': success, 'error': error }" >
+    {{ success ? 'Статус успешно изменен!' : 'Ошибка, попробуйте позже!' }}
+  </div>
 <OneSection v-if="activeSectionDescription === 1" :infoProject="infoProject" />
 <TwoSection v-if="activeSectionDescription === 2" :infoProject="infoProject" />
 <ThreeSection v-if="activeSectionDescription === 3" :infoProject="infoProject" />
@@ -71,7 +73,9 @@ export default{
     },
     data(){
         return{
-          activeSectionDescription: parseInt(localStorage.getItem('activeDetail') ? localStorage.getItem('activeDetail') : 1),
+          success: false,
+          error: false,
+          activeSectionDescription: 1,
           descriptionProject: [
               {
                   infoProject:
@@ -160,6 +164,7 @@ export default{
       getDetailProject(id){
         ProjectsDataServices.getDetailProject(id)
             .then((response) => {
+              console.log("SERVER REQUEST")
               this.infoProject = response.data
               console.log(this.infoProject)
             })
@@ -170,36 +175,49 @@ export default{
       OpenNextSection(){
         if (this.activeSectionDescription < 5){
           this.activeSectionDescription += 1
-          localStorage.setItem('activeDetail', this.activeSectionDescription)
         }
       },
       PrevNextSection(){
         if (this.activeSectionDescription > 1){
           this.activeSectionDescription -= 1
-          localStorage.setItem('activeDetail', this.activeSectionDescription)
         }
       },
       OpenCurrentSection(id){
         this.activeSectionDescription = id
-        localStorage.setItem('activeDetail', this.activeSectionDescription)
       },
       putStatusProject(status){
         try {
           if (status){
             ProjectsDataServices.putAcceptProject(this.$route.params.id)
                 .then((response) => {
-                  console.log(response)
+                  this.success = true
+                  setTimeout(() => {
+                    this.success = false
+                    this.$router.push('/admin')
+                  }, 5000)
                 })
                 .catch((e) => {
+                  this.error = true
+                  setTimeout(() => {
+                    this.error = false
+                  }, 5000)
                   console.log(e)
                 })
           } else {
             ProjectsDataServices.putRejectProject(this.$route.params.id)
                 .then((response) => {
                   console.log(response)
+                  this.success = true
+                  setTimeout(() => {
+                    this.success = false
+                  }, 5000)
                 })
                 .catch((e) => {
                   console.log(e)
+                  this.error = true
+                  setTimeout(() => {
+                    this.error = false
+                  }, 5000)
                 })
           }
         }

@@ -17,7 +17,7 @@
             <div class="item d-flex">
 
                 <div class="item-title">
-                    Тип мероприятия 
+                    Тип мероприятия
                 </div>
                 <div class="item-under">
                    {{ infoProject.crowdfundingType.name }}
@@ -31,14 +31,14 @@
                 </div>
 
                 <div class="item-title">
-                    Наименование мероприятия 
+                    Наименование мероприятия
                 </div>
                 <div class="item-under">
                     {{ infoProject.name }}
                 </div>
 
                 <div class="item-title">
-                    Цель мероприятия 
+                    Цель мероприятия
                 </div>
                 <div class="item-under">
                     {{ infoProject.goal }}
@@ -106,7 +106,7 @@
                 <div class="item-under">
                     {{ infoProject.crowdfundingRequirementToConstructing.name }}
                 </div>
-                
+
                 <div class="item-title">
                     Потребность в земельных ресурсах и (или) муниципальном имуществе
                 </div>
@@ -117,18 +117,14 @@
         </div>
     </div>
     
-    </template>
+</template>
 
 <script>
 export default{
     name: "OneSectionAdmin",
     props:{
-        desProject:{
-        type: Array,
-        required: true
-      },
       infoProject:{
-        type: Array,
+        type: Object,
         required: true
       }
     },

@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper-how-we-selected justify-content-between container">
+    <div class="wrapper-how-we-selected justify-content-between container mt-5">
         <img src="../../assets/img/otbor.svg" class="mobile_img" alt="" width="280px" height="202px">
         <div class="wrapper-text">
             <h2 class="title">

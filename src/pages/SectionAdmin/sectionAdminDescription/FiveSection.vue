@@ -3,7 +3,7 @@
     <div class="wrapper mx-3">
         <div class="title">
             <div class="title-top d-flex">
-                {{ infoProject.projectName }}
+              {{ infoProject.name }}
             </div>
             <div class="title-under d-flex">
                 {{ infoProject.firstName }} {{ infoProject.middleName }} {{ infoProject.lastName }}

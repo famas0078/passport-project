@@ -119,7 +119,7 @@ export default {
   data() {
     return {
       status: null,
-      statusId: localStorage.getItem('statusId') ? localStorage.getItem('statusId') : 0,
+      statusId: localStorage.getItem('statusId') ? localStorage.getItem('statusId') : 1,
       search: null,
       arrayProject: [
         {
