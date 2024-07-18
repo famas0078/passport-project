@@ -11,7 +11,7 @@
         </div>
         <div class="description">
             <div class="description-title">
-                ЦЕЛЕВЫЕ ПОКАЗАТЕЛИ МЕРОПРИЯТИЯ (ПРОЕКТА)
+                ЦЕЛЕВЫЕ ПОКАЗАТЕЛИ ПРОЕКТА
             </div>
 
             <div class="item d-flex">

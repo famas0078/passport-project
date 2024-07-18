@@ -21,7 +21,7 @@ export default {
   <div class="wrapper">
     <MultiSlider :ActiveSlide = ActiveSlide />
     <div class="title">
-      Сведения об инициаторе мероприятия (проекта)
+      СВЕДЕНИЯ ОБ ИНИЦИАТОРЕ ПРОЕКТА
     </div>
     <div class="form">
       <div class="form-input-item">

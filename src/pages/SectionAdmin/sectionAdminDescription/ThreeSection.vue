@@ -11,7 +11,7 @@
         </div>
         <div class="description">
             <div class="description-title">
-                общие сведения о мероприятии (проекте)
+              ОБЩИЕ СВЕДЕНИЯ О ПРОЕКТЕ
             </div>
 
             <div class="item d-flex">

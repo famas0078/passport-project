@@ -26,7 +26,7 @@ export default {
   <div v-show="ActiveSlide === 5">
     <MultiSlider :ActiveSlide = ActiveSlide />
     <div class="title">
-      ЦЕЛЕВЫЕ ПОКАЗАТЕЛИ МЕРОПРИЯТИЯ (ПРОЕКТА)
+      ЦЕЛЕВЫЕ ПОКАЗАТЕЛИ ПРОЕКТА
     </div>
     <div class="form">
 

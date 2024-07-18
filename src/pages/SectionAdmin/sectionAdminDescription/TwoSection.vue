@@ -11,7 +11,7 @@
         </div>
         <div class="description">
             <div class="description-title">
-                Сведения об инициаторе мероприятия (проекта)
+                Сведения об инициаторе проекта
             </div>
 
             <div class="item d-flex">

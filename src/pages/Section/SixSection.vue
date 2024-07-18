@@ -73,7 +73,7 @@ export default {
 <div class="wrapper">
   <MultiSlider :ActiveSlide = ActiveSlide />
   <div class="title">
-    ДОПОЛНИТЕЛЬНЫЕ СВЕДЕНИЯ О МЕРОПРИЯТИИИ (ПРОЕКТЕ)
+    ДОПОЛНИТЕЛЬНЫЕ СВЕДЕНИЯ О ПРОЕКТЕ
   </div>
   <div class="form">
     <div class="form-input-item">

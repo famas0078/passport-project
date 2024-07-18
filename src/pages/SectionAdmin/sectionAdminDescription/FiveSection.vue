@@ -11,7 +11,7 @@
         </div>
         <div class="description">
             <div class="description-title">
-                ДОПОЛНИТЕЛЬНЫЕ СВЕДЕНИЯ О МЕРОПРИЯТИИИ (ПРОЕКТЕ) {{ this.$baseUrl }}
+                ДОПОЛНИТЕЛЬНЫЕ СВЕДЕНИЯ О ПРОЕКТЕ {{ this.$baseUrl }}
             </div>
             <div class="item d-flex">
                 <div class="item-title">
