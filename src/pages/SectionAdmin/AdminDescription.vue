@@ -8,7 +8,7 @@
 <ThreeSection v-if="activeSectionDescription === 3" :infoProject="infoProject" />
 <FourSection v-if="activeSectionDescription === 4" :infoProject="infoProject" />
 <FiveSection v-if="activeSectionDescription === 5" :putStatusProject="putStatusProject" :infoProject="infoProject" />
-<div class="wrapper-pagination">
+<div class="wrapper-pagination my-3">
     <div class="paggination">
         <div class="wrapper">
     <div class="wrapper-slider d-flex justify-content-around position-relative">
@@ -210,6 +210,7 @@ export default{
                   this.success = true
                   setTimeout(() => {
                     this.success = false
+                    this.$router.push('/admin')
                   }, 5000)
                 })
                 .catch((e) => {

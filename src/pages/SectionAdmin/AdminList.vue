@@ -1,6 +1,6 @@
 
 <template>
-  <div class="wrapper container">
+  <div class="wrapper w-100 container">
     <HeaderAdmin v-model:search="search" v-model:statusId="statusId" :getSearch="getSearch" :status="status"/>
     <div class="admin-list h-100">
       <table v-if="!isLoading" class="w-100 " border="0" cellspacing="0" cellpadding="0">

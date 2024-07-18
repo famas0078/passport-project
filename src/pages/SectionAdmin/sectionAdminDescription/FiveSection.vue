@@ -1,6 +1,6 @@
 <template>
 
-    <div class="wrapper mx-3">
+    <div class="wrapper mx-auto p-2">
         <div class="title">
             <div class="title-top d-flex">
               {{ infoProject.name }}
@@ -113,6 +113,7 @@ export default{
     methods: {
       downloadFile(path) {
         const url = `${this.BACK_URL}/${path}`;
+        console.log(url)
         const fileName = url.split('/').pop();
         console.log(url)
         fetch(url)
