@@ -92,6 +92,9 @@ export default {
       <label class="form-input-item-label text-left">
         Карта-схема территориальной привязки
       </label>
+      <span class="comment">
+        Формат: jpg | jpeg | png | webp
+      </span>
       <label class="input-file d-flex justify-content-between w-100 cursor-pointer" for="input-file">
         <p class="input-file-text">
           {{ fileNameMap ? fileNameMap : 'Карта-схема территориальной привязки'}}
@@ -154,6 +157,9 @@ export default {
       <label class="form-input-item-label text-left">
         Презентация проекта
       </label>
+      <span class="comment">
+        Формат: pptx | ppt | odp | otp | pdf
+      </span>
       <label class="input-file d-flex justify-content-between w-100 cursor-pointer" for="input-file-present">
         <p class="input-file-text">
           {{ fileNamePresentation ? fileNamePresentation : 'Презентация проекта'}}
@@ -230,5 +236,10 @@ export default {
   .title{
     font-size: 20px;
   }
+}
+.comment{
+  font-size: 14px;
+  color: #878787;
+  margin-bottom: 10px ;
 }
 </style>
