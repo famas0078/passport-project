@@ -97,6 +97,7 @@ export default ({
               this.error = true;
               setTimeout(() => {
                 console.log(e)
+                this.error = false;
               }, 2000)
             })
       } catch (error) {

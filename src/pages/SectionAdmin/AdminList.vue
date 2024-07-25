@@ -1,6 +1,6 @@
 
 <template>
-  <div class="wrapper container">
+  <div class="wrapper w-100 container">
     <HeaderAdmin v-model:search="search" v-model:statusId="statusId" :getSearch="getSearch" :status="status"/>
     <div class="admin-list h-100">
       <table v-if="!isLoading" class="w-100 " border="0" cellspacing="0" cellpadding="0">
@@ -264,7 +264,6 @@ export default {
           .then( (response) => {
             this.countOfPages = response.data.countOfPages;
             this.arrayProject = response.data.values
-            console.log("Проекты", response.data)
             this.isLoading = false
           })
           .catch((e) => {
@@ -276,7 +275,6 @@ export default {
       await СrowdfundingDataServices.getStatus()
           .then( (response) => {
             this.status = response.data
-            console.log(this.status)
             this.isLoading = false
           })
           .catch((e) => {
@@ -289,7 +287,6 @@ export default {
       this.getAllProjects()
     },
     OpenNextSection(){
-      console.log('OpenNextSection')
       if (this.activePage < this.countOfPages){
         this.activePage += 1
         this.getAllProjects(this.pageSize, this.activePage, this.statusId, this.search)

@@ -1,6 +1,6 @@
 <template>
 
-    <div class="wrapper mx-3">
+    <div class="wrapper mx-auto p-2">
         <div class="title">
             <div class="title-top d-flex">
                 {{ infoProject.name }}
@@ -11,7 +11,7 @@
         </div>
         <div class="description">
             <div class="description-title">
-                общие сведения о мероприятии (проекте)
+              ОБЩИЕ СВЕДЕНИЯ О ПРОЕКТЕ
             </div>
 
             <div class="item d-flex">

@@ -2,7 +2,7 @@
 <div class="wrapper">
   <MultiSlider :ActiveSlide = ActiveSlide />
   <div class="title">
-    ОБЩИЕ СВЕДЕНИЯ О МЕРОПРИЯТИИ (ПРОЕКТЕ)
+    ОБЩИЕ СВЕДЕНИЯ О ПРОЕКТЕ
   </div>
   <div class="wrapper-general-information">
     <div class="card-w wrapper-type-event">

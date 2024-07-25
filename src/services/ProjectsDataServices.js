@@ -21,7 +21,7 @@ export default {
         if (name) {
             params['name'] = name
         }
-        console.log(params)
+
         return http.get('/crowdfunding/all-project', {
             params
         })
