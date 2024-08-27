@@ -26,9 +26,9 @@ export default {
   color: #015458;
 }
 .wrapper{
-  margin: 0 auto;
-  margin-top: 226px;
-  margin-bottom: 68px;
+  margin: 70px auto;
+  padding: 0 30px;
   max-width: 1528px;
+  width: 100%;
 }
 </style>

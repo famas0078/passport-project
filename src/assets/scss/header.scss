@@ -117,6 +117,18 @@
         list-style-type: none;
         li{
           margin: 20px 0;
+
+          .header-btn{
+            padding: 16px 24px 16px 24px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 400;
+          }
+          .wrapper-header-btn-login{
+            color: white;
+            text-decoration: none;
+            background-color: var(--bg-color-green-btn);
+          }
         }
       }
     }

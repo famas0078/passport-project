@@ -1,0 +1,49 @@
+.wrapper-simple-form{
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  .title{
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 3vw;
+    @media (min-width: 1400px) {
+      font-size: 40px;
+    }
+    @media (max-width: 600px) {
+      font-size: 20px;
+    }
+  }
+  .description{
+    .wrapper-types{
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.wrapper-simple-form-item{
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+/* ===============
+  button
+=============== */
+
+.btn-next {
+  border-radius: 8px;
+  color: white;
+  background-color: var(--bg-color-green-btn);
+  border: none;
+}
+
+.btn-item {
+  cursor: pointer;
+  gap: 15px;
+  display: flex;
+  padding: 16px 24px;
+  align-items: center;
+}

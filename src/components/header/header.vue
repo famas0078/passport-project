@@ -1,7 +1,9 @@
 <template>
  <div class="wrapper-header d-flex justify-content-between">
    <div class="wrapper-header-img">
-     <img src="../../assets/img/Logo.svg" alt="Logo Rantie">
+     <router-link :to="{name: 'home'}">
+       <img src="../../assets/img/Logo.svg" alt="Logo Rantie">
+     </router-link>
    </div>
    <div class="wrapper-header-middle d-flex justify-content-around">
      <div class="middle-item cursor-pointer">О платформе</div>
@@ -10,6 +12,12 @@
      <div class="middle-item cursor-pointer">Стать партнером</div>
    </div>
    <div class="wrapper-header-btn d-flex justify-content-between">
+     <router-link v-if="formType === 'simple'" class="wrapper-header-btn-login header-btn cursor-pointer" :to="{name: 'form', query: { form: 'full' }}">
+       Вернуться
+     </router-link>
+     <router-link v-else class="wrapper-header-btn-login header-btn cursor-pointer" :to="{name: 'simpleForm', query: { form: 'simple' }}">
+       Упрощенная форма
+     </router-link>
      <router-link class="wrapper-header-btn-login header-btn cursor-pointer" to="/admin">
        Войти
      </router-link>
@@ -45,6 +53,16 @@
              Стать партнером
            </h2>
          </li>
+         <li v-if="formType === 'simple'" class="cursor-pointer mt-5">
+           <router-link class="wrapper-header-btn-login header-btn cursor-pointer" @click="toggleMenu" :to="{name: 'form', query: { form: 'full' }}">
+             Вернуться
+           </router-link>
+         </li>
+         <li v-else class="cursor-pointer mt-5">
+           <router-link class="wrapper-header-btn-login header-btn cursor-pointer" @click="toggleMenu" :to="{name: 'simpleForm', query: { form: 'simple' }}">
+             Упрощенная форма
+           </router-link>
+         </li>
        </ul>
      </div>
    </div>
@@ -56,8 +74,14 @@ export default {
   name: "header",
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      formType: this.$route.query.form
     };
+  },
+  watch: {
+    '$route'(to) {
+      this.formType = to.query.form
+    }
   },
   methods: {
     toggleMenu() {

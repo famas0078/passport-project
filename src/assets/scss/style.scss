@@ -23,6 +23,7 @@
 @import "HowCreateProject";
 @import "GoalsPlatform";
 @import "SubmitApplication";
+@import "simple-form";
 /* loader */
 
 @import "loading";
@@ -48,6 +49,7 @@ ul {
 
 .alert{
   display: none;
+  z-index: 999;
 }
 .alert.error{
   display: block;

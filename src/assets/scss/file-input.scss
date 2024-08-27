@@ -35,3 +35,19 @@ input[type='file'] {
     width: 100%;
   }
 }
+
+/* ===============
+  mask phone
+=============== */
+
+.wrapper-input-phone{
+  .phone-input{
+    cursor: text;
+    box-sizing: border-box;
+    transition: all .2s;
+  }
+  .phone-input.focused{
+    background: #fffff4;
+    transition: all 0.2s;
+  }
+}

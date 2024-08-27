@@ -83,7 +83,7 @@
                     :class="{ 'slide-enter-top': animationPlayed.btnRegister,
                               'isVisible': !animationPlayed.btnRegister
                 }">
-                    <router-link to="/passport" class="btn-a">Заполнить паспопт проекта</router-link>
+                    <router-link to="/passport" class="btn-a">Заполнить паспорт проекта</router-link>
                 </div>
                 <div class="btn-to-invest d-flex justify-content-center" ref="btnInvest"
                     :class="{ 'slide-enter-top': animationPlayed.btnInvest,'isVisible': !animationPlayed.btnInvest }">

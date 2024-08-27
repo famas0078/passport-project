@@ -15,4 +15,11 @@ export default {
             },
         })
     },
+    postFinancialModel(file) {
+        return http.post('/files/financial-model', file, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+    }
 }
