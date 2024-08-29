@@ -3,49 +3,53 @@
   <div class="alert" :class="{ 'show': success, 'error': error }" >
     {{ success ? 'Статус успешно изменен!' : 'Ошибка, попробуйте позже!' }}
   </div>
-<OneSection v-if="activeSectionDescription === 1" :infoProject="infoProject" />
-<TwoSection v-if="activeSectionDescription === 2" :infoProject="infoProject" />
-<ThreeSection v-if="activeSectionDescription === 3" :infoProject="infoProject" />
-<FourSection v-if="activeSectionDescription === 4" :infoProject="infoProject" />
-<FiveSection v-if="activeSectionDescription === 5" :putStatusProject="putStatusProject" :infoProject="infoProject" />
-<div class="wrapper-pagination my-3">
-    <div class="paggination">
+  <div v-if="!typeForm">
+    <OneSection v-if="activeSectionDescription === 1" :infoProject="infoProject" />
+    <TwoSection v-if="activeSectionDescription === 2" :infoProject="infoProject" />
+    <ThreeSection v-if="activeSectionDescription === 3" :infoProject="infoProject" />
+    <FourSection v-if="activeSectionDescription === 4" :infoProject="infoProject" />
+    <FiveSection v-if="activeSectionDescription === 5" :isLoading="isLoading" :success="success" :putStatusProject="putStatusProject" :infoProject="infoProject" />
+    <div class="wrapper-pagination my-3">
+      <div class="paggination">
         <div class="wrapper">
-    <div class="wrapper-slider d-flex justify-content-around position-relative">
-        <img class="arrow" src="../../assets/img/Chevron_Left.svg" alt="" @click="PrevNextSection()">
-      <div v-for="item in pagination" class="d-flex align-items-center justify-content-center flex-column">
-        <div
-          :class="{
+          <div class="wrapper-slider d-flex justify-content-around position-relative">
+            <img class="arrow" src="../../assets/img/Chevron_Left.svg" alt="" @click="PrevNextSection()">
+            <div v-for="item in pagination" class="d-flex align-items-center justify-content-center flex-column">
+              <div
+                  :class="{
             'wrapper-slider-item-back': activeSectionDescription === item.id,
             'wrapper-slider-item': activeSectionDescription !== item.id && activeSectionDescription < item.id,
           }"
-        @click="OpenCurrentSection(item.id)"
-        >
-          <div
-            class="d-flex align-items-center justify-content-center h-100 w-100"
-          >
-            <div
-              :class="{
+                  @click="OpenCurrentSection(item.id)"
+              >
+                <div
+                    class="d-flex align-items-center justify-content-center h-100 w-100"
+                >
+                  <div
+                      :class="{
                 'wrapper-slider-item-text-white':
                 activeSectionDescription === item.id,
                 'wrapper-slider-item-text':
                 activeSectionDescription !== item.id,
               }"
-            >
-              {{ item.id }}
+                  >
+                    {{ item.id }}
+                  </div>
+                </div>
+              </div>
             </div>
+            <img class="arrow" src="../../assets/img/Chevron_Right.svg" alt="" @click="OpenNextSection()">
           </div>
         </div>
       </div>
-      <img class="arrow" src="../../assets/img/Chevron_Right.svg" alt="" @click="OpenNextSection()">
+      <div class="arrow-right">
+
+      </div>
     </div>
   </div>
-    </div>
-    <div class="arrow-right">
-        
-    </div>
-</div>
- 
+  <div v-else>
+    <short-form :typeForm="typeForm" :isLoading="isLoading" :success="success" :putStatusShortProject="putStatusShortProject" :infoProject="infoProject"/>
+  </div>
 </template>
 
 <script>
@@ -57,6 +61,7 @@ import TwoSection from './sectionAdminDescription/TwoSection.vue';
 import ThreeSection from './sectionAdminDescription/ThreeSection.vue';
 import FourSection from './sectionAdminDescription/FourSection.vue';
 import FiveSection from './sectionAdminDescription/FiveSection.vue';
+import ShortForm from './shortForm/ShortForm.vue';
 
 /* services */
 
@@ -65,16 +70,19 @@ import ProjectsDataServices from '@/services/ProjectsDataServices'
 export default{
     name: "AdminList",
     components: {
-        OneSection,
-        TwoSection,
-        ThreeSection,
-        FourSection,
-        FiveSection
+      OneSection,
+      TwoSection,
+      ThreeSection,
+      FourSection,
+      FiveSection,
+      ShortForm
     },
     data(){
         return{
+          typeForm: parseInt(this.$route.query.type) || false,
           success: false,
           error: false,
+          isLoading: false,
           activeSectionDescription: 1,
           descriptionProject: [
               {
@@ -158,15 +166,27 @@ export default{
         }
     },
     mounted() {
-      this.getDetailProject(this.$route.params.id)
+      if (this.typeForm) {
+        this.getDetailShortProject(this.$route.params.id, this.typeForm)
+      } else {
+
+        this.getDetailProject(this.$route.params.id)
+      }
     },
     methods:{
       getDetailProject(id){
         ProjectsDataServices.getDetailProject(id)
             .then((response) => {
-              console.log("SERVER REQUEST")
               this.infoProject = response.data
-              console.log(this.infoProject)
+            })
+            .catch((e) => {
+              console.log(e)
+            })
+      },
+      getDetailShortProject(id, typeId){
+        ProjectsDataServices.getDetailShortProject(id, typeId)
+            .then((response) => {
+              this.infoProject = response.data[0]
             })
             .catch((e) => {
               console.log(e)
@@ -187,9 +207,13 @@ export default{
       },
       putStatusProject(status){
         try {
+
+          this.isLoading = true
+
           if (status){
             ProjectsDataServices.putAcceptProject(this.$route.params.id)
                 .then((response) => {
+                  this.isLoading = false
                   this.success = true
                   setTimeout(() => {
                     this.success = false
@@ -197,6 +221,7 @@ export default{
                   }, 5000)
                 })
                 .catch((e) => {
+                  this.isLoading = false
                   this.error = true
                   setTimeout(() => {
                     this.error = false
@@ -206,7 +231,7 @@ export default{
           } else {
             ProjectsDataServices.putRejectProject(this.$route.params.id)
                 .then((response) => {
-                  console.log(response)
+                  this.isLoading = false
                   this.success = true
                   setTimeout(() => {
                     this.success = false
@@ -214,6 +239,54 @@ export default{
                   }, 5000)
                 })
                 .catch((e) => {
+                  this.isLoading = false
+                  console.log(e)
+                  this.error = true
+                  setTimeout(() => {
+                    this.error = false
+                  }, 5000)
+                })
+          }
+        }
+        catch (e) {
+          console.log(e)
+        }
+      },
+      putStatusShortProject(status){
+        try {
+
+          this.isLoading = true
+
+          if (status){
+            ProjectsDataServices.putAcceptShortProject(this.$route.params.id, this.$route.query.type)
+                .then((response) => {
+                  this.isLoading = false
+                  this.success = true
+                  setTimeout(() => {
+                    this.success = false
+                    this.$router.push('/admin')
+                  }, 5000)
+                })
+                .catch((e) => {
+                  this.isLoading = false
+                  this.error = true
+                  setTimeout(() => {
+                    this.error = false
+                  }, 5000)
+                  console.log(e)
+                })
+          } else {
+            ProjectsDataServices.putRejectShortProject(this.$route.params.id, this.$route.query.type)
+                .then((response) => {
+                  this.isLoading = false
+                  this.success = true
+                  setTimeout(() => {
+                    this.success = false
+                    this.$router.push('/admin')
+                  }, 5000)
+                })
+                .catch((e) => {
+                  this.isLoading = false
                   console.log(e)
                   this.error = true
                   setTimeout(() => {

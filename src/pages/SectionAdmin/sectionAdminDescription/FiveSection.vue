@@ -82,12 +82,15 @@
                   </div>
                 </div>
               <div class="wrapper-btn d-flex align-items-center justify-content-center my-3">
-                <div class="btn btn-success mx-2" @click="putStatusProject(true)">
-                  Принять
+                <div v-if="!isLoading">
+                  <button class="btn btn-success mx-2" @click="putStatusProject(true)" :disabled="success">
+                    Принять
+                  </button>
+                  <button class="btn btn-danger mx-2" @click="putStatusProject(false)" :disabled="success">
+                    Отказать
+                  </button>
                 </div>
-                <div class="btn btn-danger mx-2" @click="putStatusProject(false)">
-                  Отказать
-                </div>
+                <div v-else class="loader-cover m-5"></div>
               </div>
             </div>
         </div>
@@ -105,6 +108,14 @@ export default{
       },
       putStatusProject:{
         type: Function,
+      },
+      success: {
+        type: Boolean,
+        required: true
+      },
+      isLoading: {
+        type: Boolean,
+        required: true
       }
     },
     mounted() {
@@ -113,9 +124,9 @@ export default{
     methods: {
       downloadFile(path) {
         const url = `${this.BACK_URL}/${path}`;
-        console.log(url)
+
         const fileName = url.split('/').pop();
-        console.log(url)
+
         fetch(url)
             .then(response => response.blob())
             .then(blob => {

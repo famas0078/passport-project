@@ -1,7 +1,7 @@
 
 <template>
   <div class="wrapper w-100 container">
-    <HeaderAdmin v-model:search="search" v-model:statusId="statusId" :getSearch="getSearch" :status="status"/>
+    <HeaderAdmin v-model:search="search" v-model:statusId="statusId" :typeFormShort="typeFormShort" :changeTypeForm="changeTypeForm" :getSearch="getSearch" :status="status"/>
     <div class="admin-list h-100">
       <table v-if="!isLoading" class="w-100 " border="0" cellspacing="0" cellpadding="0">
         <thead class="wrapper_table">
@@ -12,9 +12,10 @@
           </tr>
         </thead>
         <tbody v-if="arrayProject.length > 0">
-        <tr v-for="(item, index) in arrayProject" :key="index" class="w-100 item-list-spisok cursor-pointer" @click="OpenDescriptionProject(item.id)">
+        <tr v-for="(item, index) in arrayProject" :key="index" class="w-100 item-list-spisok cursor-pointer" @click="OpenDescriptionProject(item.id, item.typeId)">
           <td class="item_name text-left">{{ item.name }}</td>
-          <td class="item_fio">{{ item.firstName }} {{ item.lastName }} {{ item.middleName }}</td>
+          <td v-if="!typeFormShort" class="item_fio">{{ item.firstName }} {{ item.lastName }} {{ item.middleName }}</td>
+          <td v-else class="item_fio">{{ item.fioOfLeader }}</td>
           <td v-if="item.crowdfundingStatus && item.crowdfundingStatus.id === 3" class="item_status d-flex">
             <img src="../../assets/img/TwoStatusProject.svg" alt="">
             <div class="item_status_text">Принята</div>
@@ -48,8 +49,11 @@
                     ФИО
                   </b>
                 </p>
-                <p class="my-2">
+                <p v-if="!typeFormShort" class="my-2">
                   {{ item.firstName }} {{ item.lastName }} {{ item.middleName }}
+                </p>
+                <p v-else>
+                  {{ item.fioOfLeader }}
                 </p>
               </div>
               <div class="wrapper-status my-3">
@@ -120,6 +124,7 @@ export default {
     return {
       status: null,
       statusId: localStorage.getItem('statusId') ? localStorage.getItem('statusId') : 1,
+      typeFormShort: localStorage.getItem('typeFormShort') !== null ? JSON.parse(localStorage.getItem('typeFormShort')) : false,
       search: null,
       arrayProject: [
         {
@@ -245,18 +250,39 @@ export default {
       ],
       countOfPages: null,
       page: 1,
-      pageSize: 2,
+      pageSize: 8,
       activePage: 1,
       isLoading: true,
     }
   },
   mounted(){
     this.getStatus()
-    this.getAllProjects()
+    if (!this.typeFormShort){
+      this.getAllProjects()
+    } else {
+      this.getAllShortProjects()
+    }
   },
   methods: {
-    OpenDescriptionProject(id) {
-      this.$router.push({ name: 'AdminDescriptionPage', params: { id: id } });
+    changeTypeForm() {
+      this.typeFormShort = !this.typeFormShort
+      localStorage.setItem('typeFormShort', JSON.stringify(this.typeFormShort))
+      this.getSearch()
+    },
+    OpenDescriptionProject(id, type) {
+      this.$router.push({ name: 'AdminDescriptionPage', params: { id: id }, query: { project: this.typeFormShort ? 'short' : 'entire', type: type } });
+    },
+    async getAllShortProjects() {
+      this.isLoading = true
+      ProjectsDataServices.getAllShortProjects(this.statusId, this.search)
+          .then((response) => {
+            this.isLoading = false
+            this.arrayProject = response.data
+          })
+          .catch((e) => {
+            this.isLoading = false
+            console.log(e)
+          })
     },
     async getAllProjects() {
       this.isLoading = true
@@ -276,6 +302,7 @@ export default {
           .then( (response) => {
             this.status = response.data
             this.isLoading = false
+
           })
           .catch((e) => {
             this.isLoading = false
@@ -284,7 +311,11 @@ export default {
     },
     getSearch(){
       this.activePage = 1
-      this.getAllProjects()
+      if (this.typeFormShort) {
+        this.getAllShortProjects()
+      } else {
+        this.getAllProjects()
+      }
     },
     OpenNextSection(){
       if (this.activePage < this.countOfPages){

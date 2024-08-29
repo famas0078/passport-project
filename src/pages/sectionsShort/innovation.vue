@@ -8,6 +8,16 @@
         <div class="card-w wrapper-types">
           <div>
             <div class="types-title text-left">
+              Название инновации
+            </div>
+            <ul>
+              <li>
+                <input class="form-input-item-input" type="text" placeholder="Название" v-model="form.name" >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="types-title text-left">
               Суть инновации
             </div>
             <ul>
@@ -154,6 +164,7 @@ export default{
         },
       ],
       form: {
+        name: '',
         shortDescription: '',
         amountOfInvestment: '',
         presentation: '',

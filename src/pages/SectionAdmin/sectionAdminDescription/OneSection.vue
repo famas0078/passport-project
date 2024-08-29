@@ -16,7 +16,7 @@
 
             <div class="item d-flex">
                 <div class="item-title">
-                    Имя 
+                    Имя
                 </div>
                 <div class="item-under">
                     {{ infoProject.firstName }}

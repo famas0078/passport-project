@@ -220,7 +220,6 @@ export default{
         fioOfLeader: '',
         phone: '',
         email: '',
-
       },
       success_fin: '',
       success_pre: '',
