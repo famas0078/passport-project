@@ -5,7 +5,7 @@ import indexAdmin from "@/pages/indexPages/indexAdmin.vue";
 import AdminDescription from "@/pages/SectionAdmin/AdminDescription"
 import indexLending from "@/pages/indexPages/indexLending"
 import indexSimplified from "@/pages/indexPages/indexSimplified.vue"
-
+import IndexInvestment from "@/pages/indexPages/indexInvestment.vue";
 // components auth
 
 import login from '@/auth/login.vue'
@@ -53,7 +53,13 @@ const routes = [
     name: 'AdminDescriptionPage',
     component: AdminDescription,
     meta: { requiresAuth: true },
+  },
+  {
+    path: '/IndexInvestment',
+    name: 'IndexInvestment',
+    component: IndexInvestment,
   }
+
 ]
 
 const router = createRouter({

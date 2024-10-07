@@ -5,7 +5,9 @@ export default {
 </script>
 
 <template>
-1
+<div class="wrapper-IndexInvestment">
+
+</div>
 </template>
 
 <style scoped>
