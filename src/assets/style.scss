@@ -1,32 +1,38 @@
+
 /* auth */
 
-@import "login";
-@import "register";
+@import "scss/login";
+@import "scss/register";
 
 /* components */
 
-@import "header";
-@import "checkbox-radio-input";
-@import "text-input";
-@import "file-input";
-@import "headerAdmin";
-@import "adminList";
-@import "headerLending";
-@import "adminSectionsDescription";
-@import "recommendationsLending";
-@import "faq";
-@import "advantages";
-@import "becomeInvestor";
-@import "oneSection";
-@import "hoWeSelect";
-@import "partner";
-@import "HowCreateProject";
-@import "GoalsPlatform";
-@import "SubmitApplication";
-@import "simple-form";
+@import "scss/header";
+@import "scss/checkbox-radio-input";
+@import "scss/text-input";
+@import "scss/file-input";
+@import "scss/headerAdmin";
+@import "scss/adminList";
+@import "scss/headerLending";
+@import "scss/adminSectionsDescription";
+@import "scss/recommendationsLending";
+@import "scss/faq";
+@import "scss/advantages";
+@import "scss/becomeInvestor";
+@import "scss/oneSection";
+@import "scss/hoWeSelect";
+@import "scss/partner";
+@import "scss/HowCreateProject";
+@import "scss/GoalsPlatform";
+@import "scss/SubmitApplication";
+@import "scss/simple-form";
+
 /* loader */
 
-@import "loading";
+@import "scss/loading";
+
+/* global colors */
+
+@import "colors";
 
 /* bootstrap */
 //
