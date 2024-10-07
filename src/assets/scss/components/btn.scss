@@ -1,0 +1,15 @@
+
+.button{
+  margin: $btn-y-margin auto;
+  &.button-primary{
+    cursor: pointer;
+    color: $white;
+    background: $purple;
+    border-radius: 8px;
+    transition: all .3s;
+    &:hover{
+      background: $purple-hover;
+      transition: all .3s;
+    }
+  }
+}

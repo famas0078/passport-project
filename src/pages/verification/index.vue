@@ -1,6 +1,10 @@
 <template>
   <div>
     Верификация
+
+    <div class="button button-primary">
+      send
+    </div>
   </div>
 </template>
 

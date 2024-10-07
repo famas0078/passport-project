@@ -1,4 +1,8 @@
 
+/* global variables */
+
+@import "rules/variables";
+
 /* auth */
 
 @import "auth/login";
@@ -25,14 +29,11 @@
 @import "pages/GoalsPlatform";
 @import "pages/SubmitApplication";
 @import "components/simple-form";
+@import "components/btn";
 
 /* loader */
 
 @import "components/loading";
-
-/* global colors */
-
-@import "rules/colors";
 
 /* bootstrap */
 //
