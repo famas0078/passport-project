@@ -7,9 +7,9 @@ export default {
 <template>
 <div class="wrapper-IndexInvestment">
   <div class="menu-Logo">
-
+    <img src="" alt="">
   </div>
-  <div class="menu-item-main">
+  <div class="menu-item-main d-flex justify-content-around">
     <div class="menu-item">Инвестировать</div>
     <div class="menu-item">Выдать займ</div>
     <div class="menu-item">Спонсировать</div>
