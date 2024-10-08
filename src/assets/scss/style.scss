@@ -11,8 +11,13 @@
 @import "components/text-input";
 @import "components/file-input";
 @import "components/headerLending";
-@import "pages/adminList";
+@import "components/headerInvestment";
 @import "components/headerAdmin";
+@import "components/simple-form";
+
+/* page */
+
+@import "pages/adminList";
 @import "pages/adminSectionsDescription";
 @import "pages/recommendationsLending";
 @import "pages/faq";
@@ -24,7 +29,6 @@
 @import "pages/HowCreateProject";
 @import "pages/GoalsPlatform";
 @import "pages/SubmitApplication";
-@import "components/simple-form";
 
 /* loader */
 

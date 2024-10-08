@@ -7,7 +7,10 @@ export default {
 <template>
 <div class="wrapper-IndexInvestment">
   <div class="menu-Logo">
-    <img src="" alt="">
+    <img src="../../assets/img/logoLendingPage.svg" alt="">
+    <span>
+      Развиваем города
+    </span>
   </div>
   <div class="menu-item-main d-flex justify-content-around">
     <div class="menu-item">Инвестировать</div>
