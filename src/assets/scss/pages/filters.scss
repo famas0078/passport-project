@@ -1,3 +1,51 @@
-.wrapper-filters{
-  background-color: var(--bg-white);
+.wrapper-filters {
+  background-color: $bg-white;
+  min-height: 100vh;
+  .main-filters{
+
+    .title-filters{
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 52.8px;
+      text-align: left;
+      color: $black
+    }
+
+    .menu-filters{
+      font-size: 18px;
+      font-weight: 300;
+      position: relative;
+      line-height: 24px;
+      text-align: left;
+      gap: 4px;
+      background-color: #FFFFFFBF;
+      padding: 4px;
+      max-width: 510px;
+      border-radius: 12px;
+
+      .active-indicator {
+        position: absolute;
+        bottom: -5px;
+        height: 4px;
+        width: calc(100% / 3);
+        background-color: blue;
+        transition: left 0.3s ease;
+      }
+
+      .menu-item-active{
+        //border-radius: 12px;
+        padding: 8px 16px;
+        transition: $purple 0.3s ease;
+        color: $white;
+        background-color: $purple;
+      }
+
+      .menu-item{
+        cursor: pointer;
+        padding: 8px 16px;
+        color: $grey;
+        transition: color 0.3s ease;
+      }
+    }
+  }
 }

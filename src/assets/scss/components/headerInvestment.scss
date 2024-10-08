@@ -1,18 +1,18 @@
 .wrapper-HeaderInvestment{
   padding: 24px 40px;
-  background-color: var(--white);
+  background-color: $white;
   box-shadow: 4px 4px 18px 0px #5C5B6729;
   .menu-Logo{
 
     .menu-logo-text{
-      color: var(--color-purple);
+      color: $purple;
       font-size: 13px;
     }
   }
 
   .menu-item-main{
     gap: 24px;
-    color: var(--black);
+    color: $black;
   }
   .menu-btn-avatar{
     gap: 16px;
