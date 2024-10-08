@@ -7,6 +7,7 @@ import indexLending from "@/pages/indexPages/indexLending"
 import indexSimplified from "@/pages/indexPages/indexSimplified.vue"
 import IndexInvestment from "@/pages/indexPages/indexInvestment.vue";
 import verification from "@/pages/verification/index.vue"
+import filters from "@/pages/filters/filters.vue";
 // components auth
 
 import login from '@/auth/login.vue'
@@ -64,7 +65,12 @@ const routes = [
     path: '/IndexInvestment',
     name: 'IndexInvestment',
     component: IndexInvestment,
-  }
+  },
+  {
+    path: '/filters',
+    name: 'filters',
+    component: filters,
+  },
 
 ]
 
