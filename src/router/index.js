@@ -6,6 +6,7 @@ import AdminDescription from "@/pages/SectionAdmin/AdminDescription"
 import indexLending from "@/pages/indexPages/indexLending"
 import indexSimplified from "@/pages/indexPages/indexSimplified.vue"
 import IndexInvestment from "@/pages/indexPages/indexInvestment.vue";
+import verification from "@/pages/verification/index.vue"
 // components auth
 
 import login from '@/auth/login.vue'
@@ -33,6 +34,11 @@ const routes = [
         component: indexSimplified
       }
     ]
+  },
+  {
+    path: '/verification',
+    name: 'verification',
+    component: verification,
   },
   {
     path: '/admin/auth/login',
