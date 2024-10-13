@@ -8,38 +8,60 @@
 @import "auth/login";
 @import "auth/register";
 
-/* components */
+/* components global */
 
-@import "components/header";
-@import "components/checkbox-radio-input";
-@import "components/text-input";
-@import "components/file-input";
-@import "components/headerLending";
-@import "components/headerInvestment";
-@import "components/headerAdmin";
-@import "components/simple-form";
-@import "components/simple-form";
-@import "components/btn";
+@import "components/globalStyleComponents/header";
+@import "components/globalStyleComponents/checkbox-radio-input";
+@import "components/globalStyleComponents/file-input";
+@import "components/globalStyleComponents/btn";
 
-/* page */
+/* components lending */
 
-@import "pages/filters";
-@import "pages/adminList";
-@import "pages/adminSectionsDescription";
-@import "pages/recommendationsLending";
-@import "pages/faq";
-@import "pages/advantages";
-@import "pages/becomeInvestor";
-@import "pages/oneSection";
-@import "pages/hoWeSelect";
-@import "pages/partner";
-@import "pages/HowCreateProject";
-@import "pages/GoalsPlatform";
-@import "pages/SubmitApplication";
+@import "components/lending/headerLending";
+
+/* components passport */
+
+@import "components/passport/text-input";
+@import "components/passport/simple-form";
+@import "components/passport/simple-form";
+
+/* components admin */
+
+@import "components/admin/headerAdmin";
+
+/* components admin */
+
+@import "components/investment/headerInvestment";
+
+
+
+
+
+/* page investment*/
+
+@import "pages/investment/filters";
+
+/* page admin*/
+
+@import "pages/admin/adminList";
+@import "pages/admin/adminSectionsDescription";
+
+/* page lending*/
+
+@import "pages/lending/recommendationsLending";
+@import "pages/lending/faq";
+@import "pages/lending/advantages";
+@import "pages/lending/becomeInvestor";
+@import "pages/lending/oneSection";
+@import "pages/lending/hoWeSelect";
+@import "pages/lending/partner";
+@import "pages/lending/HowCreateProject";
+@import "pages/lending/GoalsPlatform";
+@import "pages/lending/SubmitApplication";
 
 /* loader */
 
-@import "components/loading";
+@import "components/globalStyleComponents/loading";
 
 /* bootstrap */
 //
