@@ -7,7 +7,7 @@ export default {
 <template>
 <div class="wrapper-HeaderInvestment d-flex  justify-content-between align-items-center">
   <div class="menu-Logo">
-          <img src="../../assets/img/logoLendingPage.svg" alt="">
+          <img src="../../assets/img/lendingPages/logoLendingPage.svg" alt="">
     <div class="menu-logo-text">
       Развиваем города
     </div>
@@ -24,7 +24,7 @@ export default {
   </div>
   <div class="menu-btn-avatar d-flex">
     <div class="menu-btn button button-primary">Создать проект</div>
-    <img src="../../assets/img/nonAvatarInvestment.svg" alt="">
+    <img src="../../assets/img/investmentPages/nonAvatarInvestment.svg" alt="">
   </div>
 </div>
 </template>

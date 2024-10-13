@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import IndexSection from '@/pages/indexPages/index.vue'
-import IndexPassport from '@/pages/indexPages/indexPassport.vue'
-import indexAdmin from "@/pages/indexPages/indexAdmin.vue";
-import AdminDescription from "@/pages/SectionAdmin/AdminDescription"
-import indexLending from "@/pages/indexPages/indexLending"
-import indexSimplified from "@/pages/indexPages/indexSimplified.vue"
-import IndexInvestment from "@/pages/indexPages/indexInvestment.vue";
-import verification from "@/pages/verification/index.vue"
-import filters from "@/pages/filters/filters.vue";
+import IndexPassport from '@/pages/passport/indexPassport.vue'
+import indexAdmin from "@/pages/admin/indexAdmin.vue";
+import AdminDescription from "@/pages/admin/AdminDescription.vue"
+import indexLending from "@/pages/lending/indexLending.vue"
+import indexSimplified from "@/pages/passport/indexSimplified.vue"
+import IndexInvestment from "@/pages/investment/indexInvestment.vue";
+import verification from "@/pages/investment/verification/index.vue"
+import filters from "@/pages/investment/filters/filters.vue";
 // components auth
 
 import login from '@/auth/login.vue'

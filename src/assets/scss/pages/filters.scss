@@ -14,7 +14,6 @@
     .menu-filters{
       font-size: 18px;
       font-weight: 300;
-      position: relative;
       line-height: 24px;
       text-align: left;
       gap: 4px;
@@ -23,24 +22,17 @@
       max-width: 510px;
       border-radius: 12px;
 
-      .active-indicator {
-        position: absolute;
-        bottom: -5px;
-        height: 4px;
-        width: calc(100% / 3);
-        background-color: blue;
-        transition: left 0.3s ease;
-      }
-
       .menu-item-active{
-        //border-radius: 12px;
+        border-radius: 12px;
         padding: 8px 16px;
         transition: $purple 0.3s ease;
-        color: $white;
+        color: $white !important;
+        z-index: 2;
         background-color: $purple;
       }
 
       .menu-item{
+        z-index: 2;
         cursor: pointer;
         padding: 8px 16px;
         color: $grey;

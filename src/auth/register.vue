@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="container-image col-12 col-md-6 col-lg-8">
-        <img class="w-100" src="@/assets/img/auth.svg" alt="">
+        <img class="w-100" src="../assets/img/auth/auth.svg" alt="">
       </div>
     </div>
   </div>
