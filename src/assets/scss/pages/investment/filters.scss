@@ -2,6 +2,9 @@
   background-color: $bg-white;
   min-height: 100vh;
   .main-filters{
+  max-width: 1528px;
+  width: 100%;
+  margin: 0 auto;
 
     .title-filters{
       font-size: 40px;
@@ -11,32 +14,92 @@
       color: $black
     }
 
-    .menu-filters{
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 24px;
-      text-align: left;
-      gap: 4px;
-      background-color: #FFFFFFBF;
-      padding: 4px;
-      max-width: 510px;
-      border-radius: 12px;
+    .main-menu-filters{
 
-      .menu-item-active{
+      .menu-filters{
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: left;
+        gap: 4px;
+        background-color: #FFFFFFBF;
+        padding: 4px;
+        max-width: 510px;
         border-radius: 12px;
-        padding: 8px 16px;
-        transition: $purple 0.3s ease;
-        color: $white !important;
-        z-index: 2;
-        background-color: $purple;
+
+        .menu-item-active{
+          border-radius: 12px;
+          padding: 8px 16px;
+          transition: $purple 0.3s ease;
+          color: $white !important;
+          z-index: 2;
+          background-color: $purple;
+        }
+
+        .menu-item{
+          z-index: 2;
+          cursor: pointer;
+          padding: 8px 16px;
+          color: $grey;
+          transition: color 0.3s ease;
+        }
+      }
+    }
+
+    .main-projects{
+
+      .main-projects-left{
+        max-width: 437px;
+        width: 100%;
       }
 
-      .menu-item{
-        z-index: 2;
-        cursor: pointer;
-        padding: 8px 16px;
-        color: $grey;
-        transition: color 0.3s ease;
+      .main-projects-right{
+        padding: 32px 24px;
+        max-width: 1060px;
+        width: 100%;
+        box-shadow: 4px 4px 18px 0px #5C5B6729;
+        background: $white;
+        border-radius: 12px;
+      }
+
+      .search-projects-left{
+        position: relative;
+
+        .input-search-item{
+          width: 100%;
+          padding: 12px 40px;
+          border: 1px solid $grey;
+          border-radius: 12px;
+          font-size: 10pt;
+          float: left;
+          color: #262626;
+          -webkit-border-radius: 12px;
+          -moz-border-radius: 12px;
+          -webkit-transition: background .55s ease;
+          -moz-transition: background .55s ease;
+          -ms-transition: background .55s ease;
+          -o-transition: background .55s ease;
+          transition: background .55s ease;
+          &:focus {
+            outline: none;
+            border-color: black;
+          }
+        }
+        .search-icon {
+          position: absolute;
+          top: 25%;
+          right: 10px;
+          transform: translateY(35%);
+          font-size: 16px;
+          color: $grey;
+          pointer-events: none;
+        }
+      }
+
+      .rating-projects-left{
+        box-shadow: 4px 4px 18px 0px #5C5B6729;
+        background: $white;
+        border-radius: 12px;
       }
     }
   }
