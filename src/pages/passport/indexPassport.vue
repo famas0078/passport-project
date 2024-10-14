@@ -39,9 +39,9 @@ import UploadFilesDataServices from "@/services/UploadFilesDataServices"
 
 // import components
 
-import Header from "@/components/header/header.vue"
+import Header from "@/components/passport/header/header.vue"
 import OneSection from "@/pages/passport/Section/OneSection.vue";
-import Footer from "@/components/footer/footer.vue";
+import Footer from "@/components/globalComponents/footer/footer.vue";
 import TwoSection from "@/pages/passport/Section/TwoSection.vue";
 import ThreeSection from "@/pages/passport/Section/ThreeSection.vue";
 import FourSection from "@/pages/passport/Section/FourSection.vue";

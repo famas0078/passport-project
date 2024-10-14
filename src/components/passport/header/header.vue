@@ -2,7 +2,7 @@
  <div class="wrapper-header d-flex justify-content-between">
    <div class="wrapper-header-img">
      <router-link :to="{name: 'home'}">
-       <img src="../../assets/img/Logo.svg" alt="Logo Rantie">
+       <img src="../../../assets/img/Logo.svg" alt="Logo Rantie">
      </router-link>
    </div>
    <div class="wrapper-header-middle d-flex justify-content-around">

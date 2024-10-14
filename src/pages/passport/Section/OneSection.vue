@@ -1,8 +1,8 @@
 
 <script>
 
-import MultiSlider from "@/components/multiSlider/index.vue";
-import Header from "@/components/header/header.vue";
+import MultiSlider from "@/components/passport/multiSlider/index.vue";
+import Header from "@/components/passport/header/header.vue";
 
 export default {
   props:{

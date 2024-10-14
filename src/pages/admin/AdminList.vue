@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import HeaderAdmin from "@/components/headerAdmin/headerAdmin.vue";
+import HeaderAdmin from "@/components/admin/headerAdmin/headerAdmin.vue";
 import СrowdfundingDataServices from "@/services/СrowdfundingDataServices";
 import ProjectsDataServices from '@/services/ProjectsDataServices'
 

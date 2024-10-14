@@ -39,7 +39,7 @@
             <div class="projects-item-img">
               <img src="../../../assets/img/investmentPages/noImageProject.png" alt="">
             </div>
-            <div class="projects-item-description">
+            <div class="projects-item-description text-left">
               <div class="description-category">
                 Категория
               </div>
@@ -51,10 +51,12 @@
                 тестирование позволяет выполнить важные задания по разработке
                 прогресса профессионального сообщества.
               </div>
-              <div class="description-under">
-                <div class="project-rating"></div>
-                <div class="project-popular"></div>
-                <div class="project-data"></div>
+              <div class="description-under d-flex justify-content-between">
+                <div class="project-rating">1</div>
+                <div class="popular-data-main d-flex">
+                  <div class="project-popular">2</div>
+                  <div class="project-data">3</div>
+                </div>
               </div>
             </div>
           </div>
@@ -65,7 +67,7 @@
 </template>
 
 <script>
-import Header from "@/components/headerInvestment/header.vue";
+import Header from "@/components/investment/headerInvestment/header.vue";
 
 export default {
   name: "filters",

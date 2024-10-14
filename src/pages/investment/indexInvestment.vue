@@ -8,8 +8,8 @@
 </template>
 
 <script>
-  import Header from "@/components/headerInvestment/header.vue";
-  import Footer from "@/components/footer/footer.vue";
+  import Header from "@/components/investment/headerInvestment/header.vue";
+  import Footer from "@/components/globalComponents/footer/footer.vue";
 
 export default {
   name: "indexInvestment",

@@ -124,7 +124,7 @@
 </div>
 </template>
 <script>
-import MultiSlider from "@/components/multiSlider/index.vue";
+import MultiSlider from "@/components/passport/multiSlider/index.vue";
 
 export default {
   name: "FourSection",

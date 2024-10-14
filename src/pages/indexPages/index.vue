@@ -14,8 +14,8 @@
 
 // import components
 
-import Header from "@/components/header/header.vue"
-import Footer from "@/components/footer/footer.vue";
+import Header from "@/components/passport/header/header.vue"
+import Footer from "@/components/globalComponents/footer/footer.vue";
 
 
 export default {
