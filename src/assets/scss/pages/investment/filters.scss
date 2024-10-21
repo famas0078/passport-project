@@ -63,7 +63,9 @@
 
         .projects-item{
 
+
           .projects-item-description{
+            padding-left: 19px;
 
             .description-category{
               color: $purple;
@@ -81,6 +83,30 @@
               line-height: 30.8px;
               text-align: left;
 
+            }
+
+            .description-text{
+              color: $grey;
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 26px;
+              text-align: left;
+
+            }
+
+            .project-rating{
+              display: flex;
+
+              .star {
+                font-size: 30px;
+                color: #ccc;
+                cursor: pointer;
+                transition: color 0.2s ease;
+                border-radius: 50%;
+              }
+              .filled {
+                color: #FFC720;
+              }
             }
           }
         }

@@ -43,16 +43,26 @@
               <div class="description-category">
                 Категория
               </div>
-              <div class="project-name">
+              <div class="project-name mt-2">
                 Название проекта
               </div>
-              <div class="description-text">
+              <div class="description-text mt-3">
                 Вот вам яркий пример современных тенденций — синтетическое
                 тестирование позволяет выполнить важные задания по разработке
                 прогресса профессионального сообщества.
               </div>
-              <div class="description-under d-flex justify-content-between">
-                <div class="project-rating">1</div>
+              <div class="description-under d-flex justify-content-between mt-2">
+                <div class="project-rating">
+                      <span
+                          v-for="star in stars"
+                          :key="star"
+                          class="star"
+                          :class="{ filled: star <= rating }"
+                          @click="setRating(star)"
+                      >
+                        ★
+                      </span>
+                </div>
                 <div class="popular-data-main d-flex">
                   <div class="project-popular">2</div>
                   <div class="project-data">3</div>
@@ -79,12 +89,17 @@ export default {
     return{
       headerActiveMenu: 3,
       statusProject: 3,
+      rating: 2,
+      stars: [1, 2, 3, 4, 5],
     }
   },
 
   methods: {
     updateStatusProjectFilter(status) {
       this.statusProject = status;
+    },
+    setRating(star) {
+      this.rating = star;
     },
   },
 
