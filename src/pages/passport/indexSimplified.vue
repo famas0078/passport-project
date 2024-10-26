@@ -2,7 +2,7 @@
   <div class="wrapper-simple-form px-3">
     <div v-show="!this.$route.query.nameType">
       <div class="title">
-        ПАСПОРТ ПРОЕКТА ДЛЯ РАЗМЕЩЕНИЯ<br/> НА ПЛАТФОРМЕ НА ПЛАТФОРМЕ "РАНТЬЕ. РАЗВИВИЕМ ГОРОДА”
+        ПАСПОРТ ПРОЕКТА ДЛЯ РАЗМЕЩЕНИЯ<br/> НА ПЛАТФОРМЕ "РАНТЬЕ. РАЗВИВИЕМ ГОРОДА”
       </div>
       <div class="description mt-4">
         <div class="card-w wrapper-types">

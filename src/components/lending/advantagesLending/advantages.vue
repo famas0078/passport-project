@@ -59,7 +59,7 @@
                                 Низкий риск
                             </div>
                             <div class="des-card flex-grow-1">
-                                ?????????????
+                                Низкий риск
                             </div>
                         </div>
                     </div>
